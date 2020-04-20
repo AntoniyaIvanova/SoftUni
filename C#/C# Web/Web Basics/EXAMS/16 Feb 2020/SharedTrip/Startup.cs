@@ -9,12 +9,15 @@
     {
         public void Configure(IList<Route> routeTable)
         {
-           
+            using (var db = new ApplicationDbContext())
+            {
+                db.Database.EnsureCreated();
+            }
         }
 
         public void ConfigureServices(IServiceCollection serviceCollection)
         {
-            
+           
         }
     }
 }
