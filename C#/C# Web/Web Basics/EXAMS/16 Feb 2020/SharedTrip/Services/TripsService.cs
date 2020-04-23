@@ -40,7 +40,8 @@ namespace SharedTrip.Services
 
         public IEnumerable<Trip> GetAll()
         {
-            throw new System.NotImplementedException();
+            var trips = this.db.Trips.ToArray();
+            return trips;
         }
 
         public Trip GetById(string tripId)
@@ -48,6 +49,27 @@ namespace SharedTrip.Services
             var trip = this.db.Trips.FirstOrDefault(x => x.Id == tripId);
 
             return trip;
+        }
+
+        public void AddUserToTrip(string userId, string tripId)
+        {
+            var trip = this.db.Trips.FirstOrDefault(x => x.Id == tripId);
+
+            trip.Seats -= 1;
+
+            var userTrip = new UserTrip
+            {
+                UserId = userId,
+                TripId = tripId
+            };
+
+            this.db.UserTrips.Add(userTrip);
+            this.db.SaveChanges();
+        }
+
+        public bool IsUserAlreadyInCurrentTrip(string userId, string tripId)
+        {
+            return this.db.UserTrips.Any(x => x.UserId == userId && x.TripId == tripId);
         }
     }
 }

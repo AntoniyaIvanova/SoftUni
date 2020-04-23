@@ -2,9 +2,6 @@
 using SharedTrip.ViewModels.TripViews;
 using SIS.HTTP;
 using SIS.MvcFramework;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace SharedTrip.Controllers
 {
@@ -17,14 +14,13 @@ namespace SharedTrip.Controllers
             this.tripsService = tripsService;
         }
 
-
-        [HttpGet]
         public HttpResponse All()
         {
-            return this.View();
+            var trips = this.tripsService.GetAll();
+
+            return this.View(trips);
         }
 
-        [HttpGet]
         public HttpResponse Add()
         {
             return this.View();
@@ -65,11 +61,25 @@ namespace SharedTrip.Controllers
             return this.View(trip);
         }
 
-        //[HttpPost]
-        //public HttpResponse Details()
-        //{
-        //    return this.View();
-        //}
+        public HttpResponse AddUserToTrip(string tripId)
+        {
+            if (!this.IsUserLoggedIn())
+            {
+                return this.Redirect("/Users/Login");
+            }
+            
+            var userId = this.User;
 
+            var isUserAlreadyInCurrentTrip = this.tripsService.IsUserAlreadyInCurrentTrip(userId, tripId);
+
+            if (isUserAlreadyInCurrentTrip)
+            {
+                return this.Redirect($"/Trips/Details?tripId={tripId}");
+            }
+
+            this.tripsService.AddUserToTrip(userId, tripId);
+
+            return this.Redirect("/");
+        }
     }
 }
