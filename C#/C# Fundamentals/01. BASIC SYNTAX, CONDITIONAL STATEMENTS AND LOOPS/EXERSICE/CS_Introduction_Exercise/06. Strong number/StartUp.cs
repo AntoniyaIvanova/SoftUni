@@ -17,7 +17,6 @@
 
                 var factorial = 1;
 
-
                 while (true)
                 {
 
