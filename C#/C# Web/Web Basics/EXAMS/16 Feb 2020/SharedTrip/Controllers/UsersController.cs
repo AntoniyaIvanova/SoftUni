@@ -2,9 +2,6 @@
 using SharedTrip.ViewModels.UserViews;
 using SIS.HTTP;
 using SIS.MvcFramework;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace SharedTrip.Controllers
 {
@@ -19,18 +16,17 @@ namespace SharedTrip.Controllers
 
         public HttpResponse Login()
         {
-            if(this.IsUserLoggedIn())
+            if (this.IsUserLoggedIn())
             {
                 return this.Redirect("Trips/All");
             }
             return this.View();
         }
 
-
         [HttpPost]
         public HttpResponse Login(LoginInputModel input)
         {
-            if(string.IsNullOrWhiteSpace(input.Username) || string.IsNullOrWhiteSpace(input.Password))
+            if (string.IsNullOrWhiteSpace(input.Username) || string.IsNullOrWhiteSpace(input.Password))
             {
                 return this.View();
             }
@@ -40,7 +36,7 @@ namespace SharedTrip.Controllers
             if (userId != null)
             {
                 this.SignIn(userId);
-                return this.Redirect("Trips/All");
+                return this.Redirect("/Trips/All");
             }
 
             return this.Redirect("/Users/Login");
@@ -48,12 +44,21 @@ namespace SharedTrip.Controllers
 
         public HttpResponse Register()
         {
+            if (this.IsUserLoggedIn())
+            {
+                return this.Redirect("Trips/All");
+            }
             return this.View();
         }
 
         [HttpPost]
         public HttpResponse Register(RegisterInputModel input)
         {
+            if (this.IsUserLoggedIn())
+            {
+                return this.Redirect("Trips/All");
+            }
+
             if (string.IsNullOrWhiteSpace(input.Email))
             {
                 return this.View();
@@ -89,7 +94,6 @@ namespace SharedTrip.Controllers
 
             return this.Redirect("/Users/Login");
         }
-
 
         public HttpResponse Logout()
         {

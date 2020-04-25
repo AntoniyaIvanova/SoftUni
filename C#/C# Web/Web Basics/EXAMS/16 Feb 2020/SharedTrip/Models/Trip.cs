@@ -20,6 +20,7 @@ namespace SharedTrip.Models
         [Required]
         public string EndPoint { get; set; }
 
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{dd.MM.yyyy HH:mm}")]
         public DateTime DepartureTime { get; set; }
 
         [MaxLength(6)]

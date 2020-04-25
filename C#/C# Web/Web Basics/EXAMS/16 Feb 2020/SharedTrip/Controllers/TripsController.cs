@@ -16,6 +16,10 @@ namespace SharedTrip.Controllers
 
         public HttpResponse All()
         {
+            if (!this.IsUserLoggedIn())
+            {
+                return this.Redirect("Users/Login");
+            }
             var trips = this.tripsService.GetAll();
 
             return this.View(trips);
@@ -23,6 +27,11 @@ namespace SharedTrip.Controllers
 
         public HttpResponse Add()
         {
+            if (!this.IsUserLoggedIn())
+            {
+                return this.Redirect("Users/Login");
+            }
+
             return this.View();
         }
 
@@ -46,7 +55,7 @@ namespace SharedTrip.Controllers
 
             var tripId = this.tripsService.Add(tripInputModel);
 
-            return this.Redirect($"/Trips/Details?tripId={tripId}");
+            return this.Redirect("/Trips/All");
         }
 
         public HttpResponse Details(string tripId)
@@ -79,7 +88,7 @@ namespace SharedTrip.Controllers
 
             this.tripsService.AddUserToTrip(userId, tripId);
 
-            return this.Redirect("/");
+            return this.Redirect("/Trips/All");
         }
     }
 }

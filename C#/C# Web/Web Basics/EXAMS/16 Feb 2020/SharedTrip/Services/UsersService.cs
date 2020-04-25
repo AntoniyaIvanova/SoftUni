@@ -37,7 +37,6 @@ namespace SharedTrip.Services
 
         public void Register(string username, string email, string password)
         {
-
             var user = new User
             {
                 Role = IdentityRole.User,
