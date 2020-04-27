@@ -14,7 +14,6 @@ namespace SIS.MvcFramework
         public string Email { get; set; }
 
         [Required]
-        [MaxLength(20)]
         public string Password { get; set; }
 
         public IdentityRole Role { get; set; }
