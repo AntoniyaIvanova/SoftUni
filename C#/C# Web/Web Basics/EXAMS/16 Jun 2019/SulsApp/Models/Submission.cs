@@ -16,6 +16,7 @@ namespace SulsApp.Models
         [MaxLength(800)]
         public string Code { get; set; }
 
+        [Range(0, 300)]
         public int AchievedResult { get; set; }
 
         public DateTime CreatedOn { get; set; }

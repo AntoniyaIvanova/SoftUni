@@ -25,8 +25,7 @@ namespace SulsApp.Services
                 Count = x.Submissions.Count()
             }).ToArray();
         }
-
-
+        
         public string Create(string name, int points)
         {
             var problem = new Problem

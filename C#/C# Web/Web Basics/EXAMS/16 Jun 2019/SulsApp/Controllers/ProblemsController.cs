@@ -18,7 +18,6 @@ namespace SulsApp.Controllers
             this.problemsService = problemsService;
         }
 
-
         public HttpResponse Create()
         {
             if (!this.IsUserLoggedIn())
@@ -41,6 +40,7 @@ namespace SulsApp.Controllers
             {
                 return this.Error("The name of the problem must be between 5 and 20 characters.");
             }
+            
             if(inputModel.Points < 50 || inputModel.Points > 300)
             {
                 return this.Error("The points of the problem must be between 50 and 300");
@@ -48,10 +48,9 @@ namespace SulsApp.Controllers
 
             var problemId = this.problemsService.Create(inputModel.Name, inputModel.Points);
 
-            return this.Redirect($"/Problems/Details?id={problemId}");
+            return this.Redirect("/");
         }
-
-
+        
         public HttpResponse Details(string id)
         {
             if (!this.IsUserLoggedIn())
