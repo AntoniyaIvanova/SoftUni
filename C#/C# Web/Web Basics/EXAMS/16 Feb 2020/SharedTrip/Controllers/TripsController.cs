@@ -18,8 +18,9 @@ namespace SharedTrip.Controllers
         {
             if (!this.IsUserLoggedIn())
             {
-                return this.Redirect("Users/Login");
+                return this.Redirect("/Users/Login");
             }
+
             var trips = this.tripsService.GetAll();
 
             return this.View(trips);
@@ -29,7 +30,7 @@ namespace SharedTrip.Controllers
         {
             if (!this.IsUserLoggedIn())
             {
-                return this.Redirect("Users/Login");
+                return this.Redirect("/Users/Login");
             }
 
             return this.View();

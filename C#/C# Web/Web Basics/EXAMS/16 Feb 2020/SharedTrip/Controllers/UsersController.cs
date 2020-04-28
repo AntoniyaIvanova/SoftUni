@@ -18,7 +18,7 @@ namespace SharedTrip.Controllers
         {
             if (this.IsUserLoggedIn())
             {
-                return this.Redirect("Trips/All");
+                return this.Redirect("/Trips/All");
             }
             return this.View();
         }
@@ -26,6 +26,11 @@ namespace SharedTrip.Controllers
         [HttpPost]
         public HttpResponse Login(LoginInputModel input)
         {
+            if (this.IsUserLoggedIn())
+            {
+                return this.Redirect("/Trips/All");
+            }
+
             if (string.IsNullOrWhiteSpace(input.Username) || string.IsNullOrWhiteSpace(input.Password))
             {
                 return this.View();
@@ -46,8 +51,9 @@ namespace SharedTrip.Controllers
         {
             if (this.IsUserLoggedIn())
             {
-                return this.Redirect("Trips/All");
+                return this.Redirect("/Trips/All");
             }
+
             return this.View();
         }
 
@@ -56,17 +62,17 @@ namespace SharedTrip.Controllers
         {
             if (this.IsUserLoggedIn())
             {
-                return this.Redirect("Trips/All");
+                return this.Redirect("/Trips/All");
             }
 
             if (string.IsNullOrWhiteSpace(input.Email))
             {
-                return this.View();
+                return this.View(input);
             }
 
             if (input.Password.Length < 6 || input.Password.Length > 20)
             {
-                return this.View();
+                return this.View(input);
             }
 
             if (input.Username.Length < 5 || input.Username.Length > 20)
