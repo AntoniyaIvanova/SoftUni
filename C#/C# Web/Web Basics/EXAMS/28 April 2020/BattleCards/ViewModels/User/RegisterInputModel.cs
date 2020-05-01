@@ -1,4 +1,4 @@
-﻿namespace BattleCards.ViewModels.User
+﻿namespace MUSACA.ViewModels.User
 {
     public class RegisterInputModel
     {
