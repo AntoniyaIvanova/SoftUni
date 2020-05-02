@@ -1,4 +1,4 @@
-﻿namespace MUSACA
+﻿namespace MUSACA.Data
 {
     using Microsoft.EntityFrameworkCore;
     using MUSACA.Models;

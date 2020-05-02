@@ -1,6 +1,8 @@
 ﻿namespace MUSACA
 {
     using System.Collections.Generic;
+    using MUSACA.Services;
+    using MUSACA.Data;
     using SIS.HTTP;
     using SIS.MvcFramework;
 
@@ -16,7 +18,7 @@
 
         public void ConfigureServices(IServiceCollection serviceCollection)
         {
-           
+            serviceCollection.Add<IUsersService, UsersService>();
         }
     }
 }
