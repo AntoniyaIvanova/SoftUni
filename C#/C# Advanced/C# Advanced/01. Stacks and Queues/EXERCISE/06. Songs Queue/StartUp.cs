@@ -9,7 +9,7 @@
         public static void Main()
         {
             string[] songs = Console.ReadLine()
-                            .Split(new string[] { ", " }, StringSplitOptions.RemoveEmptyEntries);
+                            .Split(", ");
 
             Queue<string> queue = new Queue<string>(songs);
 
@@ -21,9 +21,8 @@
                     break;
                 }
 
-                string[] tokens = Console.ReadLine().Split();
+                string[] tokens = Console.ReadLine().Split(new char[] { ' ' }, 2);
                 string command = tokens[0];
-                string song = tokens.Skip(1).ToString();
 
                 if(command == "Play")
                 {
@@ -31,16 +30,20 @@
                 }
                 else if(command == "Add")
                 {                    
+                    string song = tokens[1];
+
                     if (queue.Contains(song))
                     {
                         Console.WriteLine($"{song} is already contained!");
-                        return;
                     }
-                    queue.Enqueue(song);
+                    else
+                    {
+                        queue.Enqueue(song);
+                    }
                 }
                 else if(command == "Show")
                 {
-                    Console.WriteLine(string.Format(", ", queue));
+                    Console.WriteLine(string.Join(", ", queue));
                 }
             }
         }
