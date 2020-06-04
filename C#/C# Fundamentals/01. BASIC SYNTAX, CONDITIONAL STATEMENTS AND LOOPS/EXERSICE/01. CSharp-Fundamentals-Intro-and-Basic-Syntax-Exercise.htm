@@ -1,0 +1,1454 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<title>Technology Fundamentals - C# Intro and Basic Syntax - Exercise</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:SimSun;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;}
+@font-face
+	{font-family:FreeSans;
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"\@SimSun";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:4.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:2.0pt;
+	margin-left:0in;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:20.0pt;
+	font-family:"Calibri",sans-serif;
+	color:#642D08;
+	font-weight:bold;}
+h2
+	{mso-style-link:"Heading 2 Char";
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:2.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:18.0pt;
+	font-family:"Calibri",sans-serif;
+	color:#7C380A;
+	font-weight:bold;}
+h3
+	{mso-style-link:"Heading 3 Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:2.0pt;
+	margin-left:0in;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Calibri",sans-serif;
+	color:#8F400B;
+	font-weight:bold;}
+h4
+	{mso-style-link:"Heading 4 Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:2.0pt;
+	margin-left:0in;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Calibri",sans-serif;
+	color:#A34A0D;
+	font-weight:bold;}
+h5
+	{mso-style-link:"Heading 5 Char";
+	margin-top:4.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	color:#B2500E;
+	font-weight:bold;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-link:"Header Char";
+	margin-top:4.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"Footer Char";
+	margin-top:4.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Balloon Text Char";
+	margin-top:4.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Tahoma",sans-serif;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{mso-style-link:"List Paragraph Char";
+	margin-top:4.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{mso-style-link:"List Paragraph Char";
+	margin-top:4.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{mso-style-link:"List Paragraph Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{mso-style-link:"List Paragraph Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+span.HeaderChar
+	{mso-style-name:"Header Char";
+	mso-style-link:Header;}
+span.FooterChar
+	{mso-style-name:"Footer Char";
+	mso-style-link:Footer;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-link:"Balloon Text";
+	font-family:"Tahoma",sans-serif;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:SimSun;
+	color:#642D08;
+	font-weight:bold;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-link:"Heading 2";
+	font-family:SimSun;
+	color:#7C380A;
+	font-weight:bold;}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-link:"Heading 3";
+	font-family:SimSun;
+	color:#8F400B;
+	font-weight:bold;}
+span.Heading4Char
+	{mso-style-name:"Heading 4 Char";
+	mso-style-link:"Heading 4";
+	font-family:SimSun;
+	color:#A34A0D;
+	font-weight:bold;}
+span.Heading5Char
+	{mso-style-name:"Heading 5 Char";
+	mso-style-link:"Heading 5";
+	font-family:SimSun;
+	color:#B2500E;
+	font-weight:bold;}
+p.Code, li.Code, div.Code
+	{mso-style-name:Code;
+	mso-style-link:"Code Char";
+	margin-top:4.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:Consolas;
+	font-weight:bold;}
+span.CodeChar
+	{mso-style-name:"Code Char";
+	mso-style-link:Code;
+	font-family:Consolas;
+	font-weight:bold;}
+span.tgc
+	{mso-style-name:_tgc;}
+p.Index, li.Index, div.Index
+	{mso-style-name:Index;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+span.ListParagraphChar
+	{mso-style-name:"List Paragraph Char";
+	mso-style-link:"List Paragraph";}
+span.InternetLink
+	{mso-style-name:"Internet Link";
+	color:blue;
+	text-decoration:underline;}
+span.Mention1
+	{mso-style-name:Mention1;
+	color:#2B579A;
+	background:#E6E6E6;}
+span.UnresolvedMention1
+	{mso-style-name:"Unresolved Mention1";
+	color:gray;
+	background:#E6E6E6;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:595.45pt 841.7pt;
+	margin:28.35pt 36.85pt 53.85pt 36.85pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=WordSection1>
+
+<h1 align=center style='text-align:center'>Exercise: Intro and Basic Syntax</h1>
+
+<p class=MsoNormal>Problems for exercises and homework for the <a
+href="https://softuni.bg/trainings/2363/csharp-fundamentals-may-2019">&quot;<span
+lang=BG>C# </span> Fundamentals&quot; course @ SoftUni</a><span
+class=MsoHyperlink><br>
+</span>You can check your solutions in <a
+href="https://judge.softuni.bg/Contests/1204">Judge</a></p>
+
+<h2>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span>Ages</h2>
+
+<p class=MsoNormal>Write a program that determines whether based on the given
+age a person is: baby, child, teenager, adult, elder. The bounders are:</p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-bottom:8.0pt;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b>0-2 – baby; </b></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-bottom:8.0pt;text-indent:
+-.25in'><span style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b>3-13 – child; </b></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-bottom:8.0pt;text-indent:
+-.25in'><span style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b>14-19 – teenager;</b></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-bottom:8.0pt;text-indent:
+-.25in'><span style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b>20-65 – adult;</b></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-bottom:8.0pt;text-indent:
+-.25in'><span style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b>&gt;=66 – elder; </b></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-bottom:8.0pt;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>All the values are <b>inclusive</b>.</p>
+
+<h3>Examples</h3>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 width=0
+ style='width:85.55pt;margin-left:.65pt;border-collapse:collapse;border:none'>
+ <tr style='height:9.8pt'>
+  <td width=52 valign=top style='width:38.75pt;border:solid windowtext 1.0pt;
+  background:#D9D9D9;padding:2.85pt 4.25pt 2.85pt 4.25pt;height:9.8pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b>Input</b></p>
+  </td>
+  <td width=62 valign=top style='width:.65in;border:solid windowtext 1.0pt;
+  border-left:none;background:#D9D9D9;padding:2.85pt 4.25pt 2.85pt 4.25pt;
+  height:9.8pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b>Output</b></p>
+  </td>
+ </tr>
+ <tr style='height:18.6pt'>
+  <td width=52 valign=top style='width:38.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:2.85pt 4.25pt 2.85pt 4.25pt;height:18.6pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>20</span></p>
+  </td>
+  <td width=62 valign=top style='width:.65in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:2.85pt 4.25pt 2.85pt 4.25pt;height:18.6pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>adult</span></p>
+  </td>
+ </tr>
+ <tr style='height:18.9pt'>
+  <td width=52 valign=top style='width:38.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:2.85pt 4.25pt 2.85pt 4.25pt;height:18.9pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>1</span></p>
+  </td>
+  <td width=62 valign=top style='width:.65in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:2.85pt 4.25pt 2.85pt 4.25pt;height:18.9pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>baby</span></p>
+  </td>
+ </tr>
+ <tr style='height:18.9pt'>
+  <td width=52 valign=top style='width:38.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:2.85pt 4.25pt 2.85pt 4.25pt;height:18.9pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>100</span></p>
+  </td>
+  <td width=62 valign=top style='width:.65in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:2.85pt 4.25pt 2.85pt 4.25pt;height:18.9pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>elder</span></p>
+  </td>
+ </tr>
+</table>
+
+<h2>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span>Divison</h2>
+
+<p class=MsoNormal>You will be given an integer and you have to print on the
+console whether that number is divisible by the following numbers: 2, 3, 6, 7,
+10. You should <b>always take the bigger division</b>. If the number is
+divisible by both <b>2 </b>and <b>3</b> it is also divisible by <b>6</b> and
+you should print only the division by 6. If a number is divisible by <b>2</b>
+it is sometimes also divisible by <b>10</b> and you should print the division
+by 10. If the number is not divisible by any of the given numbers print “<b>Not
+divisible”. </b>Otherwise print “<b>The number is divisible by {number}</b>”.</p>
+
+<h3>Examples</h3>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 width=0
+ style='width:237.5pt;margin-left:.65pt;border-collapse:collapse;border:none'>
+ <tr style='height:9.8pt'>
+  <td width=46 valign=top style='width:34.4pt;border:solid windowtext 1.0pt;
+  background:#D9D9D9;padding:2.85pt 4.25pt 2.85pt 4.25pt;height:9.8pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b>Input</b></p>
+  </td>
+  <td width=271 valign=top style='width:203.1pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#D9D9D9;padding:2.85pt 4.25pt 2.85pt 4.25pt;
+  height:9.8pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b>Output</b></p>
+  </td>
+ </tr>
+ <tr style='height:18.6pt'>
+  <td width=46 valign=top style='width:34.4pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:2.85pt 4.25pt 2.85pt 4.25pt;height:18.6pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>30</span></p>
+  </td>
+  <td width=271 valign=top style='width:203.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:2.85pt 4.25pt 2.85pt 4.25pt;height:18.6pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>The number is divisible by 10</span></p>
+  </td>
+ </tr>
+ <tr style='height:18.9pt'>
+  <td width=46 valign=top style='width:34.4pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:2.85pt 4.25pt 2.85pt 4.25pt;height:18.9pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>15</span></p>
+  </td>
+  <td width=271 valign=top style='width:203.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:2.85pt 4.25pt 2.85pt 4.25pt;height:18.9pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>The number is divisible by 3</span></p>
+  </td>
+ </tr>
+ <tr style='height:18.9pt'>
+  <td width=46 valign=top style='width:34.4pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:2.85pt 4.25pt 2.85pt 4.25pt;height:18.9pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>12</span></p>
+  </td>
+  <td width=271 valign=top style='width:203.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:2.85pt 4.25pt 2.85pt 4.25pt;height:18.9pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>The number is divisible by 6</span></p>
+  </td>
+ </tr>
+ <tr style='height:18.9pt'>
+  <td width=46 valign=top style='width:34.4pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:2.85pt 4.25pt 2.85pt 4.25pt;height:18.9pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>1643</span></p>
+  </td>
+  <td width=271 valign=top style='width:203.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:2.85pt 4.25pt 2.85pt 4.25pt;height:18.9pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>Not divisible</span></p>
+  </td>
+ </tr>
+</table>
+
+<h2>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span>Vacation</h2>
+
+<p class=MsoNormal>You are given a group of people, type of the group, on which
+day of the week they are going to stay. Based on that information calculate how
+much they have to pay and print that price on the console. Use the table below.
+In each cell is the price for a <b>single person</b>. The output should look
+like that: “<b>Total price: {price}</b>”. The price should be formatted to the
+second decimal point.</p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=76 valign=top style='width:64.9pt;border:solid windowtext 1.0pt;
+  background:#BFBFBF;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;line-height:normal'><b><span
+  style='font-size:12.0pt'>&nbsp;</span></b></p>
+  </td>
+  <td width=62 valign=top style='width:63.5pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#BFBFBF;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;line-height:normal'><b><span
+  style='font-size:12.0pt'>Friday</span></b></p>
+  </td>
+  <td width=77 valign=top style='width:64.95pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#BFBFBF;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;line-height:normal'><b><span
+  style='font-size:12.0pt'>Saturday</span></b></p>
+  </td>
+  <td width=68 valign=top style='width:64.1pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#BFBFBF;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;line-height:normal'><b><span
+  style='font-size:12.0pt'>Sunday</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=76 valign=top style='width:64.9pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#BFBFBF;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;line-height:normal'><b><span
+  style='font-size:12.0pt'>Students</span></b></p>
+  </td>
+  <td width=62 valign=top style='width:63.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;line-height:normal'>8.45</p>
+  </td>
+  <td width=77 valign=top style='width:64.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;line-height:normal'>9.80</p>
+  </td>
+  <td width=68 valign=top style='width:64.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;line-height:normal'>10.46</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=76 valign=top style='width:64.9pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#BFBFBF;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;line-height:normal'><b><span
+  style='font-size:12.0pt'>Business</span></b></p>
+  </td>
+  <td width=62 valign=top style='width:63.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;line-height:normal'>10.90</p>
+  </td>
+  <td width=77 valign=top style='width:64.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;line-height:normal'>15.60</p>
+  </td>
+  <td width=68 valign=top style='width:64.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;line-height:normal'>16</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=76 valign=top style='width:64.9pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#BFBFBF;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;line-height:normal'><b><span
+  style='font-size:12.0pt'>Regular</span></b></p>
+  </td>
+  <td width=62 valign=top style='width:63.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;line-height:normal'>15</p>
+  </td>
+  <td width=77 valign=top style='width:64.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;line-height:normal'>20</p>
+  </td>
+  <td width=68 valign=top style='width:64.1pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;line-height:normal'>22.50</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>There are also discounts based on some conditions:</p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-bottom:8.0pt;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b>Students – </b>if the group is bigger than or equal to 30
+people you should reduce the <b>total </b>price by 15%</p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-bottom:8.0pt;text-indent:
+-.25in'><span style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB>B</span>usiness – </b>if the group is bigger
+than or equal to  100 people <b>10 </b>of them can stay <b>for free.</b></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-bottom:8.0pt;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b>Regular – </b>if the group is bigger than or equal <span
+lang=EN-GB>to </span>10 and less than or equal to 20 reduce the <b>total </b>price
+by 5%</p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0in;margin-bottom:8.0pt;
+margin-left:.25in'><b>You should reduce the prices in that EXACT order</b></p>
+
+<h3>Examples</h3>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 width=0
+ style='width:251.7pt;margin-left:.65pt;border-collapse:collapse;border:none'>
+ <tr style='height:9.8pt'>
+  <td width=76 valign=top style='width:56.9pt;border:solid windowtext 1.0pt;
+  background:#D9D9D9;padding:2.85pt 4.25pt 2.85pt 4.25pt;height:9.8pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b>Input</b></p>
+  </td>
+  <td width=260 valign=top style='width:194.8pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#D9D9D9;padding:2.85pt 4.25pt 2.85pt 4.25pt;
+  height:9.8pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b>Output</b></p>
+  </td>
+ </tr>
+ <tr style='height:18.6pt'>
+  <td width=76 valign=top style='width:56.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:2.85pt 4.25pt 2.85pt 4.25pt;height:18.6pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>30</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><a
+  name="OLE_LINK11"><span style='font-family:Consolas'>Students</span></a></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>Sunday</span></p>
+  </td>
+  <td width=260 valign=top style='width:194.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:2.85pt 4.25pt 2.85pt 4.25pt;height:18.6pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><a
+  name="OLE_LINK8"></a><a name="OLE_LINK7"><span style='font-family:Consolas'>Total
+  price: 266.73</span></a></p>
+  </td>
+ </tr>
+ <tr style='height:18.9pt'>
+  <td width=76 valign=top style='width:56.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:2.85pt 4.25pt 2.85pt 4.25pt;height:18.9pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>40</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>Regular</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>Saturday</span></p>
+  </td>
+  <td width=260 valign=top style='width:194.8pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:2.85pt 4.25pt 2.85pt 4.25pt;height:18.9pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>Total price: 800.00</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=BG>&nbsp;</span></p>
+
+<h2>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span>Print and
+Sum</h2>
+
+<p class=MsoNormal>Write a program to display numbers from given start to given
+end and their sum. All the numbers will be integers. On the first line you will
+receive the start, on the second the end.</p>
+
+<h3>Examples</h3>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 width=0
+ style='width:237.5pt;margin-left:.65pt;border-collapse:collapse;border:none'>
+ <tr style='height:9.8pt'>
+  <td width=46 valign=top style='width:34.4pt;border:solid windowtext 1.0pt;
+  background:#D9D9D9;padding:2.85pt 4.25pt 2.85pt 4.25pt;height:9.8pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b>Input</b></p>
+  </td>
+  <td width=271 valign=top style='width:203.1pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#D9D9D9;padding:2.85pt 4.25pt 2.85pt 4.25pt;
+  height:9.8pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b>Output</b></p>
+  </td>
+ </tr>
+ <tr style='height:18.6pt'>
+  <td width=46 valign=top style='width:34.4pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:2.85pt 4.25pt 2.85pt 4.25pt;height:18.6pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>5</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>10</span></p>
+  </td>
+  <td width=271 valign=top style='width:203.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:2.85pt 4.25pt 2.85pt 4.25pt;height:18.6pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>5 6 7 8 9 10</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>Sum: 45</span></p>
+  </td>
+ </tr>
+ <tr style='height:18.9pt'>
+  <td width=46 valign=top style='width:34.4pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:2.85pt 4.25pt 2.85pt 4.25pt;height:18.9pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>0</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>26</span></p>
+  </td>
+  <td width=271 valign=top style='width:203.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:2.85pt 4.25pt 2.85pt 4.25pt;height:18.9pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>0 1 2 … 26</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>Sum: 351</span></p>
+  </td>
+ </tr>
+ <tr style='height:18.9pt'>
+  <td width=46 valign=top style='width:34.4pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:2.85pt 4.25pt 2.85pt 4.25pt;height:18.9pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>50</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>60</span></p>
+  </td>
+  <td width=271 valign=top style='width:203.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:2.85pt 4.25pt 2.85pt 4.25pt;height:18.9pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>50 51 52 53 54 55 56 57 58 59 60</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>Sum: 605</span></p>
+  </td>
+ </tr>
+</table>
+
+<h2>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span>Login</h2>
+
+<p class=MsoNormal>You will be given a string representing a username. The
+password will be that username reversed. Until you receive the correct password
+print on the console “<b>Incorrect password. Try again.</b>”. When you receive
+the correct password print “<b>User {username} logged in.</b>” However on the
+fourth try if the password is still not correct print “<b>User {username}
+blocked!</b>” and end the program.</p>
+
+<h3>Examples</h3>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 width=0
+ style='width:315.45pt;margin-left:.65pt;border-collapse:collapse;border:none'>
+ <tr style='height:9.8pt'>
+  <td width=128 valign=top style='width:95.75pt;border:solid windowtext 1.0pt;
+  background:#D9D9D9;padding:2.85pt 4.25pt 2.85pt 4.25pt;height:9.8pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b>Input</b></p>
+  </td>
+  <td width=293 valign=top style='width:219.7pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#D9D9D9;padding:2.85pt 4.25pt 2.85pt 4.25pt;
+  height:9.8pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b>Output</b></p>
+  </td>
+ </tr>
+ <tr style='height:33.05pt'>
+  <td width=128 valign=top style='width:95.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:2.85pt 4.25pt 2.85pt 4.25pt;height:33.05pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>Acer</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>login</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>go</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>let me in</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>recA</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>&nbsp;</span></p>
+  </td>
+  <td width=293 valign=top style='width:219.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:2.85pt 4.25pt 2.85pt 4.25pt;height:33.05pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>Incorrect password. Try again.</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>Incorrect password. Try again.</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>Incorrect password. Try again.</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>User Acer logged in.</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style='height:18.9pt'>
+  <td width=128 valign=top style='width:95.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:2.85pt 4.25pt 2.85pt 4.25pt;height:18.9pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>momo</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>omom</span></p>
+  </td>
+  <td width=293 valign=top style='width:219.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:2.85pt 4.25pt 2.85pt 4.25pt;height:18.9pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>User momo logged in.</span></p>
+  </td>
+ </tr>
+ <tr style='height:18.9pt'>
+  <td width=128 valign=top style='width:95.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:2.85pt 4.25pt 2.85pt 4.25pt;height:18.9pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>sunny</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>rainy</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>cloudy</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>sunny</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>not sunny</span></p>
+  </td>
+  <td width=293 valign=top style='width:219.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:2.85pt 4.25pt 2.85pt 4.25pt;height:18.9pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><a
+  name="OLE_LINK2"></a><a name="OLE_LINK1"><span style='font-family:Consolas'>Incorrect
+  password. Try again.</span></a></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>Incorrect password. Try again.</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>Incorrect password. Try again.</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>User sunny blocked!</span></p>
+  </td>
+ </tr>
+</table>
+
+<h2>6.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span>Strong
+Number</h2>
+
+<p class=MsoNormal>Write a program to check if a given number is a strong
+number or not. A number is strong if the sum of the Factorial of each digit is
+equal to the number. For example 145 is a strong number, because <b>1! + 4! +
+5! = 145. </b>Print <span lang=EN-GB>&quot;</span><b>yes</b><span lang=EN-GB>&quot;</span>
+if the number is strong and “<b>no</b>” if the number is not strong<span
+lang=EN-GB>.</span></p>
+
+<h3>Examples</h3>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 width=0
+ style='width:91.6pt;margin-left:.65pt;border-collapse:collapse;border:none'>
+ <tr style='height:9.8pt'>
+  <td width=60 valign=top style='width:44.8pt;border:solid windowtext 1.0pt;
+  background:#D9D9D9;padding:2.85pt 4.25pt 2.85pt 4.25pt;height:9.8pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b>Input</b></p>
+  </td>
+  <td width=62 valign=top style='width:.65in;border:solid windowtext 1.0pt;
+  border-left:none;background:#D9D9D9;padding:2.85pt 4.25pt 2.85pt 4.25pt;
+  height:9.8pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b>Output</b></p>
+  </td>
+ </tr>
+ <tr style='height:33.05pt'>
+  <td width=60 valign=top style='width:44.8pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:2.85pt 4.25pt 2.85pt 4.25pt;height:33.05pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>2</span></p>
+  </td>
+  <td width=62 valign=top style='width:.65in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:2.85pt 4.25pt 2.85pt 4.25pt;height:33.05pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>yes</span></p>
+  </td>
+ </tr>
+ <tr style='height:18.9pt'>
+  <td width=60 valign=top style='width:44.8pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:2.85pt 4.25pt 2.85pt 4.25pt;height:18.9pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>3451</span></p>
+  </td>
+  <td width=62 valign=top style='width:.65in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:2.85pt 4.25pt 2.85pt 4.25pt;height:18.9pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>no</span></p>
+  </td>
+ </tr>
+ <tr style='height:18.9pt'>
+  <td width=60 valign=top style='width:44.8pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:2.85pt 4.25pt 2.85pt 4.25pt;height:18.9pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>40585</span></p>
+  </td>
+  <td width=62 valign=top style='width:.65in;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:2.85pt 4.25pt 2.85pt 4.25pt;height:18.9pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>yes</span></p>
+  </td>
+ </tr>
+</table>
+
+<h2>7.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span>Vending
+Machine</h2>
+
+<p class=MsoNormal>You task is to calculate the total price of a purchase from
+a vending machine. Until you receive “<b>Start</b>” you will be given different
+coins that are being inserted in the machine. You have to sum them in order to
+have the total money inserted. There is a problem though. Your vending machine
+only works with <b>0.1</b>, <b>0.2</b>, <b>0.5, 1, and 2 </b>coins. If someone
+tries to insert some other coins you have to display “<b>Cannot accept {money}</b>”
+and <b>not </b>add it to the total money. On the next few lines until you
+receive “<b>End</b>” you will be given products to purchase. Your machine has
+however only “<b>Nuts</b>”, “<b>Water</b>”, “<b>Crisps</b>”, “<b>Soda</b>”, “<b>Coke</b>”.
+The prices are: <b>2.0</b>, <b>0.7</b>, <b>1.5</b>, <b>0.8</b>, <b>1.0 </b>respectively.
+If the person tries to purchase a not existing product print “<b>Invalid
+product</b>”. Be careful that the person may try to purchase a product they
+don’t have the money for. In that case print “<b>Sorry, not enough money</b>”.
+If the person purchases a product successfully print “<b>Purchased {product
+name}</b>”. After the “End” command print the money that are left formatted to
+the second decimal point in the format “<b>Change: {money left}</b>”.</p>
+
+<h3>Examples</h3>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 width=0
+ style='width:249.4pt;margin-left:.65pt;border-collapse:collapse;border:none'>
+ <tr style='height:9.8pt'>
+  <td width=128 valign=top style='width:95.75pt;border:solid windowtext 1.0pt;
+  background:#D9D9D9;padding:2.85pt 4.25pt 2.85pt 4.25pt;height:9.8pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b>Input</b></p>
+  </td>
+  <td width=205 valign=top style='width:153.65pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#D9D9D9;padding:2.85pt 4.25pt 2.85pt 4.25pt;
+  height:9.8pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b>Output</b></p>
+  </td>
+ </tr>
+ <tr style='height:33.05pt'>
+  <td width=128 valign=top style='width:95.75pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:2.85pt 4.25pt 2.85pt 4.25pt;height:33.05pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>1</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>1</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>0.5</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>0.6</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>Start</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>Coke</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>Soda</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>Crisps</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>End</span></p>
+  </td>
+  <td width=205 valign=top style='width:153.65pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:2.85pt 4.25pt 2.85pt 4.25pt;height:33.05pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>Cannot accept 0.6</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>Purchased coke</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>Purchased soda</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>Sorry, not enough money</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>Change: 0.70</span></p>
+  </td>
+ </tr>
+</table>
+
+<h2>8.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span>Triangle
+of Numbers</h2>
+
+<p class=MsoNormal>Write a program, which receives a number – <b>n</b>, and
+prints a triangle from <b>1 to n</b> as in the examples.</p>
+
+<h3>Constraints</h3>
+
+<p class=MsoListParagraph style='text-indent:-.25in'><span style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b>n </b>will be in the interval [<b>1...20]</b>.</p>
+
+<h3>Examples</h3>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 width=0
+ style='width:330.95pt;margin-left:1.15pt;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=51 style='width:38.5pt;border:solid windowtext 1.0pt;background:
+  #D9D9D9;padding:2.85pt 4.25pt 2.85pt 4.25pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b>Input</b></p>
+  </td>
+  <td width=60 style='width:44.8pt;border:solid windowtext 1.0pt;border-left:
+  none;background:#D9D9D9;padding:2.85pt 4.25pt 2.85pt 4.25pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b>Output</b></p>
+  </td>
+  <td width=21 rowspan=2 valign=top style='width:16.0pt;border:none;border-right:
+  solid windowtext 1.0pt;padding:2.85pt 4.25pt 2.85pt 4.25pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b>&nbsp;</b></p>
+  </td>
+  <td width=51 style='width:38.45pt;border:solid windowtext 1.0pt;border-left:
+  none;background:#D9D9D9;padding:2.85pt 4.25pt 2.85pt 4.25pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b>Input</b></p>
+  </td>
+  <td width=84 style='width:62.95pt;border:solid windowtext 1.0pt;border-left:
+  none;background:#D9D9D9;padding:2.85pt 4.25pt 2.85pt 4.25pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b>Output</b></p>
+  </td>
+  <td width=20 rowspan=2 valign=top style='width:15.25pt;border:none;
+  border-right:solid windowtext 1.0pt;padding:2.85pt 4.25pt 2.85pt 4.25pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b>&nbsp;</b></p>
+  </td>
+  <td width=51 style='width:38.5pt;border:solid windowtext 1.0pt;border-left:
+  none;background:#D9D9D9;padding:2.85pt 4.25pt 2.85pt 4.25pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b>Input</b></p>
+  </td>
+  <td width=102 style='width:76.5pt;border:solid windowtext 1.0pt;border-left:
+  none;background:#D9D9D9;padding:2.85pt 4.25pt 2.85pt 4.25pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b>Output</b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=51 valign=top style='width:38.5pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:2.85pt 4.25pt 2.85pt 4.25pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>3</span></p>
+  </td>
+  <td width=60 valign=top style='width:44.8pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:2.85pt 4.25pt 2.85pt 4.25pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>1</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>2 2 </span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>3 3 3</span></p>
+  </td>
+  <td width=51 valign=top style='width:38.45pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:2.85pt 4.25pt 2.85pt 4.25pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>5</span></p>
+  </td>
+  <td width=84 valign=top style='width:62.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:2.85pt 4.25pt 2.85pt 4.25pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>1</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>2 2 </span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>3 3 3</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>4 4 4 4</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>5 5 5 5 5</span></p>
+  </td>
+  <td width=51 valign=top style='width:38.5pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:2.85pt 4.25pt 2.85pt 4.25pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>6</span></p>
+  </td>
+  <td width=102 valign=top style='width:76.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:2.85pt 4.25pt 2.85pt 4.25pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>1</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>2 2 </span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>3 3 3</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>4 4 4 4</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>5 5 5 5 5</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>6 6 6 6 6 6</span></p>
+  </td>
+ </tr>
+</table>
+
+<h2><span class=Heading2Char><span style='font-family:"Calibri",sans-serif'>9.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span><span
+class=Heading2Char><span style='font-family:"Calibri",sans-serif'>*Padawan
+Equipment</span></span></h2>
+
+<p class=MsoNormal style='text-align:justify'>Yoda is starting his newly
+created Jedi academy. So, he asked master Ivan Cho to <b>buy</b> the <b>needed equipment</b>.
+The number of <b>items</b> depends on <b>how many students will sign up</b>.
+The equipment for the Padawan contains <b>lightsabers, belts and robes</b>. </p>
+
+<p class=MsoNormal style='text-align:justify'>You will be given <b>the amount
+of money Ivan Cho has</b>, the <b>number of students </b>and the <b>prices of
+each item</b>. You have to help Ivan Cho <b>calculate</b> if the <b>money</b>
+he has is <b>enough to buy all of the equipment</b>, or how much more money he
+needs. <br>
+<span lang=EN-GB>Because the lightsabres sometimes brake, Ivan Cho should <b>buy
+10% more</b>, <b>rounded up</b> to the next integer.</span><span lang=EN-GB> </span><span
+lang=EN-GB>Also, every <b>sixth belt is free</b>. </span></p>
+
+<h3>Input / Constraints</h3>
+
+<p class=MsoNormal>The input data should be read from the console. It will
+consist of <b>exactly 5 lines</b>:</p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-left:27.0pt;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>The <b>amount of money</b> Ivan Cho has – <b>floating-point
+number</b> in <b>range [0.0</b><b><span lang=BG>0</span>…1,000.00]</b></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:27.0pt;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>The <b>count of students – integer in range [0…100]</b></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:27.0pt;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>The <b>price of lightsabers</b> for a <b>single </b><b><span
+lang=EN-GB>sabre</span> – floating-point number</b> in <b>range [0.</b><b><span
+lang=BG>0</span>0…100.00]</b></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:27.0pt;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>The <b>price of robes</b> for a <b>single robe – floating-point
+number</b> in <b>range [0.</b><b><span lang=BG>0</span>0…100.00]</b></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-left:27.0pt;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>The <b>price of belts</b> for a <b>single</b> <b>belt –
+floating-point number</b> in <b>range [0.0</b><b><span lang=BG>0</span>…100.00]</b></p>
+
+<p class=MsoNormal>The <b>input data will always be valid</b>. <b>There is no
+need to check it explicitly</b>.</p>
+
+<h3>Output</h3>
+
+<p class=MsoNormal style='text-align:justify'>The output should be printed on
+the console.</p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
+margin-bottom:10.0pt;margin-left:27.0pt;text-align:justify;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b>If the calculated price of the equipment is less or equal to
+the money Ivan Cho has:</b></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+margin-bottom:10.0pt;margin-left:31.5pt;text-align:justify;text-indent:-.25in'><span
+style='font-family:"Courier New"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span><span style='color:black'>&quot;</span><span class=CodeChar>The
+money is enough - it would cost {the cost of the equipment}lv.</span><span
+style='color:black'>&quot;</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+margin-bottom:10.0pt;margin-left:27.0pt;text-align:justify;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b>If the calculated price of the equipment is more than the
+money Ivan Cho has:</b></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+margin-bottom:10.0pt;margin-left:31.5pt;text-indent:-.25in'><span
+style='font-family:"Courier New";color:black'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span><span style='color:black'> <a name="OLE_LINK4"></a><a
+name="OLE_LINK3">&quot;</a></span><span class=CodeChar>Ivan Cho will need {neededMoney}lv
+more.</span><span style='color:black'>&quot;</span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
+margin-bottom:10.0pt;margin-left:27.0pt;text-indent:-.25in'><span
+style='font-family:Symbol;color:black'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span style='color:black'>All prices</span></b><span
+style='color:black'> must be <b>rounded to two digits after the decimal point.</b></span></p>
+
+<h3>Examples</h3>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 width=0
+ style='width:526.25pt;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=50 valign=top style='width:37.55pt;border:solid windowtext 1.0pt;
+  background:#D9D9D9;padding:2.85pt 4.25pt 2.85pt 4.25pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><b>Input</b></p>
+  </td>
+  <td width=304 valign=top style='width:227.7pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#D9D9D9;padding:2.85pt 4.25pt 2.85pt 4.25pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><b>Output</b></p>
+  </td>
+  <td width=348 valign=top style='width:261.0pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#D9D9D9;padding:2.85pt 4.25pt 2.85pt 4.25pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><b>Comments</b></p>
+  </td>
+ </tr>
+ <tr style='height:20.3pt'>
+  <td width=50 valign=top style='width:37.55pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:2.85pt 4.25pt 2.85pt 4.25pt;height:20.3pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  lang=BG style='font-family:Consolas'>100</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  lang=BG style='font-family:Consolas'>2</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  lang=BG style='font-family:Consolas'>1</span><span lang=EN-GB
+  style='font-family:Consolas'>.0</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  lang=BG style='font-family:Consolas'>2</span><span lang=EN-GB
+  style='font-family:Consolas'>.0</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  lang=BG style='font-family:Consolas'>3</span><span lang=EN-GB
+  style='font-family:Consolas'>.0</span></p>
+  </td>
+  <td width=304 valign=top style='width:227.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:2.85pt 4.25pt 2.85pt 4.25pt;height:20.3pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><a
+  name="OLE_LINK10"></a><a name="OLE_LINK9"></a><a name="OLE_LINK6"></a><a
+  name="OLE_LINK5"><span lang=BG style='font-family:Consolas'>The money </span></a><span
+  lang=EN-GB style='font-family:Consolas'>is</span><span lang=BG
+  style='font-family:Consolas'> enough - it would cost </span><span lang=EN-GB
+  style='font-family:Consolas'>13</span><span lang=BG style='font-family:Consolas'>.</span><span
+  lang=EN-GB style='font-family:Consolas'>0</span><span lang=BG
+  style='font-family:Consolas'>0lv.</span></p>
+  </td>
+  <td width=348 valign=top style='width:261.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:2.85pt 4.25pt 2.85pt 4.25pt;height:20.3pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  lang=BG>Need</span>ed equipment <span lang=EN-GB>f</span><span lang=BG>or </span><span
+  lang=EN-GB>2 padawans  </span>:</p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>sabresPrice*(<span
+  lang=EN-GB>studentsCount</span> + 10%)<span lang=EN-GB> + </span>robesPrice *
+  (studentsCount) + beltsPrice*(<span lang=EN-GB>studentsCount-freeBelts</span>)
+  </p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>1*(3)<span
+  lang=BG> + </span>2*(2)<span lang=BG> + </span>3*(<span lang=EN-GB>2</span>)<span
+  lang=BG> = </span><span lang=EN-GB>13.00</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  lang=EN-GB>13.00</span><span lang=BG> &lt;</span>=<span lang=BG> 10</span><span
+  lang=EN-GB>0</span> – <span lang=BG>the money will be enough.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=50 valign=top style='width:37.55pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#D9D9D9;padding:2.85pt 4.25pt 2.85pt 4.25pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><b>Input</b></p>
+  </td>
+  <td width=304 valign=top style='width:227.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#D9D9D9;padding:2.85pt 4.25pt 2.85pt 4.25pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><b>Output</b></p>
+  </td>
+  <td width=348 valign=top style='width:261.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#D9D9D9;padding:2.85pt 4.25pt 2.85pt 4.25pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><b>Comments</b></p>
+  </td>
+ </tr>
+ <tr style='height:20.3pt'>
+  <td width=50 valign=top style='width:37.55pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:2.85pt 4.25pt 2.85pt 4.25pt;height:20.3pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>100</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>42</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>12.0</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>4.0</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:Consolas'>3.0</span></p>
+  </td>
+  <td width=304 valign=top style='width:227.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:2.85pt 4.25pt 2.85pt 4.25pt;height:20.3pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  lang=BG style='font-family:Consolas'>Ivan Cho will need 737.00lv more.</span></p>
+  </td>
+  <td width=348 valign=top style='width:261.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:2.85pt 4.25pt 2.85pt 4.25pt;height:20.3pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  lang=BG>Need</span>ed equipment <span lang=EN-GB>f</span><span lang=BG>or </span>42
+  padawans<span lang=BG>:</span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  lang=BG>12</span>*47 <span lang=EN-GB>+</span><span lang=EN-GB> </span><span
+  lang=EN-GB>4</span>*42 + 3*35<span lang=BG> = </span>837.00</p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>837
+  &gt; 10<span lang=BG>0 – need </span><span lang=EN-GB>737</span><span
+  lang=BG>.</span><span lang=EN-GB>00</span><span lang=BG> lv. more.</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal align=center style='text-align:center'><i>...May</i><i><span
+lang=EN-GB> the force<br>
+ be with you</span>...</i></p>
+
+<h2>10.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span lang=BG>*</span>Rage Expenses</h2>
+
+<p class=MsoNormal>As a MOBA challenger player, Pesho has <span lang=EN-GB>the
+bad habit to trash his PC when he loses a game</span><span lang=EN-GB> </span><span
+lang=EN-GB>and rage quits. His gaming setup consists of <b>headset, mouse,
+keyboard and display</b>. You will receive Pesho`s <b>lost games count</b>. </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>Every <b>second</b> lost game, Pesho
+trashes his <b>headset.</b></span></p>
+
+<p class=MsoNormal><span lang=EN-GB>Every <b>third</b> lost game, Pesho trashes
+his <b>mouse</b>.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB>When Pesho trashes <b>both</b> <b>his mouse
+and headset </b>in the <b>same</b> lost game, he also trashes his <b>keyboard</b>.</span></p>
+
+<p class=MsoNormal><b><span lang=EN-GB>Every</span></b><span lang=EN-GB> <b>second
+time, when he trashes his keyboard</b>, he also trashes his <b>display</b>. </span></p>
+
+<p class=MsoNormal><span lang=EN-GB>You will receive the price of each item in
+his gaming setup. Calculate his rage expenses for renewing his gaming
+equipment. </span></p>
+
+<h3>Input<span lang=BG> / </span><span lang=EN-GB>Constraints</span></h3>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>On the first input line - <b>lost games count </b>– integer in
+the range <b>[0</b><b><span lang=BG>,</span> 1000]</b>.</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>On the</span><span lang=EN-GB> </span><span
+lang=EN-GB>second line –</span><span lang=EN-GB> </span><b><span lang=EN-GB>headset
+price</span></b><span lang=EN-GB> - floating point number in range <b>[0, 100</b></span><b><span
+lang=BG>0</span></b><b><span lang=EN-GB>]</span></b>. </p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>On the</span><span lang=EN-GB> </span><span
+lang=EN-GB>third line –</span><span lang=EN-GB> </span><b><span lang=EN-GB>mouse
+price</span></b><span lang=EN-GB> - floating point number in range <b>[0, 100</b></span><b><span
+lang=BG>0</span></b><b><span lang=EN-GB>]</span></b>. </p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>On the</span><span lang=EN-GB> </span><span
+lang=EN-GB>fourth line – <b>keyboard price</b> - floating point number in range
+<b>[0, 100</b></span><b><span lang=BG>0</span></b><b><span lang=EN-GB>]</span></b>.
+</p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB>On the</span><span lang=EN-GB> </span><span
+lang=EN-GB>fifth line – <b>display price</b> - floating point number in range <b>[0,
+100</b></span><b><span lang=BG>0</span></b><b><span lang=EN-GB>]</span></b>. </p>
+
+<h3>Output</h3>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>As output you must print Pesho`s <span lang=EN-GB>total expenses</span>:
+<b>&quot;Rage expenses: {expenses} lv.&quot;</b></p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Allowed working <b>time</b> / <b>memory</b>: <b>100ms</b> / <b>16MB</b>.</p>
+
+<h3>Examples</h3>
+
+<table class=TableGrid1 border=1 cellspacing=0 cellpadding=0 width=0
+ style='width:552.85pt;margin-left:-14.45pt;border-collapse:collapse;
+ border:none'>
+ <tr>
+  <td width=163 valign=top style='width:122.2pt;border:solid windowtext 1.0pt;
+  background:#D9D9D9;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;line-height:normal'><b><span
+  style='font-size:12.0pt'>Input</span></b></p>
+  </td>
+  <td width=222 valign=top style='width:166.5pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#D9D9D9;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;line-height:normal'><b><span
+  style='font-size:12.0pt'>Output</span></b></p>
+  </td>
+  <td width=352 valign=top style='width:264.15pt;border:solid windowtext 1.0pt;
+  border-left:none;background:#D9D9D9;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;line-height:normal'><b><span
+  style='font-size:12.0pt'>Comment</span></b></p>
+  </td>
+ </tr>
+ <tr style='height:103.9pt'>
+  <td width=163 valign=top style='width:122.2pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:103.9pt'>
+  <p class=Code style='line-height:normal'><span lang=EN-GB style='font-weight:
+  normal'>7</span></p>
+  <p class=Code style='line-height:normal'><span lang=EN-GB style='font-weight:
+  normal'>2</span></p>
+  <p class=Code style='line-height:normal'><span lang=EN-GB style='font-weight:
+  normal'>3</span></p>
+  <p class=Code style='line-height:normal'><span lang=EN-GB style='font-weight:
+  normal'>4</span></p>
+  <p class=Code style='line-height:normal'><span lang=EN-GB style='font-weight:
+  normal'>5</span></p>
+  </td>
+  <td width=222 valign=top style='width:166.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:103.9pt'>
+  <p class=Code style='line-height:normal'><span lang=BG style='font-weight:
+  normal'>Rage expenses: 16.00 lv.</span></p>
+  </td>
+  <td width=352 valign=top style='width:264.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:103.9pt'>
+  <p class=Code style='line-height:normal'><span style='font-weight:normal'>Trashed
+  headset -&gt; 3 times</span></p>
+  <p class=Code style='line-height:normal'><span style='font-weight:normal'>Trashed
+  mouse -&gt; 2 times</span></p>
+  <p class=Code style='line-height:normal'><span style='font-weight:normal'>Trashed
+  keyboard -&gt; 1 time</span></p>
+  <p class=Code style='line-height:normal'><span style='font-weight:normal'>Total:
+  6 + 6 + 4 = 16.00 lv;</span></p>
+  </td>
+ </tr>
+ <tr style='height:103.9pt'>
+  <td width=163 valign=top style='width:122.2pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:103.9pt'>
+  <p class=Code style='line-height:normal'><span lang=BG style='font-weight:
+  normal'>23</span></p>
+  <p class=Code style='line-height:normal'><span lang=BG style='font-weight:
+  normal'>12.50</span></p>
+  <p class=Code style='line-height:normal'><span lang=BG style='font-weight:
+  normal'>21.50</span></p>
+  <p class=Code style='line-height:normal'><span lang=BG style='font-weight:
+  normal'>40</span></p>
+  <p class=Code style='line-height:normal'><span lang=BG style='font-weight:
+  normal'>200</span></p>
+  </td>
+  <td width=222 valign=top style='width:166.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:103.9pt'>
+  <p class=Code style='line-height:normal'><span style='font-weight:normal'>Rage
+  expenses: 608.00 lv.</span></p>
+  </td>
+  <td width=352 valign=top style='width:264.15pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:103.9pt'>
+  <p class=Code style='line-height:normal'><span style='font-weight:normal'>&nbsp;</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=BG>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>
