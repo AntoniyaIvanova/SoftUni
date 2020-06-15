@@ -61,12 +61,12 @@
                 }
                 else if (command == "Insert")
                 {
-                    int place = int.Parse(tokens[1]);
+                    int place = int.Parse(tokens[1]) + 1;
                     int paintingNumber = int.Parse(tokens[2]);
 
-                    if (place + 1 >= 0 && place + 1 <= numbers.Count)
+                    if (place >= 0 && place <= numbers.Count)
                     {
-                        numbers.Insert(place+1, paintingNumber);
+                        numbers.Insert(place, paintingNumber);
                     }
                 }
                 else if(command == "Reverse")
