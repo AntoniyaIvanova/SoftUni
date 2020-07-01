@@ -17,8 +17,6 @@ current and following exercises to write queries.
 Write a SQL query to find **all available information about the
 Departments.**
 
-SELECT \* FROM Departments
-
 ### Example
 
 | **DepartmentID** | **Name**    | **ManagerID** |
@@ -31,8 +29,6 @@ SELECT \* FROM Departments
 ## Find all Department Names
 
 Write SQL query to find **all Department names**.
-
-SELECT \[Name\] FROM Departments
 
 ### Example
 
@@ -48,10 +44,6 @@ SELECT \[Name\] FROM Departments
 Write SQL query to find the **first name**, **last name** and **salary**
 of each employee.
 
-SELECT FirstName, LastName, Salary
-
-FROM Employees
-
 ### Example
 
 | **FirstName** | **LastName** | **Salary** |
@@ -65,10 +57,6 @@ FROM Employees
 
 Write SQL query to find the **first**, **middle** and **last name** of
 each employee.
-
-SELECT FirstName, MiddleName, LastName
-
-FROM Employees
 
 ### Example
 
@@ -86,12 +74,6 @@ his **first and last name**). Consider that the email domain is
 **softuni.bg**. Emails should look like “John.Doe@softuni.bg". The
 **produced column** should be named **"Full Email Address"**.
 
-SELECT FirstName + '.' + LastName + '@softuni.bg'
-
-AS \[Full Email Address\]
-
-FROM Employees
-
 ### Example
 
 | **Full Email Address**        |
@@ -106,8 +88,6 @@ FROM Employees
 Write a SQL query to find **all different employee’s salaries**. Show
 only the salaries.
 
-SELECT DISTINCT Salary FROM Employees
-
 ### Example
 
 | **Salary** |
@@ -121,10 +101,6 @@ SELECT DISTINCT Salary FROM Employees
 
 Write a SQL query to find **all information** about the employees whose
 **job title** is **“Sales Representative”.**
-
-SELECT \* FROM Employees
-
-WHERE JobTitle = 'Sales Representative'
 
 ### Example
 
@@ -205,10 +181,6 @@ Write a SQL query to find the **first name**, **last name** and **job
 title** of all employees whose **salary is in the** **range \[20000,
 30000\].**
 
-SELECT FirstName, LastName, JobTitle FROM Employees
-
-WHERE Salary BETWEEN 20000 AND 30000
-
 ### Example
 
 | **FirstName** | **LastName** | **JobTitle**          |
@@ -225,11 +197,6 @@ Write a SQL query to find the **full name** of all employees whose
 of **first**, **middle** and **last** name (separated with **single
 space**) and they should be **in one column** called **“Full Name”.**
 
-SELECT CONCAT(FirstName, ' ', MiddleName, ' ', LastName) AS \[Full
-Name\] FROM Employees
-
-WHERE Salary IN (25000, 14000, 12500, 23600)
-
 ### Example
 
 | **Full Name**    |
@@ -242,10 +209,6 @@ WHERE Salary IN (25000, 14000, 12500, 23600)
 
 Write a SQL query to find **first and last names** about those employees
 that **does not have a manager**.
-
-SELECT FirstName, LastName FROM Employees
-
-WHERE ManagerId IS NULL
 
 ### Example
 
@@ -261,12 +224,6 @@ Write a SQL query to find **first name**, **last name** and **salary**
 of those employees who has salary more than 50000. Order them in
 decreasing order by salary.
 
-SELECT FirstName, LastName, Salary FROM Employees
-
-WHERE Salary \>= 50000
-
-ORDER BY Salary DESC
-
 ### Example
 
 | **FirstName** | **LastName** | **Salary** |
@@ -280,10 +237,6 @@ ORDER BY Salary DESC
 Write SQL query to find **first and last names** about **5 best paid
 Employees** ordered **descending by their salary.**
 
-SELECT TOP(5) FirstName, LastName FROM Employees
-
-ORDER BY Salary DESC
-
 ### Example
 
 | **FirstName** | **LastName** |
@@ -296,10 +249,6 @@ ORDER BY Salary DESC
 
 Write a SQL query to find the **first** and **last names** of all
 employees whose **department ID is different from 4.**
-
-SELECT FirstName, LastName FROM Employees
-
-WHERE DepartmentId \!= 4
 
 ### Example
 
@@ -321,16 +270,6 @@ following criteria:
   - Then by **last name descending**
 
   - > Then by **middle name alphabetically**
-
-SELECT \* FROM Employees
-
-ORDER BY Salary DESC,
-
-FirstName ASC,
-
-LastName DESC,
-
-MiddleName ASC
 
 ### Example
 
@@ -410,14 +349,6 @@ MiddleName ASC
 Write a SQL query to create a view **V\_EmployeesSalaries** with **first
 name**, **last name** and **salary** for each employee.
 
-CREATE VIEW \[V\_EmployeesSalaries\] AS
-
-SELECT FirstName, LastName, Salary
-
-FROM Employees
-
-SELECT \* FROM V\_EmployeesSalaries
-
 ### Example
 
 | **FirstName** | **LastName** | **Salary** |
@@ -432,18 +363,6 @@ Write a SQL query to create view **V\_EmployeeNameJobTitle** with **full
 employee name** and **job title**. When middle name is **NULL** replace
 it with **empty string (‘’)**.
 
-CREATE VIEW V\_EmployeeNameJobTitle
-
-AS
-
-SELECT FirstName + ' ' + ISNULL(MiddleName, '') + ' ' + LastName
-
-AS \[Full Name\], JobTitle
-
-AS \[Job Title\]
-
-FROM Employees
-
 ### Example
 
 | **Full Name**      | **Job Title**         |
@@ -456,8 +375,6 @@ FROM Employees
 ##  Distinct Job Titles
 
 Write a SQL query to find **all distinct job titles**.
-
-SELECT DISTINCT JobTitle FROM Employees
 
 ### Example
 
@@ -474,12 +391,6 @@ Write a SQL query to find **first 10 started projects**. Select **all
 information about them** and **sort** them **by start date**, **then by
 name**.
 
-SELECT TOP(10) \* FROM Projects
-
-ORDER BY StartDate,
-
-\[Name\]
-
 ### Example
 
 | **ID** | **Name**          | **Description**                               | **StartDate**       | **EndDate**         |
@@ -493,10 +404,6 @@ ORDER BY StartDate,
 
 Write a SQL query to find **last 7 hired employees**. Select **their
 first, last name and their hire date**.
-
-SELECT TOP(7) FirstName, LastName, HireDate FROM Employees
-
-ORDER BY HireDate DESC
 
 ### Example
 
@@ -515,14 +422,6 @@ Services** department by **12%**. Then **select Salaries column** from
 the **Employees** table. After that exercise restore your database to
 revert those changes.
 
-UPDATE Employees
-
-SET Salary += Salary\*0.12
-
-WHERE DepartmentID IN (1, 2, 4, 11)
-
-SELECT Salary FROM Employees
-
 ### Example
 
 | **Salary** |
@@ -539,10 +438,6 @@ SELECT Salary FROM Employees
 
 Display all **mountain peaks** in alphabetical order.
 
-SELECT \[PeakName\] FROM Peaks
-
-ORDER BY \[PeakName\]
-
 ### Example
 
 | **PeakName**      |
@@ -557,14 +452,6 @@ ORDER BY \[PeakName\]
 Find the 30 biggest countries by population **from Europe**. Display the
 country name and population. Sort the results by population (from
 biggest to smallest), then by country alphabetically.
-
-SELECT TOP(30) \[CountryName\], \[Population\]
-
-FROM Countries
-
-WHERE ContinentCode = 'EU'
-
-ORDER BY \[Population\] DESC
 
 ### Example
 
@@ -584,18 +471,6 @@ alphabetically.
 
 \*Hint: Use **CASE** … **WHEN**.
 
-SELECT CountryName, CountryCode,
-
-CASE WHEN CurrencyCode = 'EUR' THEN 'Euro'
-
-ELSE 'Not Euro'
-
-END AS \[Currency\]
-
-FROM Countries
-
-ORDER BY \[CountryName\]
-
 ### Example
 
 | **CountryName** | **CountryCode** | **Currency** |
@@ -610,10 +485,6 @@ ORDER BY \[CountryName\]
 ##  All Diablo Characters
 
 Display all **characters** in alphabetical order.
-
-SELECT \[Name\] FROM Characters
-
-ORDER BY \[Name\]
 
 ### Example
 
