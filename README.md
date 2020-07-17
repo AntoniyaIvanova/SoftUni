@@ -2,7 +2,7 @@
 Courses from softuni.bg
 
 # C# 
-  1. C# Fundamentals                  [Contribution guidelines for this project](https://softuni.bg/certificates/details/60974/1acd9571)
+  1. C# Fundamentals                  [Certificate from SoftUni](https://softuni.bg/certificates/details/60974/1acd9571)
   2. C# Advanced<br/>
     2.1. C# Advanced<br/>
     2.2. C# OOP<br/>
