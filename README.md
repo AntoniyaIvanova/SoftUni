@@ -27,5 +27,5 @@ Courses from softuni.bg
     5.2. VueJS
     
 # Front-End
-  1. HTML & CSS
+  1. HTML & CSS  ------------------->  [Certificate from SoftUni](https://softuni.bg/certificates/details/84944/9fa11b76)
   2. CSS Advanced
