@@ -1,0 +1,40 @@
+@import "../01-settings/settings-shadows.scss";
+@import "../01-settings/settings-colors.scss";
+
+.c-information-box {
+    position: absolute;
+    top: 309px;
+    left: 115px;
+    right: 75px;
+    display: grid;
+    grid-template-columns: 290px 230px 230px 270px 270px;
+    grid-template-rows: 1fr;
+    justify-items: center;
+    align-items: center;
+    min-height: 112px;
+    width: 1290px;
+    border-radius: 12px;
+    box-shadow: $box-shadow-1dp;
+    background: $white;
+
+    &__button {
+        grid-column: 1/2;
+       
+    }
+
+    &__money {
+        grid-column: 2/3;
+    }
+
+    &__suitable-for {
+        grid-column: 3/4;
+    }
+
+    &__schedule {
+        grid-column: 4/5;
+    }
+
+    &__location {
+        grid-column: 5/6;
+    }
+}

@@ -1,0 +1,47 @@
+/* Shadow 0dp */
+/* Shadow 1dp */
+/* Shadow 2dp */
+/* Shadow 3dp */
+/* Shadow 4dp */
+/* Shadow 6dp */
+/* Shadow 8dp */
+/* Shadow 9dp */
+/* Shadow 12dp */
+/* Shadow 16dp */
+/* Shadow 24dp */
+.c-information-box {
+  position: absolute;
+  top: 309px;
+  left: 115px;
+  right: 75px;
+  display: grid;
+  grid-template-columns: 290px 230px 230px 270px 270px;
+  grid-template-rows: 1fr;
+  justify-items: center;
+  align-items: center;
+  min-height: 112px;
+  width: 1290px;
+  border-radius: 12px;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  background: #FFFFFF;
+}
+
+.c-information-box__button {
+  grid-column: 1/2;
+}
+
+.c-information-box__money {
+  grid-column: 2/3;
+}
+
+.c-information-box__suitable-for {
+  grid-column: 3/4;
+}
+
+.c-information-box__schedule {
+  grid-column: 4/5;
+}
+
+.c-information-box__location {
+  grid-column: 5/6;
+}

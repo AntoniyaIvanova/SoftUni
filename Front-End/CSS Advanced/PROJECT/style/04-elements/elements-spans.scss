@@ -1,0 +1,25 @@
+@import "../01-settings/settings-colors.scss";
+@import "../01-settings/settings-shadows.scss";
+
+span {
+    margin: 0;
+    padding: 0;
+}
+
+.variable {
+    color: $grey-700;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.value {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 24px;
+
+    color: $orange-secondary-800;
+}

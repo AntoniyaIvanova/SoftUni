@@ -1,7 +1,24 @@
 img {
   display: block;
-  width: 100%;
+  width: 440px;
+  height: 248px;
   max-width: 100%;
-  height: auto;
   max-height: 100%;
+  margin: 0;
+  padding: 0px;
+}
+
+.vector-images {
+  width: 32px;
+  height: auto;
+  margin-right: 25px;
+}
+
+.play-button {
+  position: absolute;
+  top: 615px;
+  right: 290px;
+  width: 64px;
+  height: auto;
+  z-index: 2;
 }
