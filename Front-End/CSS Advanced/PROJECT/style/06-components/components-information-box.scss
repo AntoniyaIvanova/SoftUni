@@ -4,37 +4,40 @@
 .c-information-box {
     position: absolute;
     top: 309px;
-    left: 115px;
+    left: 110px;
     right: 75px;
     display: grid;
-    grid-template-columns: 290px 230px 230px 270px 270px;
-    grid-template-rows: 1fr;
+    grid-template-columns: 280px 1fr 200px 230px 290px 270px;
+    grid-template-rows: 112px;
     justify-items: center;
     align-items: center;
-    min-height: 112px;
     width: 1290px;
     border-radius: 12px;
     box-shadow: $box-shadow-1dp;
     background: $white;
 
     &__button {
-        grid-column: 1/2;
-       
+        grid-column: 1/2;       
     }
 
-    &__money {
+    &__dots{
         grid-column: 2/3;
     }
 
-    &__suitable-for {
+    &__money {
         grid-column: 3/4;
     }
 
-    &__schedule {
+    &__suitable-for {
         grid-column: 4/5;
     }
 
-    &__location {
+    &__schedule {
         grid-column: 5/6;
+    }
+
+    &__location {
+        grid-column: 6/7;
+        justify-self: start;
     }
 }

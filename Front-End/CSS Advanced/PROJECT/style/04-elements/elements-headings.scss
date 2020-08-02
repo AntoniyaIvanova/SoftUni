@@ -38,6 +38,7 @@ h6 {
     font-family: "Montserrat", sans-serif;
     font-style: normal;
     font-weight: 600;
+    color: $grey-700;
 }
 
 @each $header, $size in (h1: 36px, h2: 30px, h3: 24px, h4: 20px, h5: 18px, h6: 16px) {
@@ -46,7 +47,7 @@ h6 {
     }
 }
 
-@each $header, $height in (h1: 44px, h2: 38px, h3: 30px, h4: 24px, h5: 22px, h6: 19px) {
+@each $header, $height in (h1: 44px, h2: 36px, h3: 30px, h4: 24px, h5: 22px, h6: 19px) {
     #{$header}{
         line-height: $height;
     }

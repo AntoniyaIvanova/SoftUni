@@ -8,6 +8,9 @@
 .o-row-container {
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
-  align-content: center;
+  align-items: center;
+}
+
+.o-row-container--top {
+  align-items: flex-start;
 }

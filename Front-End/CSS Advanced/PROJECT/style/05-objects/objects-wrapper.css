@@ -9,3 +9,11 @@
   width: 1290px;
   margin: 0 auto;
 }
+
+.o-paragraph-wrapper {
+  width: 488px;
+}
+
+.o-paragraph-wrapper--longer {
+  width: 675px;
+}

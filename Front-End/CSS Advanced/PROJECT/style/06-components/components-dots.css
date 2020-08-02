@@ -1,0 +1,35 @@
+.dots {
+  transform: rotate(-90deg);
+  max-width: 180px;
+  margin-top: 70px;
+}
+
+.dots--absolute-first-border {
+  transform: rotate(0deg);
+  position: absolute;
+  max-width: 1520px;
+  top: 1063px;
+}
+
+.dots--absolute-second-border {
+  transform: rotate(0deg);
+  position: absolute;
+  max-width: 1520px;
+  top: 1614px;
+}
+
+.dots .dot {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.dots .dot--orange {
+  background-color: #ffecb3;
+}
+
+.dots .dot--white {
+  background-color: #FFFFFF;
+}
