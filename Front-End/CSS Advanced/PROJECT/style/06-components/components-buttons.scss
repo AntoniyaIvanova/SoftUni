@@ -1,5 +1,5 @@
 @import "../01-settings/settings-colors.scss";
-@import '../01-settings/settings-shadows.scss';
+@import "../01-settings/settings-shadows.scss";
 
 .c-button {
     border: 0;
@@ -7,9 +7,8 @@
     border-radius: 100px;
     font-family: "Lato";
 
-    &--large {
-        width: 163px;
-        height: 48px;
+    &--primary{
+
         font-weight: 800;
         font-size: 16px;
         line-height: 20px;
@@ -17,5 +16,26 @@
         padding: 14px 32px;
         background: $orange-secondary-800;
         box-shadow: $box-shadow-4dp;
+
+        &--medium {
+            width: 140px;
+            height: 48px;
+        }
+    
+        &--large {
+            width: 163px;
+            height: 48px;
+        }
+    }
+    
+
+    &--secondary {
+        font-size: 14px;
+        line-height: 16px;
+        color: $orange-secondary-800;
+        border: 1px solid $orange-secondary-800;
+        background-color: transparent;
+        padding: 14px 24px;
+        border-radius: 50px;
     }
 }

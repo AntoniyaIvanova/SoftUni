@@ -16,9 +16,7 @@
   font-family: "Lato";
 }
 
-.c-button--large {
-  width: 163px;
-  height: 48px;
+.c-button--primary {
   font-weight: 800;
   font-size: 16px;
   line-height: 20px;
@@ -26,4 +24,24 @@
   padding: 14px 32px;
   background: #ff9100;
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+
+.c-button--primary--medium {
+  width: 140px;
+  height: 48px;
+}
+
+.c-button--primary--large {
+  width: 163px;
+  height: 48px;
+}
+
+.c-button--secondary {
+  font-size: 14px;
+  line-height: 16px;
+  color: #ff9100;
+  border: 1px solid #ff9100;
+  background-color: transparent;
+  padding: 14px 24px;
+  border-radius: 50px;
 }

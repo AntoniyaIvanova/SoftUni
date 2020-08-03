@@ -1,0 +1,55 @@
+/* Shadow 0dp */
+/* Shadow 1dp */
+/* Shadow 2dp */
+/* Shadow 3dp */
+/* Shadow 4dp */
+/* Shadow 6dp */
+/* Shadow 8dp */
+/* Shadow 9dp */
+/* Shadow 12dp */
+/* Shadow 16dp */
+/* Shadow 24dp */
+.contact-information-card {
+  position: absolute;
+  top: 202px;
+  left: 115px;
+  width: 519px;
+  height: 382px;
+  background-color: #FFFFFF;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  display: grid;
+  grid-template-columns: 200px 227px;
+  column-gap: 28px;
+  grid-template-rows: 130px 130px 58px;
+  justify-content: center;
+  align-content: center;
+}
+
+.contact-information-card h4 {
+  color: #41bead;
+}
+
+.contact-information-card p {
+  margin: 0;
+  padding: 10px 0;
+}
+
+.contact-information-card .working-days,
+.contact-information-card .weekend {
+  display: grid;
+  grid-template-columns: 88px 103px;
+  column-gap: 24px;
+}
+
+.contact-information-card .working-days .time,
+.contact-information-card .weekend .time {
+  color: #ff9100;
+}
+
+.contact-information-card__button {
+  grid-row: 3/4;
+  grid-column: 1/3;
+  justify-self: center;
+  align-self: center;
+}
