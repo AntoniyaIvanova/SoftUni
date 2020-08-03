@@ -1,21 +1,15 @@
-.dots {
-  transform: rotate(-90deg);
-  max-width: 180px;
-  margin-top: 70px;
-}
-
 .dots--absolute-first-border {
-  transform: rotate(0deg);
   position: absolute;
   max-width: 1520px;
-  top: 1063px;
+  top: 1170px;
+  margin: 0;
 }
 
 .dots--absolute-second-border {
-  transform: rotate(0deg);
   position: absolute;
   max-width: 1520px;
-  top: 1614px;
+  top: 1720px;
+  margin: 0;
 }
 
 .dots .dot {

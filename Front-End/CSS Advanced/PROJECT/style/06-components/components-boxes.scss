@@ -1,0 +1,13 @@
+@import '../01-settings/settings-colors.scss';
+@import '../01-settings/settings-shadows.scss';
+
+.certificate-picture-box{
+    width: 364px;
+    height: 256px;
+    background-color: $grey-300;
+    box-shadow: $box-shadow-1dp;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+}

@@ -1,22 +1,19 @@
 @import "../01-settings/settings-colors.scss";
 
 .dots {
-    transform: rotate(-90deg);
-    max-width: 180px;
-    margin-top: 70px;
 
     &--absolute-first-border {
-        transform: rotate(0deg);
         position: absolute;
         max-width: 1520px;
-        top: 1063px;
+        top: 1170px;
+        margin: 0;
     }
 
     &--absolute-second-border {
-        transform: rotate(0deg);
         position: absolute;
         max-width: 1520px;
-        top: 1614px;
+        top: 1720px;
+        margin: 0;
     }
 
     .dot {

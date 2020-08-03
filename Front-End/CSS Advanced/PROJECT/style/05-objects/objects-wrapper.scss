@@ -1,7 +1,7 @@
 .o-page-wrapper{
     display: grid;
     min-width: 1440px;
-    grid-template-rows: 74px 1fr 324px;
+    grid-template-rows: 74px 1fr 325px;
     min-height: 100%;
 }
 
@@ -12,7 +12,12 @@
 
 
 .o-paragraph-wrapper{
+   
     width: 488px;
+
+    &--middle{
+        width: 544px;
+    }
 
     &--longer{
         width: 675px;

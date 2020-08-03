@@ -12,8 +12,8 @@
 .c-information-box {
   position: absolute;
   top: 309px;
-  left: 110px;
-  right: 75px;
+  right: 115px;
+  left: 116px;
   display: grid;
   grid-template-columns: 280px 1fr 200px 230px 290px 270px;
   grid-template-rows: 112px;
