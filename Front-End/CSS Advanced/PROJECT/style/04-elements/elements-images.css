@@ -1,4 +1,4 @@
-img {
+.video-option {
   display: block;
   width: 440px;
   height: 248px;
@@ -15,12 +15,16 @@ img {
 }
 
 .play-button {
-  position: absolute;
-  top: 630px;
-  right: 300px;
+  position: relative;
+  bottom: 154px;
+  left: 190px;
   width: 64px;
   height: auto;
-  z-index: 2;
+}
+
+.footer__img {
+  position: relative;
+  bottom: 146px;
 }
 
 .schedule {
@@ -43,4 +47,30 @@ img {
   border: 5px solid #41bead;
   object-fit: cover;
   margin: 0 auto;
+  margin-bottom: 24px;
+}
+
+.nav-bar-img,
+.nav-logo,
+.nav-bar-search {
+  display: inline;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-bar-img {
+  width: 20px;
+  height: 12px;
+  margin-bottom: 10px;
+}
+
+.nav-bar-search {
+  width: 16px;
+  height: 16px;
+  margin-right: 20px;
+}
+
+.nav-logo {
+  width: 121px;
+  height: 41px;
 }

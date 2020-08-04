@@ -4,14 +4,14 @@
 
     &--absolute-first-border {
         position: absolute;
-        max-width: 1520px;
+        min-width: 1520px;
         top: 1170px;
         margin: 0;
     }
 
     &--absolute-second-border {
         position: absolute;
-        max-width: 1520px;
+        min-width: 1520px;
         top: 1720px;
         margin: 0;
     }

@@ -1,0 +1,31 @@
+@import "../01-settings/settings-colors.scss";
+@import "../01-settings/settings-shadows.scss";
+
+.c-main-header {
+    background: $white;
+    box-shadow: $box-shadow-2dp;
+
+    position: relative;
+    z-index: 1;
+
+    .o-page-content-wrapper {
+        display: grid;
+        grid-template-columns: max-content 1fr 130px;
+        grid-template-rows: 74px;
+        grid-column-gap: 32px;
+        align-items: center;
+
+        &__logo-and-arrow {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &__search-and-entrance{
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+}

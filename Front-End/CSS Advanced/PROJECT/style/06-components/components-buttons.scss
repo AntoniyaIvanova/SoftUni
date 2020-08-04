@@ -7,8 +7,7 @@
     border-radius: 100px;
     font-family: "Lato";
 
-    &--primary{
-
+    &--primary {
         font-weight: 800;
         font-size: 16px;
         line-height: 20px;
@@ -17,17 +16,24 @@
         background: $orange-secondary-800;
         box-shadow: $box-shadow-4dp;
 
+        &--small {
+            width: 82px;
+            height: 36px;
+            padding: 10px 22px;
+            font-size: 13px;
+            line-height: 16px;
+        }
+
         &--medium {
             width: 140px;
             height: 48px;
         }
-    
+
         &--large {
             width: 163px;
             height: 48px;
         }
     }
-    
 
     &--secondary {
         font-size: 14px;

@@ -1,4 +1,4 @@
-@import '../01-settings/settings-colors.scss';
+@import "../01-settings/settings-colors.scss";
 
 html,
 * {
@@ -13,7 +13,14 @@ button {
 }
 
 a {
-    font-weight: 600;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: $grey-200;
+    text-decoration: none;
+
 }
 
 p {
@@ -42,13 +49,13 @@ h6 {
 }
 
 @each $header, $size in (h1: 36px, h2: 30px, h3: 24px, h4: 20px, h5: 18px, h6: 16px) {
-    #{$header}{
+    #{$header} {
         font-size: $size;
     }
 }
 
 @each $header, $height in (h1: 44px, h2: 36px, h3: 30px, h4: 24px, h5: 22px, h6: 19px) {
-    #{$header}{
+    #{$header} {
         line-height: $height;
     }
 }
@@ -64,4 +71,3 @@ h5 {
 i {
     font-size: 30px;
 }
-

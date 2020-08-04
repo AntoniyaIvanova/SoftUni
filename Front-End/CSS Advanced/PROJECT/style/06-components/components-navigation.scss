@@ -1,0 +1,35 @@
+@import '../01-settings/settings-colors.scss';
+
+.c-main-nav {
+    &__list {
+        list-style-type: none;
+        display: flex;
+        flex-flow: row wrap;
+        height: 100%;
+        justify-content: flex-end;
+    }
+
+    &__list-item:not(:last-child) {
+        margin-right: 24px;
+    }
+    
+    &__link {
+        text-decoration: none;
+        color: $grey-700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 12px;
+        height: 100%;
+        text-transform: uppercase;
+        transition: color 0.4s ease-out;
+
+        &:hover {
+            color: $orange-secondary-800;
+        }
+    }
+}
+
+
+  
+      

@@ -1,0 +1,27 @@
+.c-main-nav__list {
+  list-style-type: none;
+  display: flex;
+  flex-flow: row wrap;
+  height: 100%;
+  justify-content: flex-end;
+}
+
+.c-main-nav__list-item:not(:last-child) {
+  margin-right: 24px;
+}
+
+.c-main-nav__link {
+  text-decoration: none;
+  color: #565656;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12px;
+  height: 100%;
+  text-transform: uppercase;
+  transition: color 0.4s ease-out;
+}
+
+.c-main-nav__link:hover {
+  color: #ff9100;
+}

@@ -26,6 +26,14 @@
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
 }
 
+.c-button--primary--small {
+  width: 82px;
+  height: 36px;
+  padding: 10px 22px;
+  font-size: 13px;
+  line-height: 16px;
+}
+
 .c-button--primary--medium {
   width: 140px;
   height: 48px;
