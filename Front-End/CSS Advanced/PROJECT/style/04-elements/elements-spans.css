@@ -14,6 +14,15 @@ span {
   padding: 0;
 }
 
+.position {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  color: #b2b2b2;
+}
+
 .variable {
   color: #565656;
   font-style: normal;

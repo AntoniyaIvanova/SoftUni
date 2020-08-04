@@ -224,8 +224,153 @@
                 justify-self: center;
             }
 
-            h3{
+            h3 {
                 color: $green-primary-300;
+            }
+        }
+    }
+}
+
+.c-trainers-main {
+    display: grid;
+    grid-template-rows: 256px 548px 20px 1472px 412px;
+
+    &__trainers-summary {
+        background-color: $orange-secondary-600;
+        .o-page-content-wrapper {
+            display: grid;
+            grid-template-columns: 850px;
+            grid-template-rows: 200px;
+            justify-content: center;
+            align-items: end;
+
+            .text {
+                h1,
+                p {
+                    color: $white;
+                }
+            }
+        }
+    }
+
+    &__top-lectors {
+        display: grid;
+        justify-content: center;
+        align-content: center;
+
+        .o-page-content-wrapper {
+            display: grid;
+            grid-template-rows: 356px;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 52px;
+
+            .left-trainer,
+            .right-trainer {
+                display: grid;
+                grid-template-columns: 210px 409px;
+                justify-items: start;
+            }
+
+            h4 {
+                margin-bottom: 5px;
+                color: $green-primary-300;
+            }
+
+            .position {
+                margin-bottom: 25px;
+            }
+        }
+    }
+
+    &__all-trainers {
+        display: grid;
+        align-content: center;
+
+        .o-page-content-wrapper {
+            display: grid;
+            justify-content: center;
+            align-content: center;
+
+            grid-template-columns: 240px 240px 240px 240px;
+            grid-template-rows: 260px 260px 260px 260px;
+            column-gap: 86px;
+            row-gap: 60px;
+
+            .trainer {
+                justify-self: center;
+                align-self: center;
+
+                .trainer__picture {
+                    justify-self: center;
+                    align-self: center;
+                }
+                text-align: center;
+            }
+
+            h4 {
+                color: $green-primary-300;
+            }
+        }
+    }
+
+    &__job-openings {
+
+        &__divider {
+            height: 12px;
+            background-color: $blue-200;
+        }
+
+        &__main-part {
+            background-color: $blue-300;
+            display: grid;
+            grid-template-rows: 400px;
+           
+            .o-page-content-wrapper {
+                display: grid;
+                grid-template-rows: 153px 52px;
+                grid-template-columns: 228px 228px 228px 228px;
+                column-gap: 32px;
+                justify-content: center;
+                align-content: center;
+            
+                .advertisement{
+                    grid-row: 1/2;
+                    grid-column: 1/5;
+                    text-align: center;
+                    margin: 0 65px;
+                    
+                    h1, p{
+
+                        color: $white;
+                    }
+                }
+
+               .title,
+               .mail,
+               .phone{
+                   background-color: transparent;
+                   font-size: 16px;
+                   line-height: 19px;
+                   box-sizing: border-box;
+                   border-radius: 6px;
+                   border: 1px solid $white;
+
+                   &::placeholder {
+                    font-family: Lato;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 16px;
+                    line-height: 19px;
+                    padding: 10px;
+                    color: $white;
+                }
+               }
+
+
+
+                button{
+                    justify-self: center;
+                }
             }
         }
     }

@@ -1,3 +1,5 @@
+@import '../01-settings/settings-colors.scss';
+
 img{
     display: block;
     width: 440px;
@@ -34,4 +36,14 @@ img{
     padding: 0;
     width: 100%;
     height: 100%;
+}
+
+.trainer__img{
+    width: 175px;
+    height: 172px;
+    border-radius: 50%;
+    border: 5px solid $green-primary-300;
+    object-fit: cover;
+    margin: 0 auto;
+    margin-bottom: 24px;
 }
