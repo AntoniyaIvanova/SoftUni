@@ -1248,34 +1248,36 @@ span {
 .c-main-footer-nav .links-info__list--icons {
   display: flex;
   flex-flow: row wrap;
-  margin: 20px 0;
+  list-style-type: none;
   padding: 0;
+  margin: 0;
 }
 
-.c-main-footer-nav .links-info__link-icon {
-  padding-right: 20px;
+.c-main-footer-nav .links-info__link, .c-main-footer-nav .links-info__link-icon {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: #E6E6E6;
+  transition: color 0.4s ease-out;
+}
+
+.c-main-footer-nav .links-info__link:hover, .c-main-footer-nav .links-info__link-icon:hover {
+  color: #41bead;
+}
+
+.c-main-footer-nav .links-info__title {
+  color: #FFFFFF;
+  padding-bottom: 20px;
+}
+
+.c-main-footer-nav .links-info__list-item {
+  padding: 6px 10px 6px 0;
 }
 
 .c-main-footer-nav .links-info__reserved {
   padding: 0;
   margin: 50px 0;
   color: #919191;
-}
-
-.c-main-footer-nav .links-info__title {
-  color: white;
-  padding-bottom: 20px;
-}
-
-.c-main-footer-nav .links-info__list-item {
-  padding: 6px 0;
-}
-
-.c-main-footer-nav .links-info__link {
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 19px;
-  color: #E6E6E6;
 }
 
 .c-main-footer {
