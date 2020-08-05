@@ -3,7 +3,7 @@
 .c-main-footer {
     background-color: $grey-700;
     border-top: 12px solid $grey-500;
-    height: 325px;
+    /*height: 325px;*/
     display: grid;
 
     .o-page-content-wrapper {
@@ -11,48 +11,6 @@
         grid-template-rows: 200px;
         grid-template-columns: 220px 1fr;
         align-content: center;
-        column-gap: 50px;
-
-        .c-main-footer__links {
-            display: grid;
-            grid-template-rows: 200px;
-            grid-template-columns: 1fr 220px 220px 220px;
-            column-gap: 10px;
-
-            h5,
-            p {
-                color: white;
-                padding-bottom: 10px;
-            }
-
-           
-            li {
-                padding: 6px 0;
-            }
-
-            ul {
-                display: flex;
-                flex-flow: column wrap;
-                list-style-type: none;
-                margin: 0;
-                padding: 0;
-                height: 170px;
-            }
-
-            .links__info__list__icons {
-               
-                display: flex;
-                flex-flow: row wrap;
-
-                a{
-                    padding-right: 20px;
-                }
-            }
-
-            .links__info__rights-reserved{
-                padding: 0;
-                margin: 0;
-            }
-        }
+        column-gap: 50px;        
     }
 }
