@@ -8,24 +8,22 @@
     position: relative;
     z-index: 1;
 
+    &__logo-and-arrow {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    &__search-and-entrance {
+        display: flex;
+        justify-content: space-between;
+    }
+
     .o-page-content-wrapper {
         display: grid;
-        grid-template-columns: max-content 1fr 130px;
+        grid-template-columns: 150px 1fr 120px;
         grid-template-rows: 74px;
         grid-column-gap: 32px;
         align-items: center;
-
-        &__logo-and-arrow {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        &__search-and-entrance{
-            display: flex;
-            flex-flow: row wrap;
-            justify-content: space-between;
-            align-items: center;
-        }
     }
+
 }

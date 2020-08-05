@@ -16,23 +16,20 @@
   z-index: 1;
 }
 
+.c-main-header__logo-and-arrow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.c-main-header__search-and-entrance {
+  display: flex;
+  justify-content: space-between;
+}
+
 .c-main-header .o-page-content-wrapper {
   display: grid;
-  grid-template-columns: max-content 1fr 130px;
+  grid-template-columns: 150px 1fr 120px;
   grid-template-rows: 74px;
   grid-column-gap: 32px;
-  align-items: center;
-}
-
-.c-main-header .o-page-content-wrapper__logo-and-arrow {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.c-main-header .o-page-content-wrapper__search-and-entrance {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
   align-items: center;
 }
