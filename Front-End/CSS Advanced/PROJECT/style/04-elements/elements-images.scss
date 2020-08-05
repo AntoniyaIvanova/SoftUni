@@ -1,70 +1,72 @@
-@import '../01-settings/settings-colors.scss';
+@import "../01-settings/settings-colors.scss";
 
-.video-option{
-    display: block;
-    width: 440px;
-    height: 248px;
-    max-width: 100%;
-    max-height: 100%;
-    margin: 0;
-    padding: 0px;
+.video {
+    &__img {
+        display: block;
+        width: 440px;
+        height: 248px;
+        max-width: 100%;
+        max-height: 100%;
+        margin: 0;
+        padding: 0px;
+    }
+
+    &__play-button {
+        position: relative;
+        bottom: 154px;
+        left: 190px;
+        width: 64px;
+        height: auto;
+    }
 }
 
-.vector-images{
+.schedule-image {
+    &__img {
+        width: 352px;
+        height: 230px;
+        margin-bottom: 80px;
+    }
+}
+
+.vector-images {
     max-width: 32px;
     max-height: 32px;
     margin-right: 25px;
 }
 
-.play-button{
-    position: relative;
-    bottom: 154px;
-    left: 190px;
-    width: 64px;
-    height: auto;
-}
-
-.footer__img{
+.footer__img {
     position: relative;
     bottom: 146px;
 }
 
-.schedule{
-    width: 352px;
-    height: 230px;
-    margin-bottom: 80px;
-}
-
-.map{
+.map {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
 }
 
-
-
-.nav-bar-img, 
+.nav-bar-img,
 .nav-logo,
-.nav-bar-search{ 
+.nav-bar-search {
     display: inline;
     padding: 0;
     margin: 0;
 }
 
-.nav-bar-img{
+.nav-bar-img {
     width: 20px;
     height: 12px;
     margin-bottom: 10px;
 }
 
-.nav-bar-search{
+.nav-bar-search {
     width: 16px;
     height: 16px;
     margin-right: 20px;
 }
 
-.nav-logo{
+.nav-logo {
     width: 121px;
     height: 41px;
 }

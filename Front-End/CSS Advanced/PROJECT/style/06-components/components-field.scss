@@ -1,4 +1,4 @@
-.filter_options {
+.fields_options {
     margin: 5px 0;
     width: 676px;
     height: 50px;
@@ -7,11 +7,11 @@
     appearance: none;
 }
 
-.filter__label::after {
+.fields__label::after {
     left: 630px;
     bottom: 41px;
     content: "";
-    background: url(/images/vectors/icons/arrow.svg) center no-repeat;
+    background: url(./images/vectors/icons/arrow.svg) center no-repeat;
     width: 28px;
     height: 8px;
     display: inline-block;

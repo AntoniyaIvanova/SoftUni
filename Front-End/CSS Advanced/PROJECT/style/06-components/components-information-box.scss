@@ -1,43 +1,44 @@
 @import "../01-settings/settings-shadows.scss";
 @import "../01-settings/settings-colors.scss";
 
+
+
 .c-information-box {
     position: absolute;
     top: 309px;
     right: 115px;
     left: 116px;
     display: grid;
-    grid-template-columns: 280px 1fr 200px 230px 290px 270px;
+    grid-template-columns: 280px 10px 200px 230px 290px 270px;
     grid-template-rows: 112px;
     justify-items: center;
     align-items: center;
     width: 1290px;
     border-radius: 12px;
     box-shadow: $box-shadow-1dp;
-    background: $white;
-
-    &__button {
-        grid-column: 1/2;       
+        background-color: white;
+  
+    &__money::after,
+    &__suitable-for::after,
+    &__schedule::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: $grey-100;
+        width: 2px;
+        height: 24px;
     }
 
-    &__dots{
-        grid-column: 2/3;
+    &__money::after {
+        left: 500px;
+    }
+    &__suitable-for::after {
+        left: 746px;
     }
 
-    &__money {
-        grid-column: 3/4;
-    }
-
-    &__suitable-for {
-        grid-column: 4/5;
-    }
-
-    &__schedule {
-        grid-column: 5/6;
-    }
-
-    &__location {
-        grid-column: 6/7;
-        justify-self: start;
+    &__schedule::after {
+        left: 1015px;
     }
 }

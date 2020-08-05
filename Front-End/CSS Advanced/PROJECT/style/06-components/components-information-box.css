@@ -15,37 +15,35 @@
   right: 115px;
   left: 116px;
   display: grid;
-  grid-template-columns: 280px 1fr 200px 230px 290px 270px;
+  grid-template-columns: 280px 10px 200px 230px 290px 270px;
   grid-template-rows: 112px;
   justify-items: center;
   align-items: center;
   width: 1290px;
   border-radius: 12px;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
-  background: #FFFFFF;
+  background-color: white;
 }
 
-.c-information-box__button {
-  grid-column: 1/2;
+.c-information-box__money::after, .c-information-box__suitable-for::after, .c-information-box__schedule::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #F1F1F1;
+  width: 2px;
+  height: 24px;
 }
 
-.c-information-box__dots {
-  grid-column: 2/3;
+.c-information-box__money::after {
+  left: 500px;
 }
 
-.c-information-box__money {
-  grid-column: 3/4;
+.c-information-box__suitable-for::after {
+  left: 746px;
 }
 
-.c-information-box__suitable-for {
-  grid-column: 4/5;
-}
-
-.c-information-box__schedule {
-  grid-column: 5/6;
-}
-
-.c-information-box__location {
-  grid-column: 6/7;
-  justify-self: start;
+.c-information-box__schedule::after {
+  left: 1015px;
 }

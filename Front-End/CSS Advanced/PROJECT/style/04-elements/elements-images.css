@@ -1,4 +1,4 @@
-.video-option {
+.video__img {
   display: block;
   width: 440px;
   height: 248px;
@@ -8,13 +8,7 @@
   padding: 0px;
 }
 
-.vector-images {
-  max-width: 32px;
-  max-height: 32px;
-  margin-right: 25px;
-}
-
-.play-button {
+.video__play-button {
   position: relative;
   bottom: 154px;
   left: 190px;
@@ -22,15 +16,21 @@
   height: auto;
 }
 
-.footer__img {
-  position: relative;
-  bottom: 146px;
-}
-
-.schedule {
+.schedule-image__img {
   width: 352px;
   height: 230px;
   margin-bottom: 80px;
+}
+
+.vector-images {
+  max-width: 32px;
+  max-height: 32px;
+  margin-right: 25px;
+}
+
+.footer__img {
+  position: relative;
+  bottom: 146px;
 }
 
 .map {
