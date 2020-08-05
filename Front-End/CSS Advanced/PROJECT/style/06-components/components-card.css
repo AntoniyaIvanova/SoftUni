@@ -10,41 +10,45 @@
 /* Shadow 16dp */
 /* Shadow 24dp */
 .contact-information-card {
+  width: 519px;
+  height: 382px;
+  border-radius: 12px;
   position: absolute;
   top: 202px;
   left: 115px;
-  width: 519px;
-  height: 382px;
   background-color: #FFFFFF;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 12px;
   display: grid;
   grid-template-columns: 200px 227px;
-  column-gap: 28px;
   grid-template-rows: 130px 130px 58px;
+  column-gap: 28px;
   justify-content: center;
   align-content: center;
+  opacity: 0;
+  transform: translateX(-40px);
+  animation: reveal-left 2s ease-out;
+  animation-fill-mode: forwards;
 }
 
-.contact-information-card h4 {
+.contact-information-card__title {
   color: #41bead;
 }
 
-.contact-information-card p {
+.contact-information-card__info {
   margin: 0;
   padding: 10px 0;
 }
 
-.contact-information-card .working-days,
-.contact-information-card .weekend {
+.contact-information-card__info--days {
   display: grid;
   grid-template-columns: 88px 103px;
   column-gap: 24px;
 }
 
-.contact-information-card .working-days .time,
-.contact-information-card .weekend .time {
+.contact-information-card__info--days__time {
   color: #ff9100;
+  margin: 0;
+  padding: 11px 0;
 }
 
 .contact-information-card__button {

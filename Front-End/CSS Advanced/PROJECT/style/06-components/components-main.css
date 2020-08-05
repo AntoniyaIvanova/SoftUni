@@ -139,7 +139,7 @@
 }
 
 .c-contact-us-main__map-section {
-  background-image: url("/images/pictures/maps/map.svg");
+  background-image: url("./images/pictures/maps/map.svg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -149,79 +149,11 @@
   align-self: center;
 }
 
-.c-contact-us-main__form h2 {
-  color: #41bead;
-}
-
-.c-contact-us-main__form .input-fields {
-  margin-top: 15px;
-  display: grid;
-  grid-template-columns: 409px 409px;
-  grid-template-rows: 52px 192px 60px;
-  row-gap: 30px;
-  column-gap: 32px;
-}
-
-.c-contact-us-main__form .input-fields .title {
-  grid-row: 1/2;
-  grid-column: 1/2;
-}
-
-.c-contact-us-main__form .input-fields .mail {
-  grid-row: 1/2;
-  grid-column: 2/3;
-}
-
-.c-contact-us-main__form .input-fields .subject {
-  grid-row: 2/3;
-  grid-column: 1/3;
-}
-
-.c-contact-us-main__form .input-fields .title,
-.c-contact-us-main__form .input-fields .mail,
-.c-contact-us-main__form .input-fields .subject {
-  font-size: 16px;
-  line-height: 19px;
-  box-sizing: border-box;
-  border-radius: 6px;
-  border: 1px solid #919191;
-}
-
-.c-contact-us-main__form .input-fields .title::placeholder,
-.c-contact-us-main__form .input-fields .mail::placeholder,
-.c-contact-us-main__form .input-fields .subject::placeholder {
-  font-family: Lato;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 19px;
-  padding: 10px;
-}
-
 .c-contact-us-main__directions {
   background-color: #fff8e1;
+  justify-content: center;
+  align-content: center;
   display: grid;
-}
-
-.c-contact-us-main__directions .o-page-content-wrapper {
-  display: grid;
-  grid-template-rows: 36px 358px;
-  row-gap: 46px;
-  grid-template-columns: 408px 408px 408px;
-  column-gap: 33px;
-  align-self: center;
-  justify-self: center;
-}
-
-.c-contact-us-main__directions .o-page-content-wrapper .title {
-  color: #41bead;
-  grid-row: 1/2;
-  grid-column: 1/4;
-  justify-self: center;
-}
-
-.c-contact-us-main__directions .o-page-content-wrapper h3 {
-  color: #41bead;
 }
 
 .c-trainers-main {
@@ -329,10 +261,11 @@
   grid-row: 1/2;
   grid-column: 1/5;
   text-align: center;
-  margin: 0 45px;
+  margin: 0 65px;
 }
 
-.c-trainers-main__job-openings__main-part .o-page-content-wrapper .advertisement h1, .c-trainers-main__job-openings__main-part .o-page-content-wrapper .advertisement p {
+.c-trainers-main__job-openings__main-part .o-page-content-wrapper .advertisement h1,
+.c-trainers-main__job-openings__main-part .o-page-content-wrapper .advertisement p {
   color: #FFFFFF;
 }
 

@@ -2,39 +2,48 @@
 @import "../01-settings/settings-colors.scss";
 
 .contact-information-card {
+    width: 519px;
+    height: 382px;
+    border-radius: 12px;
+
     position: absolute;
     top: 202px;
     left: 115px;
-    width: 519px;
-    height: 382px;
+
     background-color: $white;
     box-shadow: $box-shadow-1dp;
-    border-radius: 12px;
 
     display: grid;
     grid-template-columns: 200px 227px;
-    column-gap: 28px;
     grid-template-rows: 130px 130px 58px;
+    column-gap: 28px;
+
     justify-content: center;
     align-content: center;
 
-    h4{
+    opacity: 0;
+    transform: translateX(-40px);
+    animation: reveal-left 2s ease-out;
+    animation-fill-mode: forwards;
+
+    &__title {
         color: $green-primary-300;
     }
 
-    p{
+    &__info {
         margin: 0;
         padding: 10px 0;
-    }
 
-    .working-days,
-    .weekend {
-        display: grid;
-        grid-template-columns: 88px 103px;
-        column-gap: 24px;
+        &--days {
+            display: grid;
+            grid-template-columns: 88px 103px;
+            column-gap: 24px;
 
-        .time{
-            color: $orange-secondary-800;
+            &__time {
+                color: $orange-secondary-800;
+                margin: 0;
+                padding: 11px 0;
+            }
         }
     }
 
