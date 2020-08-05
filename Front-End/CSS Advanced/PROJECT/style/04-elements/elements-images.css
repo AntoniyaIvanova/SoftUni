@@ -40,16 +40,6 @@
   height: 100%;
 }
 
-.trainer__img {
-  width: 175px;
-  height: 172px;
-  border-radius: 50%;
-  border: 5px solid #41bead;
-  object-fit: cover;
-  margin: 0 auto;
-  margin-bottom: 24px;
-}
-
 .nav-bar-img,
 .nav-logo,
 .nav-bar-search {

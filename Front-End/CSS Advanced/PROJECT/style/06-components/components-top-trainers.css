@@ -1,0 +1,87 @@
+.trainers-box {
+  display: grid;
+  grid-template-columns: 210px 409px;
+  justify-items: start;
+}
+
+.trainers-box .overlay {
+  left: 0;
+}
+
+.individual_trainer {
+  text-align: center;
+}
+
+.individual_trainer .overlay {
+  left: 31px;
+}
+
+.trainers-box__picture,
+.individual_trainer__picture {
+  position: relative;
+}
+
+.trainers-box__picture:hover .overlay,
+.individual_trainer__picture:hover .overlay {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.trainers-box__img,
+.individual_trainer__img {
+  width: 175px;
+  height: 172px;
+  border-radius: 50%;
+  border: 5px solid #41bead;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+.trainers-box__name,
+.individual_trainer__name {
+  margin-bottom: 5px;
+  color: #41bead;
+}
+
+.trainers-box__position,
+.individual_trainer__position {
+  margin-bottom: 25px;
+  color: #b2b2b2;
+}
+
+.trainers-box .overlay,
+.individual_trainer .overlay {
+  display: flex;
+  flex-flow: column wrap;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 175px;
+  height: 172px;
+  object-fit: cover;
+  border: 5px solid #41bead;
+  border-radius: 50%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: #ff9100;
+}
+
+.trainers-box .overlay__vector,
+.individual_trainer .overlay__vector {
+  position: absolute;
+  top: 20%;
+  left: 40%;
+}
+
+.trainers-box .overlay__text,
+.individual_trainer .overlay__text {
+  font-size: 10px;
+  line-height: 12px;
+  color: #FFFFFF;
+  position: absolute;
+  top: 70%;
+  left: 47%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}

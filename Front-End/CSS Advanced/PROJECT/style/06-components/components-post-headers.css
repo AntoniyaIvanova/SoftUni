@@ -1,0 +1,11 @@
+.post-header {
+  display: grid;
+  grid-template-columns: 796px;
+  grid-template-rows: 100px;
+  justify-content: center;
+  align-items: end;
+}
+
+.post-header__title, .post-header__info {
+  color: #FFFFFF;
+}

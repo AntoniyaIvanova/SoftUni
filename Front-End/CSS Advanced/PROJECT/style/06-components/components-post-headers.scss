@@ -1,0 +1,14 @@
+@import "../01-settings/settings-colors.scss";
+
+.post-header {
+    display: grid;
+    grid-template-columns: 796px;
+    grid-template-rows: 100px;
+    justify-content: center;
+    align-items: end;
+
+    &__title,
+    &__info {
+        color: $white;
+    }
+}
