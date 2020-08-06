@@ -1,4 +1,4 @@
-.filter_options {
+.fields .fields_options {
   margin: 5px 0;
   width: 676px;
   height: 50px;
@@ -7,7 +7,13 @@
   appearance: none;
 }
 
-.fields__label::after {
+@media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
+  .fields .fields_options {
+    width: 335px;
+  }
+}
+
+.fields .fields__label::after {
   left: 630px;
   bottom: 41px;
   content: "";
@@ -16,4 +22,10 @@
   height: 8px;
   display: inline-block;
   position: relative;
+}
+
+@media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
+  .fields .fields__label::after {
+    left: 293px;
+  }
 }

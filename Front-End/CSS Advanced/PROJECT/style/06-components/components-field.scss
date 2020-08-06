@@ -1,27 +1,33 @@
-.fields_options {
-    margin: 5px 0;
-    width: 676px;
-    height: 50px;
-    border-radius: 6px;
-    padding: 14px 60px 14px 14px;
-    appearance: none;
+@import '../01-settings/settings-breakpoints.scss';
 
-    @include for-phone-only {
-        width: 335px;
+.fields{
+
+    .fields_options {
+        margin: 5px 0;
+        width: 676px;
+        height: 50px;
+        border-radius: 6px;
+        padding: 14px 60px 14px 14px;
+        appearance: none;
+    
+        @include for-phone-only {
+            width: 335px;
+        }
+    }
+    
+    .fields__label::after {
+        left: 630px;
+        bottom: 41px;
+        content: "";
+        background: url(./images/vectors/icons/arrow.svg) center no-repeat;
+        width: 28px;
+        height: 8px;
+        display: inline-block;
+        position: relative;
+    
+        @include for-phone-only{
+            left: 293px;
+        }
     }
 }
 
-.fields__label::after {
-    left: 630px;
-    bottom: 41px;
-    content: "";
-    background: url(./images/vectors/icons/arrow.svg) center no-repeat;
-    width: 28px;
-    height: 8px;
-    display: inline-block;
-    position: relative;
-
-    @include for-phone-only{
-        left: 293px;
-    }
-}

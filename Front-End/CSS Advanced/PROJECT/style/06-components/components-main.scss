@@ -81,6 +81,7 @@
         background-color: $orange-secondary-500;
         position: relative;
 
+        
         &::before {
             content: "";
             width: 100%;
@@ -88,6 +89,8 @@
             top: -5px;
             position: absolute;
             border-top: dotted 12px white;
+            pointer-events: none;
+
         }
 
         &::after {
@@ -97,6 +100,8 @@
             top: 5px;
             position: absolute;
             border-bottom: dotted 12px white;
+            pointer-events: none;
+
         }
 
         .o-page-content-wrapper {
