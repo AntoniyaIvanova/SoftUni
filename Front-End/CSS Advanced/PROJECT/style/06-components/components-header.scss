@@ -1,22 +1,12 @@
 @import "../01-settings/settings-colors.scss";
 @import "../01-settings/settings-shadows.scss";
+@import "../01-settings/settings-breakpoints.scss";
 
 .c-main-header {
     background: $white;
     box-shadow: $box-shadow-2dp;
-
     position: relative;
     z-index: 1;
-
-    &__logo-and-arrow {
-        display: flex;
-        justify-content: space-between;
-    }
-    
-    &__search-and-entrance {
-        display: flex;
-        justify-content: space-between;
-    }
 
     .o-page-content-wrapper {
         display: grid;
@@ -24,6 +14,48 @@
         grid-template-rows: 74px;
         grid-column-gap: 32px;
         align-items: center;
+
+        @include for-phone-only {
+            display: grid;
+            grid-template-rows: 65px 180px 26px;
+            grid-template-rows: 72px;
+            grid-column-gap: 32px;
+        }
     }
 
+    &__logo-and-arrow {
+        display: flex;
+        justify-content: space-between;
+
+        @include for-phone-only {
+            width: 40%;
+            height: 40%;
+        }
+    }
+
+    &__hamburger{
+        display: none;
+
+        @include for-phone-only {
+            display: block;
+            order: 3;
+        }
+    }
+
+    &__nav {
+        @include for-phone-only {
+            display: none;
+        }
+    }
+
+    &__search-and-entrance {
+        display: flex;
+        justify-content: space-between;
+        @include for-phone-only {
+            order: 2;
+            img {
+                display: none;
+            }
+        }
+    }
 }

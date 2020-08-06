@@ -1,5 +1,6 @@
 @import "../01-settings/settings-shadows.scss";
 @import "../01-settings/settings-colors.scss";
+@import '../01-settings/settings-breakpoints.scss';
 
 .c-information-box {
     position: absolute;
@@ -16,12 +17,31 @@
     box-shadow: $box-shadow-1dp;
     background-color: white;
 
+    @include for-phone-only {
+        position: absolute;
+        top: 325px;
+        left: 20px;
+        right: 35px;
+        width: 335px;
+        height: 562px;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: space-around;
+        align-content: flex-start;
+        padding: 30px;
+        align-items: flex-start;
+    }
+
     &__variable {
         color: $grey-700;
         font-style: normal;
         font-weight: bold;
         font-size: 18px;
         line-height: 22px;
+
+        @include for-phone-only {
+            align-self: flex-start;
+        }
     }
     
     &__value {
@@ -45,16 +65,37 @@
         background: $grey-100;
         width: 2px;
         height: 24px;
+
+        @include for-phone-only {
+            transform: rotate(90deg);
+            width: 2px;
+            height: 74px;
+        }
     }
 
     &__money::after {
         left: 500px;
+
+        @include for-phone-only {
+            left: 60px;
+            top: 235px;
+        }
     }
     &__suitable-for::after {
         left: 746px;
+
+        @include for-phone-only {
+            left: 60px;
+            top: 320px;
+        }
     }
 
     &__schedule::after {
         left: 1015px;
+
+        @include for-phone-only {
+            left: 60px;
+            top: 410px;
+        }
     }
 }

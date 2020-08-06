@@ -1,5 +1,6 @@
 @import "../01-settings/settings-colors.scss";
 @import "../01-settings/settings-shadows.scss";
+@import '../01-settings/settings-breakpoints.scss';
 
 .video {
     &__img {
@@ -24,6 +25,10 @@
         &:hover {
             transform: scale(1.7);
         }
+
+        @include for-phone-only {
+            left: 135px;
+        }
     }
 }
 
@@ -44,6 +49,10 @@
 .footer__img {
     position: relative;
     bottom: 146px;
+
+    @include for-phone-only {
+        display: none;
+    }
 }
 
 .map {

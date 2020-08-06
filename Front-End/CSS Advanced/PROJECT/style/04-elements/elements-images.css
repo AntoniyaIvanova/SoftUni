@@ -32,6 +32,12 @@
   transform: scale(1.7);
 }
 
+@media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
+  .video__play-button {
+    left: 135px;
+  }
+}
+
 .schedule-image__img {
   width: 352px;
   height: 230px;
@@ -47,6 +53,12 @@
 .footer__img {
   position: relative;
   bottom: 146px;
+}
+
+@media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
+  .footer__img {
+    display: none;
+  }
 }
 
 .map {
