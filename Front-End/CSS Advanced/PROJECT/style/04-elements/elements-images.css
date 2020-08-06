@@ -1,3 +1,14 @@
+/* Shadow 0dp */
+/* Shadow 1dp */
+/* Shadow 2dp */
+/* Shadow 3dp */
+/* Shadow 4dp */
+/* Shadow 6dp */
+/* Shadow 8dp */
+/* Shadow 9dp */
+/* Shadow 12dp */
+/* Shadow 16dp */
+/* Shadow 24dp */
 .video__img {
   display: block;
   width: 440px;
@@ -14,6 +25,11 @@
   left: 190px;
   width: 64px;
   height: auto;
+  transition: all 0.2s ease-in-out;
+}
+
+.video__play-button:hover {
+  transform: scale(1.7);
 }
 
 .schedule-image__img {

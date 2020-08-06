@@ -360,6 +360,17 @@ i {
   font-size: 30px;
 }
 
+/* Shadow 0dp */
+/* Shadow 1dp */
+/* Shadow 2dp */
+/* Shadow 3dp */
+/* Shadow 4dp */
+/* Shadow 6dp */
+/* Shadow 8dp */
+/* Shadow 9dp */
+/* Shadow 12dp */
+/* Shadow 16dp */
+/* Shadow 24dp */
 .video__img {
   display: block;
   width: 440px;
@@ -376,6 +387,11 @@ i {
   left: 190px;
   width: 64px;
   height: auto;
+  transition: all 0.2s ease-in-out;
+}
+
+.video__play-button:hover {
+  transform: scale(1.7);
 }
 
 .schedule-image__img {
@@ -546,6 +562,20 @@ span {
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
 }
 
+.c-button--primary:hover {
+  color: #ff9100;
+  background-color: white;
+  border: 1px solid #ff9100;
+}
+
+.c-button--primary:active {
+  border: 0.5px solid #ff9100;
+  color: #ff9100;
+  background-color: white;
+  box-shadow: inset 0px 1px 5px 0px rgba(0, 0, 0, 0.75);
+  transform: translateY(4px);
+}
+
 .c-button--primary--small {
   width: 82px;
   height: 36px;
@@ -572,6 +602,20 @@ span {
   background-color: transparent;
   padding: 14px 24px;
   border-radius: 50px;
+}
+
+.c-button--secondary:hover {
+  color: #FFFFFF;
+  border: 1px solid #41bead;
+  background-color: #41bead;
+}
+
+.c-button--secondary:active {
+  border: 0.5px solid green-primary-300;
+  color: #FFFFFF;
+  background-color: #41bead;
+  box-shadow: inset 0px 1px 5px 0px rgba(0, 0, 0, 0.75);
+  transform: translateY(4px);
 }
 
 .c-home-main {
@@ -1096,6 +1140,18 @@ span {
   }
 }
 
+@keyframes flip-overlay {
+  0% {
+    transform: rotateY(-180deg);
+  }
+  50% {
+    transform: rotateY(-90deg);
+  }
+  100% {
+    transform: rotateY(0);
+  }
+}
+
 .c-contact-form__title {
   color: #41bead;
   margin-bottom: 15px;
@@ -1225,6 +1281,40 @@ span {
   color: #FFFFFF;
 }
 
+/* Shadow 0dp */
+/* Shadow 1dp */
+/* Shadow 2dp */
+/* Shadow 3dp */
+/* Shadow 4dp */
+/* Shadow 6dp */
+/* Shadow 8dp */
+/* Shadow 9dp */
+/* Shadow 12dp */
+/* Shadow 16dp */
+/* Shadow 24dp */
+@keyframes reveal-left {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes flip-overlay {
+  0% {
+    transform: rotateY(-180deg);
+  }
+  50% {
+    transform: rotateY(-90deg);
+  }
+  100% {
+    transform: rotateY(0);
+  }
+}
+
 .trainers-box {
   display: grid;
   grid-template-columns: 210px 409px;
@@ -1252,6 +1342,7 @@ span {
 .individual_trainer__picture:hover .overlay {
   opacity: 0.7;
   cursor: pointer;
+  animation: flip-overlay 1s 1;
 }
 
 .trainers-box__img,

@@ -1,4 +1,5 @@
 @import "../01-settings/settings-colors.scss";
+@import "../01-settings/settings-shadows.scss";
 
 .video {
     &__img {
@@ -17,6 +18,12 @@
         left: 190px;
         width: 64px;
         height: auto;
+
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+            transform: scale(1.7);
+        }
     }
 }
 

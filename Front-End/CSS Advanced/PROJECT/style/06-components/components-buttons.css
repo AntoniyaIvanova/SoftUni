@@ -26,6 +26,20 @@
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
 }
 
+.c-button--primary:hover {
+  color: #ff9100;
+  background-color: white;
+  border: 1px solid #ff9100;
+}
+
+.c-button--primary:active {
+  border: 0.5px solid #ff9100;
+  color: #ff9100;
+  background-color: white;
+  box-shadow: inset 0px 1px 5px 0px rgba(0, 0, 0, 0.75);
+  transform: translateY(4px);
+}
+
 .c-button--primary--small {
   width: 82px;
   height: 36px;
@@ -52,4 +66,18 @@
   background-color: transparent;
   padding: 14px 24px;
   border-radius: 50px;
+}
+
+.c-button--secondary:hover {
+  color: #FFFFFF;
+  border: 1px solid #41bead;
+  background-color: #41bead;
+}
+
+.c-button--secondary:active {
+  border: 0.5px solid green-primary-300;
+  color: #FFFFFF;
+  background-color: #41bead;
+  box-shadow: inset 0px 1px 5px 0px rgba(0, 0, 0, 0.75);
+  transform: translateY(4px);
 }

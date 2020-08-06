@@ -1,4 +1,6 @@
 @import "../01-settings/settings-colors.scss";
+@import '../01-settings/settings-shadows.scss';
+@import './components-animations.scss';
 
 .trainers-box {
     display: grid;
@@ -24,9 +26,12 @@
     &__picture {
         position: relative;
 
+
         &:hover .overlay {
             opacity: 0.7;
             cursor: pointer;
+            animation: flip-overlay 1s 1;
+
         }
     }
 
@@ -37,6 +42,7 @@
         border: 5px solid $green-primary-300;
         object-fit: cover;
         margin: 0 auto;
+
     }
 
     &__name {
@@ -65,6 +71,7 @@
         opacity: 0;
         transition: 0.5s ease;
         background-color: $orange-secondary-800;
+
 
         &__vector {
             position: absolute;

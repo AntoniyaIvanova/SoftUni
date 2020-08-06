@@ -16,6 +16,20 @@
         background: $orange-secondary-800;
         box-shadow: $box-shadow-4dp;
 
+        &:hover {
+            color: $orange-secondary-800;
+            background-color: white;
+            border: 1px solid $orange-secondary-800;
+        }
+
+        &:active {
+            border: 0.5px solid $orange-secondary-800;
+            color: $orange-secondary-800;
+            background-color: white;
+            box-shadow: $box-shadow-buttons;
+            transform: translateY(4px);
+        }
+
         &--small {
             width: 82px;
             height: 36px;
@@ -43,5 +57,19 @@
         background-color: transparent;
         padding: 14px 24px;
         border-radius: 50px;
+
+        &:hover {
+            color: $white;
+            border: 1px solid $green-primary-300;
+            background-color: $green-primary-300;
+        }
+
+        &:active {
+            border: 0.5px solid green-primary-300;
+            color: $white;
+            background-color: $green-primary-300;
+            box-shadow: $box-shadow-buttons;
+            transform: translateY(4px);
+        }
     }
 }

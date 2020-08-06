@@ -1,8 +1,6 @@
 @import "../01-settings/settings-shadows.scss";
 @import "../01-settings/settings-colors.scss";
 
-
-
 .c-information-box {
     position: absolute;
     top: 309px;
@@ -16,8 +14,8 @@
     width: 1290px;
     border-radius: 12px;
     box-shadow: $box-shadow-1dp;
-        background-color: white;
-  
+    background-color: white;
+
     &__money::after,
     &__suitable-for::after,
     &__schedule::after {
