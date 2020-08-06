@@ -38,6 +38,15 @@
   justify-items: start;
 }
 
+@media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
+  .trainers-box {
+    display: flex;
+    flex-flow: column wrap;
+    text-align: center;
+    padding-bottom: 40px;
+  }
+}
+
 .trainers-box .overlay {
   left: 0;
 }
@@ -50,9 +59,22 @@
   left: 31px;
 }
 
+@media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
+  .individual_trainer .overlay {
+    left: 80px;
+  }
+}
+
 .trainers-box__picture,
 .individual_trainer__picture {
   position: relative;
+}
+
+@media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
+  .trainers-box__picture,
+.individual_trainer__picture {
+    margin: 0 auto;
+  }
 }
 
 .trainers-box__picture:hover .overlay,

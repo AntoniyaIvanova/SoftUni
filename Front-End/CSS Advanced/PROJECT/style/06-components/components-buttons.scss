@@ -41,6 +41,12 @@
         &--medium {
             width: 140px;
             height: 48px;
+
+            @include for-phone-only {
+                width: 334px;
+                height: 48px;
+                text-align: center;
+            }
         }
 
         &--large {

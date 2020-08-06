@@ -220,8 +220,14 @@
     display: grid;
     grid-template-rows: 256px 548px 10px 1472px 450px;
 
+    @include for-phone-only {
+        display: grid;
+        grid-template-rows: 375px 1360px 10px 1210px 662px;
+    }
+
     &__trainers-summary {
         background-color: $orange-secondary-600;
+     
     }
 
     &__top-lectors {
@@ -229,11 +235,22 @@
         justify-content: center;
         align-content: center;
 
+        @include for-phone-only {
+            display: flex;
+            padding: 60px 0;
+
+        }
+
         .o-page-content-wrapper {
             display: grid;
             grid-template-rows: 356px;
             grid-template-columns: 1fr 1fr;
             column-gap: 52px;
+
+            @include for-phone-only {
+                display: flex;
+                flex-flow: row wrap;
+            }
         }
     }
 
@@ -254,6 +271,17 @@
             grid-template-rows: 260px 260px 260px 260px;
             column-gap: 86px;
             row-gap: 60px;
+
+            @include for-phone-only {
+                display: flex;
+                flex-flow: column wrap;    
+            }
+
+            @include for-phone-only {
+                .individual_trainer:nth-child(n+5){
+            display: none;
+                }
+            }
         }
     }
 
@@ -262,6 +290,10 @@
         background-color: $blue-300;
         display: grid;
         grid-template-rows: 400px;
+
+        @include for-phone-only {
+            display: flex;
+        }
 
         .o-page-content-wrapper {
             align-self: center;

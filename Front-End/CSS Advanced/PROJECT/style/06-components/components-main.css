@@ -201,9 +201,7 @@
 
 @media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
   .c-home-main__additional-information .o-page-content-wrapper .additional-info {
-    display: flex;
-    flex-flow: column wrap;
-    padding: 85px 0;
+    padding-top: 20px;
   }
 }
 
@@ -235,6 +233,13 @@
   grid-template-rows: 256px 548px 10px 1472px 450px;
 }
 
+@media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
+  .c-trainers-main {
+    display: grid;
+    grid-template-rows: 375px 1360px 10px 1210px 662px;
+  }
+}
+
 .c-trainers-main__trainers-summary {
   background-color: #ffb402;
 }
@@ -245,11 +250,25 @@
   align-content: center;
 }
 
+@media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
+  .c-trainers-main__top-lectors {
+    display: flex;
+    padding: 60px 0;
+  }
+}
+
 .c-trainers-main__top-lectors .o-page-content-wrapper {
   display: grid;
   grid-template-rows: 356px;
   grid-template-columns: 1fr 1fr;
   column-gap: 52px;
+}
+
+@media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
+  .c-trainers-main__top-lectors .o-page-content-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+  }
 }
 
 .c-trainers-main__division .o-page-content-wrapper {
@@ -270,11 +289,30 @@
   row-gap: 60px;
 }
 
+@media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
+  .c-trainers-main__all-trainers .o-page-content-wrapper {
+    display: flex;
+    flex-flow: column wrap;
+  }
+}
+
+@media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
+  .c-trainers-main__all-trainers .o-page-content-wrapper .individual_trainer:nth-child(n+5) {
+    display: none;
+  }
+}
+
 .c-trainers-main__job-openings {
   border-top: 12px solid #92cdfb;
   background-color: #66b9f8;
   display: grid;
   grid-template-rows: 400px;
+}
+
+@media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
+  .c-trainers-main__job-openings {
+    display: flex;
+  }
 }
 
 .c-trainers-main__job-openings .o-page-content-wrapper {

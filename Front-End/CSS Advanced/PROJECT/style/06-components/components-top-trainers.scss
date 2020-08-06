@@ -1,11 +1,19 @@
 @import "../01-settings/settings-colors.scss";
 @import '../01-settings/settings-shadows.scss';
 @import './components-animations.scss';
+@import '../01-settings/settings-breakpoints.scss';
 
 .trainers-box {
     display: grid;
     grid-template-columns: 210px 409px;
     justify-items: start;
+
+    @include for-phone-only {
+        display: flex;
+        flex-flow: column wrap;
+        text-align: center;
+        padding-bottom: 40px;
+    }
 
     .overlay {
         left: 0;
@@ -17,14 +25,23 @@
     
     .overlay {
         left: 31px;
+
+        @include for-phone-only{
+            left: 80px;
+        }
     }
 }
 
 .trainers-box,
 .individual_trainer
-{
+{   
+
     &__picture {
         position: relative;
+
+        @include for-phone-only {
+            margin: 0 auto;
+        }
 
 
         &:hover .overlay {
@@ -90,4 +107,5 @@
             text-align: center;
         }
     }
+
 }

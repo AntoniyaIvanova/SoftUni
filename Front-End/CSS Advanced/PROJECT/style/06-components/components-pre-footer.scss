@@ -27,11 +27,21 @@
     justify-content: center;
     align-content: center;
 
+    @include for-phone-only {
+        display: flex;
+        flex-flow: column wrap;    
+    }
+
     &__info {
         grid-row: 1/2;
         grid-column: 1/5;
         text-align: center;
         margin: 0 65px;
+
+        @include for-phone-only {
+            margin: 0;
+            text-align: start;
+        }
     }
 
     &__title,
@@ -55,6 +65,11 @@
             line-height: 19px;
             padding: 10px;
             color: $white;
+        }
+
+        @include for-phone-only {
+           padding: 15px 0;
+           margin: 20px 0;
         }
     }    
 }

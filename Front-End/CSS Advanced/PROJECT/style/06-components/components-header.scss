@@ -17,9 +17,7 @@
 
         @include for-phone-only {
             display: grid;
-            grid-template-rows: 65px 180px 26px;
             grid-template-rows: 72px;
-            grid-column-gap: 32px;
         }
     }
 
@@ -39,6 +37,7 @@
         @include for-phone-only {
             display: block;
             order: 3;
+            width: 20px;
         }
     }
 

@@ -20,4 +20,8 @@
     height: 8px;
     display: inline-block;
     position: relative;
+
+    @include for-phone-only{
+        left: 293px;
+    }
 }
