@@ -16,6 +16,24 @@
     box-shadow: $box-shadow-1dp;
     background-color: white;
 
+    &__variable {
+        color: $grey-700;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 22px;
+    }
+    
+    &__value {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 24px;
+    
+        color: $orange-secondary-800;
+    }
+
     &__money::after,
     &__suitable-for::after,
     &__schedule::after {

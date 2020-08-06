@@ -20,6 +20,15 @@ a {
   text-decoration: none;
 }
 
+.orange-link {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 19px;
+  color: orange;
+  text-decoration: underline;
+}
+
 p {
   font-style: normal;
   font-weight: normal;
@@ -42,6 +51,11 @@ h6 {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 600;
+  color: #565656;
+}
+
+span {
+  font-weight: 700;
   color: #565656;
 }
 
