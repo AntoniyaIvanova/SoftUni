@@ -5,41 +5,16 @@ html,
     font-family: "Lato", sans-serif;
 }
 
-a,
-button {
-    font-style: normal;
-    font-size: 13px;
-    line-height: 16px;
+@each $header, $size in (h1: 36px, h2: 30px, h3: 24px, h4: 20px, h5: 18px, h6: 16px) {
+    #{$header} {
+        font-size: $size;
+    }
 }
 
-a {
-    font-family: Lato;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 19px;
-    color: $grey-200;
-    text-decoration: none;
-}
-.orange-link {
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 19px;
-    color: orange;
-    text-decoration: underline;
-}
-
-p {
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 20px;
-    color: $grey-700;
-}
-
-button {
-    font-weight: 800;
+@each $header, $height in (h1: 44px, h2: 36px, h3: 30px, h4: 24px, h5: 22px, h6: 19px) {
+    #{$header} {
+        line-height: $height;
+    }
 }
 
 h1,
@@ -55,29 +30,52 @@ h6 {
     color: $grey-700;
 }
 
-span {
-    font-weight: 700;
+h3,
+h5 {
+    font-weight: bold;
+}
+
+a {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: $grey-200;
+    text-decoration: none;
+
+    &.orange-link {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 19px;
+        text-decoration: underline;
+
+        color: orange;
+
+        &:visited {
+            color: blue;
+        }
+        &:active {
+            color: orange;
+        }
+        &:hover {
+            color: green;
+        }
+    }
+}
+
+p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
     color: $grey-700;
 }
 
-@each $header, $size in (h1: 36px, h2: 30px, h3: 24px, h4: 20px, h5: 18px, h6: 16px) {
-    #{$header} {
-        font-size: $size;
-    }
-}
-
-@each $header, $height in (h1: 44px, h2: 36px, h3: 30px, h4: 24px, h5: 22px, h6: 19px) {
-    #{$header} {
-        line-height: $height;
-    }
-}
-
-h3 {
-    font-weight: bold;
-}
-
-h5 {
-    font-weight: bold;
+span {
+    font-weight: 700;
+    color: $grey-700;
 }
 
 i {

@@ -1,4 +1,4 @@
-.fields .fields_options {
+.curriculum__fields .fields__options {
   margin: 5px 0;
   width: 676px;
   height: 50px;
@@ -8,12 +8,12 @@
 }
 
 @media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
-  .fields .fields_options {
+  .curriculum__fields .fields__options {
     width: 335px;
   }
 }
 
-.fields .fields__label::after {
+.curriculum__fields .fields__label::after {
   left: 630px;
   bottom: 41px;
   content: "";
@@ -25,7 +25,7 @@
 }
 
 @media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
-  .fields .fields__label::after {
+  .curriculum__fields .fields__label::after {
     left: 293px;
   }
 }

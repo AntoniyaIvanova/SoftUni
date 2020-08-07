@@ -1,4 +1,4 @@
-.c-main-nav__list {
+.c-main-header-nav__list {
   height: 100%;
   list-style-type: none;
   display: flex;
@@ -6,11 +6,11 @@
   justify-content: flex-end;
 }
 
-.c-main-nav__list-item:not(:last-child) {
+.c-main-header-nav__list-item:not(:last-child) {
   margin-right: 24px;
 }
 
-.c-main-nav__link {
+.c-main-header-nav__link {
   /*text-decoration: none;
         display: flex;
         align-items: center;
@@ -29,7 +29,7 @@
   transition: color 0.4s ease-out;
 }
 
-.c-main-nav__link:hover {
+.c-main-header-nav__link:hover {
   color: #ff9100;
 }
 
@@ -70,12 +70,6 @@
   height: 170px;
 }
 
-@media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
-  .c-main-footer-nav .links-info__list {
-    height: 225px;
-  }
-}
-
 .c-main-footer-nav .links-info__list--icons {
   display: flex;
   flex-flow: row wrap;
@@ -84,11 +78,17 @@
   margin: 0;
 }
 
+@media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
+  .c-main-footer-nav .links-info__list {
+    height: 225px;
+  }
+}
+
 .c-main-footer-nav .links-info__link, .c-main-footer-nav .links-info__link-icon, .c-main-footer-nav .links-info__link--icon {
   font-weight: normal;
   font-size: 16px;
   line-height: 19px;
-  color: #E6E6E6;
+  color: #e6e6e6;
   transition: color 0.4s ease-out;
 }
 
@@ -97,7 +97,7 @@
 }
 
 .c-main-footer-nav .links-info__title {
-  color: #FFFFFF;
+  color: #ffffff;
   padding-bottom: 20px;
 }
 

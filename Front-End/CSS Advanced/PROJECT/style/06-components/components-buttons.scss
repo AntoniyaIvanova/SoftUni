@@ -6,6 +6,10 @@
     background: none;
     border-radius: 100px;
     font-family: "Lato";
+    font-weight: 800;
+    font-style: normal;
+    font-size: 13px;
+    line-height: 16px;
 
     &--primary {
         font-weight: 800;
@@ -20,6 +24,7 @@
             color: $orange-secondary-800;
             background-color: white;
             border: 1px solid $orange-secondary-800;
+            cursor: pointer;
         }
 
         &:active {
@@ -28,6 +33,7 @@
             background-color: white;
             box-shadow: $box-shadow-buttons;
             transform: translateY(4px);
+            cursor: pointer;
         }
 
         &--small {
@@ -74,6 +80,7 @@
             color: $white;
             border: 1px solid $green-primary-300;
             background-color: $green-primary-300;
+            cursor: pointer;
         }
 
         &:active {
@@ -82,6 +89,7 @@
             background-color: $green-primary-300;
             box-shadow: $box-shadow-buttons;
             transform: translateY(4px);
+            cursor: pointer;
         }
     }
 }

@@ -21,19 +21,21 @@
   align-items: center;
 }
 
+.c-home-main__program-first-part .o-page-content-wrapper .program-first-part__video {
+  justify-self: end;
+}
+
 @media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
   .c-home-main__program-first-part .o-page-content-wrapper {
     display: flex;
     flex-flow: column wrap;
   }
-  .c-home-main__program-first-part .o-page-content-wrapper .description {
+  .c-home-main__program-first-part .o-page-content-wrapper .program-first-part__description {
     margin-top: 550px;
   }
-}
-
-.c-home-main__program-first-part .o-page-content-wrapper .video {
-  margin: 50px 0;
-  justify-self: end;
+  .c-home-main__program-first-part .o-page-content-wrapper .program-first-part__video {
+    justify-content: center;
+  }
 }
 
 .c-home-main__program-second-part .o-page-content-wrapper {
@@ -43,38 +45,45 @@
 }
 
 @media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
+  .c-home-main__program-second-part .o-page-content-wrapper .program-second-part__program-suitable-for {
+    padding-top: 20px;
+    display: grid;
+    grid-template-columns: 40px 1fr;
+  }
+}
+
+@media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
+  .c-home-main__program-second-part .o-page-content-wrapper .program-second-part__dots {
+    display: none;
+  }
+}
+
+.c-home-main__program-second-part .o-page-content-wrapper .program-second-part__program-goals {
+  justify-self: end;
+}
+
+.c-home-main__program-second-part .o-page-content-wrapper .program-second-part__program-goals--hidden {
+  display: none;
+}
+
+@media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
+  .c-home-main__program-second-part .o-page-content-wrapper .program-second-part__program-goals {
+    display: none;
+  }
+  .c-home-main__program-second-part .o-page-content-wrapper .program-second-part__program-goals--hidden {
+    border-top: 10px dotted #ffecb3;
+    padding-top: 20px;
+    display: grid;
+    grid-template-columns: 40px 1fr;
+  }
+}
+
+@media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
   .c-home-main__program-second-part .o-page-content-wrapper {
     display: flex;
     flex-flow: column wrap;
     height: 537px;
     margin: 30px;
-  }
-}
-
-@media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
-  .c-home-main__program-second-part .o-page-content-wrapper .dots {
-    display: none;
-  }
-}
-
-@media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
-  .c-home-main__program-second-part .o-page-content-wrapper .program-suitable-for {
-    padding-top: 20px;
-    display: grid;
-    grid-template-columns: 40px 1fr;
-  }
-}
-
-.c-home-main__program-second-part .o-page-content-wrapper .program-goals {
-  justify-self: end;
-}
-
-@media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
-  .c-home-main__program-second-part .o-page-content-wrapper .program-goals {
-    border-top: 10px dotted #ffecb3;
-    padding-top: 20px;
-    display: grid;
-    grid-template-columns: 40px 1fr;
   }
 }
 
@@ -100,6 +109,7 @@
   top: 5px;
   position: absolute;
   border-bottom: dotted 12px white;
+  pointer-events: none;
 }
 
 .c-home-main__curriculum .o-page-content-wrapper {
@@ -116,27 +126,27 @@
   }
 }
 
-.c-home-main__curriculum .o-page-content-wrapper .study-schedule {
+.c-home-main__curriculum .o-page-content-wrapper .curriculum__study-schedule {
   align-self: center;
 }
 
-.c-home-main__curriculum .o-page-content-wrapper .fields {
+.c-home-main__curriculum .o-page-content-wrapper .curriculum__fields {
   padding-left: 55px;
 }
 
 @media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
-  .c-home-main__curriculum .o-page-content-wrapper .fields {
+  .c-home-main__curriculum .o-page-content-wrapper .curriculum__fields {
     padding: 0;
   }
 }
 
-.c-home-main__curriculum .o-page-content-wrapper .schedule-image {
+.c-home-main__curriculum .o-page-content-wrapper .curriculum__schedule-image {
   align-self: end;
   justify-self: center;
 }
 
 @media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
-  .c-home-main__curriculum .o-page-content-wrapper .schedule-image {
+  .c-home-main__curriculum .o-page-content-wrapper .curriculum__schedule-image {
     display: none;
   }
 }
@@ -155,45 +165,7 @@
   }
 }
 
-.c-home-main__additional-information .o-page-content-wrapper .certificate {
-  align-self: center;
-  grid-row: 1/2;
-  grid-column: 1/2;
-}
-
-@media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
-  .c-home-main__additional-information .o-page-content-wrapper .certificate {
-    display: none;
-  }
-}
-
-.c-home-main__additional-information .o-page-content-wrapper .certificate-picture {
-  align-self: center;
-  justify-self: center;
-  grid-row: 1/2;
-  grid-column: 3/4;
-}
-
-@media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
-  .c-home-main__additional-information .o-page-content-wrapper .certificate-picture {
-    display: none;
-  }
-}
-
-.c-home-main__additional-information .o-page-content-wrapper .time-location-info {
-  justify-self: start;
-  align-items: flex-start;
-  grid-row: 2/3;
-  grid-column: 1/2;
-}
-
-.c-home-main__additional-information .o-page-content-wrapper .dots {
-  grid-row: 2/3;
-  grid-column: 2/3;
-  justify-self: center;
-}
-
-.c-home-main__additional-information .o-page-content-wrapper .additional-info {
+.c-home-main__additional-information .o-page-content-wrapper .additional-information__additional-info {
   grid-row: 2/3;
   grid-column: 3/4;
   justify-self: end;
@@ -201,14 +173,60 @@
 }
 
 @media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
-  .c-home-main__additional-information .o-page-content-wrapper .additional-info {
+  .c-home-main__additional-information .o-page-content-wrapper .additional-information__additional-info {
     padding-top: 20px;
   }
+}
+
+.c-home-main__additional-information .o-page-content-wrapper .additional-information__certificate {
+  align-self: center;
+  grid-row: 1/2;
+  grid-column: 1/2;
+}
+
+@media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
+  .c-home-main__additional-information .o-page-content-wrapper .additional-information__certificate {
+    display: none;
+  }
+}
+
+.c-home-main__additional-information .o-page-content-wrapper .additional-information__certificate-picture {
+  align-self: center;
+  justify-self: center;
+  grid-row: 1/2;
+  grid-column: 3/4;
+}
+
+@media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
+  .c-home-main__additional-information .o-page-content-wrapper .additional-information__certificate-picture {
+    display: none;
+  }
+}
+
+.c-home-main__additional-information .o-page-content-wrapper .additional-information__time-location-info {
+  justify-self: start;
+  align-items: flex-start;
+  grid-row: 2/3;
+  grid-column: 1/2;
+}
+
+.c-home-main__additional-information .o-page-content-wrapper .additional-information__dots {
+  grid-row: 2/3;
+  grid-column: 2/3;
+  justify-self: center;
 }
 
 .c-contact-us-main {
   display: grid;
   grid-template-rows: 426px 686px 572px;
+}
+
+@media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
+  .c-contact-us-main {
+    display: grid;
+    grid-template-rows: 226px 715px 957px;
+    grid-template-columns: 375px;
+  }
 }
 
 .c-contact-us-main__map-section {
@@ -273,7 +291,7 @@
 }
 
 .c-trainers-main__division .o-page-content-wrapper {
-  border-bottom: 10px dotted #DFF4F1;
+  border-bottom: 10px dotted #dff4f1;
 }
 
 .c-trainers-main__all-trainers {
@@ -298,7 +316,7 @@
 }
 
 @media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
-  .c-trainers-main__all-trainers .o-page-content-wrapper .individual_trainer:nth-child(n+5) {
+  .c-trainers-main__all-trainers .o-page-content-wrapper .individual_trainer:nth-child(n + 5) {
     display: none;
   }
 }

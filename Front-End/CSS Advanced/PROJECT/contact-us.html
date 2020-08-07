@@ -19,13 +19,17 @@
                     <img src="./images/vectors/icons/reversed-arrow.svg" alt="">
                     <img src="./images/vectors/logos/softuni-logo.svg" alt="">
                 </div>
+                <div class="c-main-header__hamburger">
+                    <img src="./images/vectors/icons/menu.svg" alt="">
+                </div>
                 <nav class="c-main-header__nav">
-                    <ul class="c-main-nav__list">
-                        <li class="c-main-nav__list-item"><a href="#" class="c-main-nav__link">Обучения</a></li>
-                        <li class="c-main-nav__list-item"><a href="#" class="c-main-nav__link">Събития</a></li>
-                        <li class="c-main-nav__list-item"><a href="#" class="c-main-nav__link">Преподаватели</a></li>
-                        <li class="c-main-nav__list-item"><a href="#" class="c-main-nav__link">Блог</a></li>
-                        <li class="c-main-nav__list-item"><a href="#" class="c-main-nav__link">Контакти</a></li>
+                    <ul class="c-main-header-nav__list">
+                        <li class="c-main-header-nav__list-item"><a href="#" class="c-main-header-nav__link">Обучения</a></li>
+                        <li class="c-main-header-nav__list-item"><a href="#" class="c-main-header-nav__link">Събития</a></li>
+                        <li class="c-main-header-nav__list-item"><a href="#" class="c-main-header-nav__link">Преподаватели</a>
+                        </li>
+                        <li class="c-main-header-nav__list-item"><a href="#" class="c-main-header-nav__link">Блог</a></li>
+                        <li class="c-main-header-nav__list-item"><a href="#" class="c-main-header-nav__link">Контакти</a></li>
                     </ul>
                 </nav>
                 <div class="c-main-header__search-and-entrance">
@@ -40,44 +44,44 @@
             <section class="c-contact-us-main__map-section">
             </section>
 
-            <section class="contact-information-card">
-                <div class="contact-information-card__section">
-                    <h4 class="contact-information-card__title">Адрес:</h4>
-                    <p class="contact-information-card__info">София, кв. Изгрев, ул. "Тинтява" 15-17, етаж 1,
+            <section class="c-contact-us-main__contact-information-card">
+                <div class="card__section">
+                    <h4 class="card__title">Адрес:</h4>
+                    <p class="card__info">София, кв. Изгрев, ул. "Тинтява" 15-17, етаж 1,
                         ПК: 1113</p>
                 </div>
-                <div class="contact-information-card__working-times">
-                    <h4 class="contact-information-card__title">Работно време:</h4>
-                    <section class="contact-information-card__info--days">
-                        <time class="contact-information-card__info--days__time">9:00 - 19:30</time>
-                        <p class="contact-information-card__info">Понеделник - Петък</p>
+                <div class="card__working-times">
+                    <h4 class="card__title">Работно време:</h4>
+                    <section class="card__info--days">
+                        <time class="card__info--days__time">9:00 - 19:30</time>
+                        <p class="card__info">Понеделник - Петък</p>
                     </section>
-                    <section class="contact-information-card__info--days">
-                        <time class="contact-information-card__info--days__time">8:30 - 18:00</time>
-                        <p class="contact-information-card__info">Събота и Неделя</p>
+                    <section class="card__info--days">
+                        <time class="card__info--days__time">8:30 - 18:00</time>
+                        <p class="card__info">Събота и Неделя</p>
                     </section>
                 </div>
-                <div class="contact-information-card__contacts">
-                    <section class="contact-information-card__info">
-                        <h4 class="contact-information-card__title">Контакти:</h4>
+                <div class="card__contacts">
+                    <section class="card__info">
+                        <h4 class="card__title">Контакти:</h4>
                         <p class="phone">+ 359 892 241 199</p>
                         <p class="email">digital@softuni.bg</p>
                     </section>
                 </div>
-                <div class="contact-information-card__button">
+                <div class="card__button">
                     <button class="c=button c-button--secondary u-uppercase">намери ни на картата</button>
                 </div>
             </section>
 
             <section class="c-contact-us-main__form">
-                <section class="c-contact-form">
-                    <h2 class="c-contact-form__title u-centered">Пишете ни</h2>
-                    <div class="c-contact-form__input-fields">
-                        <input class="c-contact-form__input-fields__title" type="text" id="title" name="title"
+                <section class="form">
+                    <h2 class="form__title u-centered">Пишете ни</h2>
+                    <div class="form__input-fields">
+                        <input class="form__input-fields__title" type="text" id="title" name="title"
                             placeholder="Заглавие">
-                        <input class="c-contact-form__input-fields__mail" type="text" id="mail" name="mail"
+                        <input class="form__input-fields__mail" type="text" id="mail" name="mail"
                             placeholder="Имейл адрес">
-                        <textarea class="c-contact-form__input-fields__subject" id="subject" name="subject"
+                        <textarea class="form__input-fields__subject" id="subject" name="subject"
                             placeholder="Съобщение"></textarea>
                         <button
                             class="c-button c-button--primary c-button--primary--medium u-uppercase">Изпрати</button>
@@ -87,15 +91,15 @@
 
             <section class="c-contact-us-main__directions">
                 <div class="o-page-content-wrapper">
-                    <section class="c-types-of-transport">
-                        <h2 class="c-types-of-transport__title">Как да стигна до SoftUni?</h2>
-                        <article class="c-types-of-transport__type">
-                            <h3 class="c-types-of-transport__subtype">Метро</h3>
+                    <section class="c-contact-us-main__types-of-transport">
+                        <h2 class="transport__title">Как да стигна до SoftUni?</h2>
+                        <article class="transport__type">
+                            <h3 class="transport__subtype">Метро</h3>
                             <p>Метростанция <span>Жолио Кюри</span> - на 5-10 минути от СофтУни</p>
                             <p>Метростанция <span>Г. М. Димитров</span> - на 5-10 минути от СофтУни</p>
                         </article>
-                        <article class="c-types-of-transport__type">
-                            <h3 class="c-types-of-transport__subtype">Автобуси</h3>
+                        <article class="transport__type">
+                            <h3 class="transport__subtype">Автобуси</h3>
                             <p><span>67, 413</span> - Спирка “СТЦ Интерпред” (1112) или спирка “ж.к. Дианабад” (0627) (на бул. Драган
                                 Цанков)</p>
                             <p><span>88, 94, 102</span> - Спирка “ПК Диана” (1342) (на 10-ина минути от СофтУни)</p>
@@ -106,8 +110,8 @@
                                 М.
                                 Димитров и бул. Драган Цанков)</p>
                         </article>
-                        <article class="c-types-of-transport__type">
-                            <h3 class="c-types-of-transport__subtype">Маршрутки</h3>
+                        <article class="transport__type">
+                            <h3 class="transport__subtype">Маршрутки</h3>
                             <p><span>5</span> - минава през метростанцията на бул Г. М. Димитров</p>
                             <p><span>27</span> - минава през метростанцията на бул Г. М. Димитров</p>
                         </article>
@@ -119,7 +123,7 @@
 
         <footer class="c-main-footer">
             <div class="o-page-content-wrapper">
-                <img src="./images/vectors/icons/footer-person.svg" alt="" class="footer__img">
+                <img src="./images/vectors/icons/footer-person.svg" alt="" class="c-main-footer__img">
 
                 <div class="c-main-footer-nav">
                     <article class="links-info">
@@ -158,18 +162,19 @@
                                     Foundation</a></li>
                         </ul>
                     </article>
+
                     <article class="links-info">
                         <h5 class="links-info__title">Намери ни</h5>
                         <ul class="links-info__list--icons">
-                            <li class="links-info__list-item"><a href="#" class="links-info__link-icon">
+                            <li class="links-info__list-item"><a href="#" class="links-info__link--icon">
                                     <i class="fab fa-facebook"></i>
                                 </a></li>
-                            <li class="links-info__list-item"><a href="#" class="links-info__link-icon">
+                            <li class="links-info__list-item"><a href="#" class="links-info__link--icon">
 
                                     <i class="fab fa-instagram"></i>
                                 </a></li>
-                            <p class="links-info__reserved">© 2016-2020 - SoftUni Kids. All Rights Reserved.</p>
                         </ul>
+                        <p class="links-info__reserved">© 2016-2020 - SoftUni Kids. All Rights Reserved.</p>
                     </article>
                 </div>
             </div>

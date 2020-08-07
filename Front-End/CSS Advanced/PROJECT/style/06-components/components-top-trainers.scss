@@ -1,7 +1,7 @@
 @import "../01-settings/settings-colors.scss";
-@import '../01-settings/settings-shadows.scss';
-@import './components-animations.scss';
-@import '../01-settings/settings-breakpoints.scss';
+@import "../01-settings/settings-shadows.scss";
+@import "../01-settings/settings-animations.scss";
+@import "../01-settings/settings-breakpoints.scss";
 
 .trainers-box {
     display: grid;
@@ -22,20 +22,17 @@
 
 .individual_trainer {
     text-align: center;
-    
+
     .overlay {
         left: 31px;
-
-        @include for-phone-only{
+        @include for-phone-only {
             left: 80px;
         }
     }
 }
 
 .trainers-box,
-.individual_trainer
-{   
-
+.individual_trainer {
     &__picture {
         position: relative;
 
@@ -43,12 +40,10 @@
             margin: 0 auto;
         }
 
-
         &:hover .overlay {
             opacity: 0.7;
             cursor: pointer;
             animation: flip-overlay 1s 1;
-
         }
     }
 
@@ -59,7 +54,6 @@
         border: 5px solid $green-primary-300;
         object-fit: cover;
         margin: 0 auto;
-
     }
 
     &__name {
@@ -89,7 +83,6 @@
         transition: 0.5s ease;
         background-color: $orange-secondary-800;
 
-
         &__vector {
             position: absolute;
             top: 20%;
@@ -107,5 +100,4 @@
             text-align: center;
         }
     }
-
 }

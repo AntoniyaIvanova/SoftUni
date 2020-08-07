@@ -1,38 +1,23 @@
 @import "../01-settings/settings-colors.scss";
 
-.dots {
+.program-second-part,
+.information-box,
+.additional-information {
+    &__dots {
+        .dot {
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 5px;
 
-    &--absolute-first-border {
-        position: absolute;
-        min-width: 1520px;
-        top: 1170px;
-        margin: 0;
-    }
+            &--orange {
+                background-color: $orange-secondary-100;
+            }
 
-    &--absolute-second-border {
-        position: absolute;
-        min-width: 1520px;
-        top: 1720px;
-        margin: 0;
-    }
-
-    .dot {
-        height: 10px;
-        width: 10px;
-        border-radius: 50%;
-        display: inline-block;
-        margin-right: 5px;
-
-        &--orange {
-            background-color: $orange-secondary-100;
-        }
-
-        &--white{
-            background-color: $white;
-        }
-
-        &--green{
-            background-color: $green-primary-50;
+            &--white {
+                background-color: $white;
+            }
         }
     }
 }
