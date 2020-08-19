@@ -28,4 +28,4 @@ Courses from softuni.bg
     
 # Front-End
   1. HTML & CSS  ------------------->  [Certificate from SoftUni](https://softuni.bg/certificates/details/84944/9fa11b76)
-  2. CSS Advanced
+  2. CSS Advanced  ------------------->  [Certificate from SoftUni](https://softuni.bg/certificates/details/86663/4511aa20)
