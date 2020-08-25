@@ -1,18 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using WildFarm.Models.Foods;
-
-namespace WildFarm.Models.Animals
+﻿namespace _04._Wild_Farm.Models.Animals
 {
+    using System.Collections.Generic;
+    using _04._Wild_Farm.Models.Foods;
+
     public class Cat : Feline
     {
         private const double Increase = 0.30;
 
-        public Cat(string name, double weight,string livingRegion, string breed)
-            :base(name, weight, livingRegion, breed)
+        public Cat(string name, double weight, string livingRegion, string breed)
+            : base(name, weight, livingRegion, breed)
         {
-
         }
 
         public override void Eat(Food food)
@@ -24,7 +21,5 @@ namespace WildFarm.Models.Animals
         {
             return $"Meow";
         }
-
-
     }
 }

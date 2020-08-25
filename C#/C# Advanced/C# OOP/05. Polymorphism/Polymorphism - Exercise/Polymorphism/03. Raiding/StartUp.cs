@@ -1,11 +1,11 @@
 ﻿namespace _03._Raiding
 {
-    using System;
     public class StartUp
     {
-        static void Main(string[] args)
+        public static void Main()
         {
-            Console.WriteLine("Hello World!");
+            Engine engine = new Engine();
+            engine.Run();
         }
     }
 }

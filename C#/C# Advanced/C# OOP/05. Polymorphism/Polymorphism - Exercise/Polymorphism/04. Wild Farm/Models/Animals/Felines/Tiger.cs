@@ -10,7 +10,6 @@
         public Tiger(string name, double weight, string livingRegion, string breed)
             : base(name, weight, livingRegion, breed)
         {
-
         }
 
         public override void Eat(Food food)

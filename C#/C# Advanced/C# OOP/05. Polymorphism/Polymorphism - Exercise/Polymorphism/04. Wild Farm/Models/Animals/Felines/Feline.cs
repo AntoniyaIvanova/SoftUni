@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace WildFarm.Models.Animals
+﻿namespace _04._Wild_Farm.Models.Animals
 {
     public abstract class Feline : Mammal
     {
