@@ -62,7 +62,6 @@ namespace AquaShop.Core
             {
                 throw new InvalidOperationException("Invalid decoration type.");
             }
-
             decorations.Add(decorationToAdd);
             decorationRepository.Add(decorationToAdd);
 
@@ -146,9 +145,9 @@ namespace AquaShop.Core
             var sb = new StringBuilder();
 
             foreach (var kvp in aquariums)
-            {              
+            {                
                
-                    sb.Append(kvp.Value.GetInfo() + Environment.NewLine);
+                    sb.Append(kvp.Value.GetInfo());
                
             }
 

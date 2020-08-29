@@ -80,10 +80,10 @@ namespace AquaShop.Models.Aquariums
             var sb = new StringBuilder();
             var fishNames = fishes.Select(x => x.Name).ToList();
             sb.AppendLine($"{this.Name} ({this.GetType().Name}):");
-            sb.AppendLine($"Fish: {(fishes.Count == 0 ? "none" : string.Join(", ", fishNames))}");
-            sb.AppendLine($"Decorations: {Decorations.Count}");
+            sb.AppendLine($"Fish: {(fishes.Count == 0 ? "None" : string.Join(", ", fishNames))}");
+            sb.AppendLine($"Decorations: {decorations.Count}");
             sb.AppendLine($"Comfort: {this.Comfort}");
-            return sb.ToString().TrimEnd();
+            return sb.ToString();
         }
 
         public bool RemoveFish(IFish fish)
