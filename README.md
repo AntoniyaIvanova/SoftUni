@@ -10,7 +10,7 @@ Courses from softuni.bg
     3.1. MS SQL   ------------------------->  [Certificate from SoftUni](https://softuni.bg/certificates/details/71050/ebb64c3c)<br/>
     3.2. Entity Framework Core<br/> -------------------> [Certificate from SoftUni](https://softuni.bg/certificates/details/88684/45308976)
   4. C# Web<br/>
-    4.1. C# Web Basics  ------->   [Certificate from SoftUni](https://softuni.bg/certificates/details/81135/43a8fd1d)<br/>
+    4.1. C# Web Basics  ---------->   [Certificate from SoftUni](https://softuni.bg/certificates/details/81135/43a8fd1d)<br/>
     4.2. ASP.NET Core<br/>
     
 # JavaScript
