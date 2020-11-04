@@ -17,7 +17,7 @@ Courses from softuni.bg
   1. JS Fundamentals
   2. JS Essentials
   3. JS Advanced<br/>
-    3.1. JS Advanced<br/>
+    3.1. JS Advanced<br/>  -------------->   https://softuni.bg/certificates/details/90509/49af7525
     3.2. JS Applications<br/>
   4. JS Web<br/>
     4.1. JS Back-End<br/>
