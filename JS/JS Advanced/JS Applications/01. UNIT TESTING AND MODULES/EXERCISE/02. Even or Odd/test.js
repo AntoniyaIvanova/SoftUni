@@ -17,4 +17,12 @@ describe('isOddorEven', () => {
     it('should return odd', () => {
         assert.equal('odd', isOddOrEven('words'));
     })
+    
+    it('should return correct values with multiple consecutive checks', () => {
+        assert.equal('odd', isOddOrEven.isOddOrEven('words'), 'Function did not return the correct result!');
+        assert.equal('even', isOddOrEven.isOddOrEven('word'), 'Function did not return the correct result!');
+        assert.equal('odd', isOddOrEven.isOddOrEven('words'), 'Function did not return the correct result!');
+        assert.equal(undefined, isOddOrEven.isOddOrEven({}), 'Function did not return the correct result!');
+        assert.equal(undefined, isOddOrEven.isOddOrEven(4), 'Function did not return the correct result!');
+    })
 });
