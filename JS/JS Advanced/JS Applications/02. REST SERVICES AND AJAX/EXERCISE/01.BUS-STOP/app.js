@@ -34,7 +34,9 @@ function getInfo() {
     httpRequest.send();
 
 
-    /*fetch(url)
+    /*
+    Other way
+    fetch(url)
       .then((response) => response.json())
       .then((data) => {
           stopInfo.textContent = data.name;
