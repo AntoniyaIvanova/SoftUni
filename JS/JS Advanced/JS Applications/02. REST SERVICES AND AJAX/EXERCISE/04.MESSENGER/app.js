@@ -31,8 +31,8 @@ function attachEvents() {
             fetch(url, {
                 method: 'POST',
                 body: JSON.stringify({
-                    author: author.value,
-                    content: content.value
+                    author: author,
+                    content: content
                 })
             })
         }
