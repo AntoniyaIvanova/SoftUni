@@ -7,7 +7,7 @@ Courses from softuni.bg
     2.1. C# Advanced   ------------------->   [Certificate from SoftUni](https://softuni.bg/certificates/details/65159/e8792c3a)<br/>
     2.2. C# OOP    ------------------------->    [Certificate from SoftUni](https://softuni.bg/certificates/details/75396/6ba92376)<br/>
   3. C# DB<br/>
-    3.1. MS SQL   ------------------------->  [Certificate from SoftUni](https://softuni.bg/certificates/details/71050/ebb64c3c)<br/>
+    3.1. MS SQL   ---------------------->  [Certificate from SoftUni](https://softuni.bg/certificates/details/71050/ebb64c3c)<br/>
     3.2. Entity Framework Core ---------> [Certificate from SoftUni](https://softuni.bg/certificates/details/88684/45308976)<br/>
   4. C# Web<br/>
     4.1. C# Web Basics  -------------->   [Certificate from SoftUni](https://softuni.bg/certificates/details/81135/43a8fd1d)<br/>
@@ -17,7 +17,7 @@ Courses from softuni.bg
   1. JS Fundamentals
   2. JS Essentials
   3. JS Advanced<br/>
-    3.1. JS Advanced<br/>  -------------->   https://softuni.bg/certificates/details/90509/49af7525
+    3.1. JS Advanced  ------------------->   [Certificate from SoftUni](https://softuni.bg/certificates/details/90509/49af7525)<br/>
     3.2. JS Applications<br/>
   4. JS Web<br/>
     4.1. JS Back-End<br/>
