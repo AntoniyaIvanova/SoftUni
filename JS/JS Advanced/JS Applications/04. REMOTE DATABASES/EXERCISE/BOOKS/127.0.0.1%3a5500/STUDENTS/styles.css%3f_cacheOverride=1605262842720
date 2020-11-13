@@ -1,15 +1,6 @@
-*{
+body{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 20px;
-}
-
-ul{
-    list-style-type: none;
-}
-
-button{
-    display: flex;
-    justify-content: center;
 }
 
 table{
@@ -21,10 +12,10 @@ table{
 }
 table th{
     text-decoration: underline;
-    text-align: center;
+    text-align: left;
 }
 table tbody td{
-    text-align: center;
+    text-align: left;
     border-bottom:1px solid black;
     padding: 0.5%;
 }
@@ -49,34 +40,8 @@ table tbody tr:nth-child(even) button{
     color:#234465;
 }
 
-table tr td:not(:last-child):hover{
+table tr:hover{
     text-decoration: underline;
-}
-
-table button{
-    border: none;
-    padding: 5px;
-    border-radius: 5px;
-    margin-left: 8%;
-}
-
-table button:hover{
-    text-decoration: underline;
-}
-
-button#loadBooks{
-    margin: 0 auto;
-    display:block;
-    padding:1%;
-    margin-top: 1%;
-    margin-bottom: 1%;
-    border-radius: 4px;
-}
-
-
-label, input{
-    display:block;
-    margin: 0 auto;
 }
 
 form input{
@@ -86,7 +51,7 @@ form input{
 
 form{
     display: block;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     text-align: center;
 }
 
@@ -101,17 +66,3 @@ form button{
     border: none;
     padding: 0.5%;
 }
-
-#edit-form,
-#delete-form,
-#edit-tag-form
-{
-    display: none;
-}
-
-#error-notification{
-    display: none;
-    border: 1px solid red;
-    color: black;
-}
-
