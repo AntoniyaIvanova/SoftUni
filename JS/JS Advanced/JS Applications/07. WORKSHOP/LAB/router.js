@@ -3,13 +3,14 @@ const routes = {
     'login': 'login-form-template',
     'register': 'register-form-template',
     'add-movie': 'add-movie-template',
-    'details': 'movie-details-template'
+    'details': 'movie-details-template',
 };
 
 const router = async (fullPath) => {
     let [path, id, param] = fullPath.split('/');
     let app = document.getElementById('app');
     let templateData = authServices.getData();
+    
     let templateId = routes[path];
 
     switch (path) {
@@ -32,8 +33,7 @@ const router = async (fullPath) => {
 
     let template = Handlebars.compile(document.getElementById(templateId).innerHTML);
 
-
-    app.innerHTML = template(authData);
+    app.innerHTML = template(templateData);
 };
 
 const navigate = (path) => {

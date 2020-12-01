@@ -35,6 +35,29 @@ function onLoginSubmit(e) {
         });
 }
 
+function onRegisterSubmit(e) {
+    e.preventDefault();
+
+    let formData = new FormData(document.forms['form-register']);
+    let email = formData.get('email');
+    let password = formData.get('password');
+    let repeatPassword = formData.get('repeatPassword');
+
+    if (password !== repeatPassword) {
+        return;
+    }
+
+    if (password === '' || repeatPassword === '' || email === '') {
+        return;
+    }
+
+    authServices.register(email, password)
+        .then(data => {
+            navigate('login');
+        });
+
+}
+
 function onAddMovieSubmit(e) {
     e.preventDefault();
 
@@ -52,18 +75,18 @@ function onAddMovieSubmit(e) {
     })
 }
 
-function deleteMovie(e){
+function deleteMovie(e) {
     e.preventDefault();
 
     let id = e.target.dataset.id;
 
     movieServices.deleteMovie(id)
-    .then(res => {
-        navigate('home');
-    })
+        .then(res => {
+            navigate('home');
+        })
 }
 
-function onEditMovieSubmit(e, id){
+function onEditMovieSubmit(e, id) {
     e.preventDefault();
 
     let formData = new FormData(document.forms['edit-movie-form']);
@@ -76,10 +99,9 @@ function onEditMovieSubmit(e, id){
         description,
         imageUrl,
     })
-    .then(res=>{
-        navigate(`details/${id}`)
-    });
+        .then(res => {
+            navigate(`details/${id}`)
+        });
 }
-
 
 addEventListeners();
