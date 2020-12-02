@@ -9,24 +9,30 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="/node_modules/handlebars/dist/handlebars.min.js"></script>
-    <script src="router.js" defer></script>
-    <script src="services.js" defer></script>
-    <script src="init.js" defer></script>
+    <script src="/services.js" defer></script>
+    <script src="/router.js" defer></script>
+    <script src="/init.js" defer></script>
 </head>
 
 <body>
     <div class="container" id="container">
         <div id="app"></div>
 
-        <!-- <section class="notifications" style="display: none;">
+        <section class="notifications" id="errorBoxSection" style="display: none;">
             <p class="notification-message" id="errorBox">Message...</p>
         </section>
-        <section class="notifications" style="display: none;background-color:rgba(1, 131, 29, 0.541);">
+        <section class="notifications" id="successBoxSection" style="display: none;background-color:rgba(1, 131, 29, 0.541);">
             <p class="notification-message" id="successBox">Message...</p>
         </section>
- -->
+
 
         <footer class="page-footer font-small">
+            <section class="notifications" style="display: none;">
+                <p class="notification-message" id="errorBox">Message...</p>
+            </section>
+            <section class="notifications" style="display: none;background-color:rgba(1, 131, 29, 0.541);">
+                <p class="notification-message" id="successBox">Message...</p>
+            </section>
             <div class="footer-copyright text-center py-3">© 2020
                 <a href="https://softuni.bg/trainings/2840/js-applications-june-2020/internal" class="text-dark">JS
                     Applications</a>
@@ -74,7 +80,7 @@
 
     <script type="text/x-handlebars-template" id='navigation-template'>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark navigation" onclick="navigateHandlerbars(event)">
-            <a class="navbar-brand text-light nav-link" href="home">Movies</a>
+            <a class="navbar-brand text-light nav-link" href="/home">Movies</a>
             <ul class="navbar-nav ml-auto">
                 {{#if isAuthenticated}}
                 <li class="nav-item">
@@ -95,6 +101,34 @@
         </nav>
     </script>
 
+    <script type="text/x-handlebars-template" id="movie-details-template">
+        {{>navigation-template}}
+         <div class="container">
+            <div class="row bg-light text-dark">
+                <h1>Movie title: {{title}}</h1>
+                
+                <div class="col-md-8">
+                    <img class="img-thumbnail" src="{{imageUrl}}" alt="{{title}}">
+                </div>
+                <div class="col-md-4 text-center">
+                    <h3 class="my-3 ">Movie Description</h3>
+                    <p>{{description}}</p>
+                    {{#if isOwn}}
+                    <a class="btn btn-danger" href="#" data-id="{{id}}" onclick="deleteMovie(event)">Delete</a>
+                    <a class="btn btn-warning" href="/details/{{id}}/edit">Edit</a>
+                    {{else}}
+                    {{#if alreadyLiked}}
+                    <span class="enrolled-span">Liked {{likes}}</span>
+                    {{else}}
+                     <a class="btn btn-primary" href="#" onclick="onMovieLike(event, '{{id}}')">Like</a>
+                    {{/if}}
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    </script>
+
+
     <script type="text/x-handlebars-template" id="home-template">
         {{>navigation-template}}
         <div class="jumbotron jumbotron-fluid text-light" style="background-color: #343a40;">
@@ -108,19 +142,18 @@
         <h1 class="text-center">Movies</h1>
         <section>
             <a href="/add-movie" class="btn btn-warning" onclick="navigateHandlerbars(event)">Add Movie</a>
-            <form class="search float-right">
+            <form class="search float-right" id="search-movie-form" onsubmit="onMovieSearchSubmit(event)">
                 <label>Search: </label>
-                <input type="text">
+                <input type="text" name="search-text">
                 <input type="submit" class="btn btn-info" value="Search">
             </form>
         </section>
-
+        
         <div class=" mt-3 ">
             <div class="row d-flex d-wrap">
-
                 <div class="card-deck d-flex justify-content-center">
                     {{#each movies}}
-                   {{>movie-card-template}}
+                       {{>movie-card-template}}
                    {{else}}
                    <p>There are no movies</p>
                    {{/each}}
@@ -130,6 +163,25 @@
         {{/if}}
     </script>
 
+    <script type="text/x-handlebars-template" id="edit-movie-template">
+        {{>navigation-template}}
+        <form id="edit-movie-form" class="text-center border border-light p-5" onsubmit="onEditMovieSubmit(event, '{{id}}')">
+            <h1>Edit Movie</h1>
+            <div class="form-group">
+                <label for="title">Movie Title</label>
+                <input type="text" class="form-control" placeholder="Movie Title" value="{{title}}" name="title">
+            </div>
+            <div class="form-group">
+                <label for="description">Movie Description</label>
+                <textarea class="form-control" placeholder="Movie Description..." name="description">{{description}}</textarea>
+            </div>
+            <div class="form-group">
+                <label for="imageUrl">Image url</label>
+                <input type="text" class="form-control" placeholder="Image Url" value="{{imageUrl}}" name="imageUrl">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </script>
 
     <script type="text/x-handlebars-template" id="add-movie-template">
         {{>navigation-template}}
@@ -151,7 +203,7 @@
         </form>
     </script>
 
-    <script type="text/x-handlebars-template" id='movie-card-template'>
+    <script type="text/x-handlebars-template" id="movie-card-template">
          <div class="card mb-4">
                         <img class="card-img-top" src="{{imageUrl}}"
                             alt="{{title}}" width="400">
@@ -159,55 +211,13 @@
                             <h4 class="card-title">{{title}}</h4>
                         </div>
                         <div class="card-footer">
-                            <button type="button"
-                                    class="btn btn-info"><a href="/details/{{key}}" onclick="navigateHandlerbars(event)">Details</button></a>
+                            <button type="button" class="btn btn-info"><a href="/details/{{key}}" onclick="navigateHandlerbars(event)">Details</button></a></button>
                         </div>
                     </div>        
     </script>
 
-    <script type="text/x-handlebars-template" id='movie-details-template'>
-        {{>navigation-template}}
-         <div class="container">
-            <div class="row bg-light text-dark">
-                <h1>Movie title: {{title}}</h1>
 
-                <div class="col-md-8">
-                    <img class="img-thumbnail" src="{{imageUrl}}"
-                        alt="{{title}}">
-                </div>
-                <div class="col-md-4 text-center">
-                    <h3 class="my-3 ">Movie Description</h3>
-                    <p>{{description}}</p>
-                    <a class="btn btn-danger" href="#" data-id="{{id}}" onclick="deleteMovie(event)">Delete</a>
-                    <a class="btn btn-warning" href="/details/{{id}}/edit">Edit</a>
-                    <a class="btn btn-primary" href="#">Like</a>
-                    <span class="enrolled-span">Liked 1</span>
-                </div>
-            </div>
-        </div>
-    </script>
 
-    <script type="text/x-handlebars-template" id='edit-movie-template'>
-
-        {{>navigation-template}}
-
-        <form id="edit-movie-form" class="text-center border border-light p-5" action="#" method="" onsubmit="onEditMovieSubmit(event, '{{id}}')">
-            <h1>Edit Movie</h1>
-            <div class="form-group">
-                <label for="title">Movie Title</label>
-                <input type="text" class="form-control" placeholder="Movie Title" value="{{title}}" name="title">
-            </div>
-            <div class="form-group">
-                <label for="description">Movie Description</label>
-                <textarea class="form-control" placeholder="Movie Description..." name="description">{{description}}</textarea>
-            </div>
-            <div class="form-group">
-                <label for="imageUrl">Image url</label>
-                <input type="text" class="form-control" placeholder="Image Url" value="{{imageUrl}}" name="imageUrl">
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-    </script>
 </body>
 
 </html>

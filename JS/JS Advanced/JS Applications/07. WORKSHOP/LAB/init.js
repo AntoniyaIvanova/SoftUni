@@ -7,7 +7,30 @@ function addEventListeners() {
     Handlebars.registerPartial('movie-card-template', movieCardTemplate);
 
     navigate(location.pathname == '/' ? 'home' : location.pathname.slice(1));
+};
+
+
+
+function showNotification(message, type) {
+    let notificationElement;
+
+    switch (type) {
+        case 'error':
+            notificationElement = document.getElementById('errorBoxSection');
+            break;
+        default:
+            notificationElement = document.getElementById('successBoxSection');
+            break;
+    }
+    notificationElement.firstElementChild.innerHTML = message;
+    notificationElement.style.display = 'block';
+
+    setTimeout(()=>{
+        notificationElement.style.display = 'none';
+    }, 1000);
 }
+
+showNotification('error', 'blq');
 
 function navigateHandlerbars(e) {
     e.preventDefault();
@@ -33,7 +56,7 @@ function onLoginSubmit(e) {
         .then(data => {
             navigate('home');
         });
-}
+};
 
 function onRegisterSubmit(e) {
     e.preventDefault();
@@ -56,7 +79,7 @@ function onRegisterSubmit(e) {
             navigate('login');
         });
 
-}
+};
 
 function onAddMovieSubmit(e) {
     e.preventDefault();
@@ -66,14 +89,17 @@ function onAddMovieSubmit(e) {
     let description = formData.get('description');
     let imageUrl = formData.get('imageUrl');
 
+    let { email } = authServices.getData();
+
     movieServices.add({
+        creator: email,
         title,
         description,
         imageUrl,
     }).then(res => {
         navigate('home');
     })
-}
+};
 
 function deleteMovie(e) {
     e.preventDefault();
@@ -84,7 +110,7 @@ function deleteMovie(e) {
         .then(res => {
             navigate('home');
         })
-}
+};
 
 function onEditMovieSubmit(e, id) {
     e.preventDefault();
@@ -100,7 +126,30 @@ function onEditMovieSubmit(e, id) {
         imageUrl,
     })
         .then(res => {
-            navigate(`details/${id}`)
+            navigate(`details/${id}`);
+        });
+};
+
+function onMovieLike(e, movieId) {
+    e.preventDefault();
+
+    let { email } = authServices.getData();
+
+    movieServices.likeMovie(movieId, email)
+        .then(res => {
+            navigate(`details/${movieId}`);
+        });
+};
+
+function onMovieSearchSubmit(e) {
+    e.preventDefault();
+
+    let formData = new FormData(document.forms['search-movie-form']);
+    let searchText = formData.get('search-text');
+
+    movieServices.getAll(searchText)
+        .then(res => {
+            navigate(`home?search=${searchText}`);
         });
 }
 

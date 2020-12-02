@@ -4,27 +4,31 @@ const routes = {
     'register': 'register-form-template',
     'add-movie': 'add-movie-template',
     'details': 'movie-details-template',
+    'edit-movie': 'edit-movie-template',
 };
 
-const router = async (fullPath) => {
+const router = async (url) => {
+    let [fullPath, queryString] = url.split('?');
     let [path, id, param] = fullPath.split('/');
     let app = document.getElementById('app');
     let templateData = authServices.getData();
-    
+
     let templateId = routes[path];
 
     switch (path) {
         case 'home':
-            templateData.movies = await movieServices.getAll();
+            let searchedElemenet = queryString?.split('=')[1];
+            templateData.movies = await movieServices.getAll(searchedElemenet);
             break;
         case 'logout':
             authServices.logout();
             return navigate('home');
         case 'details':
             let movieDetails = await movieServices.getOne(id);
-            Object.assign(templateData, movieDetails);
-            if (param === 'edit') {
-                templateId = 'edit=movie-template';
+            Object.assign(templateData, movieDetails, {id});
+
+            if (param == 'edit') {
+                templateId = 'edit-movie-template';
             }
             break;
         default:

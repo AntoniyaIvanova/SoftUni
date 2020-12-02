@@ -1,5 +1,5 @@
 const apiKey = 'AIzaSyDxp4DtoQ-J3NDqqTWxSZNAMKSWlZDD8Us';
-const dbUrl = 'https://movies-b5a2a.firebaseio.com/';
+const dbUrl = `https://movies-b5a2a.firebaseio.com/`;
 
 const request = async (url, method, body) => {
     let options = {
@@ -86,15 +86,19 @@ const movieServices = {
         return res;
     },
 
-    async getAll() {
+    async getAll(searchedElemenet) {
         let res = await request(`${dbUrl}/movies.json`, 'GET');
 
-        return Object.keys(res).map(key => ({ key, ...res[key] }));
+        return Object.keys(res).map(key => ({ key, ...res[key] })).filter(x => !searchedElemenet || searchedElemenet == x.title);
     },
 
     async getOne(id) {
         let res = await request(`${dbUrl}/movies/${id}.json`, 'GET');
-        return res;
+        let { email } = authServices.getData();
+        let likes = Object.values(res.likes || {});
+        let alreadyLiked = likes.some(x => x.creator == email);
+
+        return Object.assign(res, { isOwn: res.creator == email, alreadyLiked, likes: likes.length });
     },
 
     async deleteMovie(id) {
@@ -104,7 +108,13 @@ const movieServices = {
     },
 
     async editMovie(id, movie) {
-        let res = await request(`${dbUrl}/movies/${id}.json`, 'PUT', movie);
+        let res = await request(`${dbUrl}/movies/${id}.json`, 'PATCH', movie);
+
+        return res;
+    },
+
+    async likeMovie(id, creator) {
+        let res = await request(`${dbUrl}/movies/${id}/likes.json`, 'POST', { creator });
 
         return res;
     }
