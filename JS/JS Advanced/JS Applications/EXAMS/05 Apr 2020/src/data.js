@@ -1,4 +1,4 @@
-import { getUserData, getUserId, setUserData } from "./util.js";
+import { getUserData, getUserId, objectToArray, setUserData } from "./util.js";
 
 const apiKey = 'AIzaSyA5IrsoAhWuUEXqkVkhQKV0H3tcWWmG7mY';
 const dbUrl = 'https://softwiki-e3e6d-default-rtdb.firebaseio.com/';
@@ -7,6 +7,7 @@ const endpoints = {
     LOGIN: 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=',
     REGISTER: 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=',
     ARTICLES: 'articles',
+    ARTICLEBYID: 'articles/',
 }
 
 function host(url) {
@@ -67,11 +68,9 @@ export async function login(email, password) {
         returnSecureToken: true,
     });
 
-    let data = await response.json();
+    setUserData(response);
 
-    setUserData(data);
-
-    return data;
+    return response;
 };
 
 export async function register(email, password) {
@@ -86,9 +85,29 @@ export async function register(email, password) {
     return data;
 };
 
+
+export async function getAll() {
+    const records = await get(host(endpoints.ARTICLES));
+
+    return objectToArray(records);
+}
+
+export async function getById(id) {
+    const record = await get(host(endpoints.ARTICLEBYID + id));
+    record._id = id;
+    return record;
+}
+
 export async function createArticle(article) {
     const data = Object.assign({ _ownerId: getUserId() }, article);
 
     return post(host(endpoints.ARTICLES), data);
 }
 
+export async function editArticle(id, article){
+    return patch(host(endpoints.ARTICLEBYID+id), article);
+}
+
+export async function deleteById(id){
+    return del(host(endpoints.ARTICLEBYID+id));
+}

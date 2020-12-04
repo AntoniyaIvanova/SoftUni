@@ -3,7 +3,7 @@ export function setUserData(data) {
 }
 
 export function getUserData() {
-    const auth = localStorage.getItem('auth');
+    const auth = sessionStorage.getItem('auth');
 
     if (auth !== null) {
         return JSON.parse(auth);
@@ -12,12 +12,54 @@ export function getUserData() {
     return null;
 }
 
-export function getUserId(){
-    const auth = localStorage.getItem('auth');
+export function getUserId() {
+    const auth = sessionStorage.getItem('auth');
 
     if (auth !== null) {
         return JSON.parse(auth).localId;
     }
 
     return null;
+}
+
+export function objectToArray(data) {
+    if (data === null) {
+        return [];
+    } else {
+        return Object.entries(data).map(([k, v]) => Object.assign({ _id: k }, v));
+    }
+}
+
+export async function addPartials(context) {
+    const partials = await Promise.all([
+        context.load('/templates/common/header.hbs'),
+        context.load('/templates/common/footer.hbs'),
+    ]);
+
+    context.partials = {
+        header: partials[0],
+        footer: partials[1],
+    };
+}
+
+const categoryMap = {
+    'Javascript': 'js',
+    'C#': 'csharp',
+    'Java': 'java',
+    'Python': 'python',
+}
+
+export function mapCategories(data) {
+    const result = {
+        js: [],
+        csharp: [],
+        java: [],
+        python: []
+    };
+
+    for (let article of data) {
+        result[categoryMap[article.category]].push(article);
+    }
+
+    return result;
 }
