@@ -1,5 +1,9 @@
 export function setUserData(data) {
-    localStorage.setItem('auth', JSON.stringify(data));
+    sessionStorage.setItem('auth', JSON.stringify(data));
+}
+
+export function removeUserData(){
+    sessionStorage.removeItem('auth');
 }
 
 export function getUserData() {
@@ -23,7 +27,7 @@ export function getUserId() {
 }
 
 export function objectToArray(data) {
-    if (data === null) {
+    if (data == null) {
         return [];
     } else {
         return Object.entries(data).map(([k, v]) => Object.assign({ _id: k }, v));
@@ -42,8 +46,8 @@ export async function addPartials(context) {
     };
 }
 
-const categoryMap = {
-    'Javascript': 'js',
+export const categoryMap = {
+    'JavaScript': 'js',
     'C#': 'csharp',
     'Java': 'java',
     'Python': 'python',

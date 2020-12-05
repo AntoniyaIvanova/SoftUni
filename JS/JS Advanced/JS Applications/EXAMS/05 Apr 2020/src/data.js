@@ -41,6 +41,12 @@ async function request(url, method, body) {
 
     let data = await response.json();
 
+    if (data && data.hasOwnProperty('error')) {
+        const message = data.error.message;
+        throw new Error(message);
+    }
+
+
     return data;
 }
 
@@ -82,9 +88,8 @@ export async function register(email, password) {
 
     setUserData(response);
 
-    return data;
+    return response;
 };
-
 
 export async function getAll() {
     const records = await get(host(endpoints.ARTICLES));
@@ -104,10 +109,10 @@ export async function createArticle(article) {
     return post(host(endpoints.ARTICLES), data);
 }
 
-export async function editArticle(id, article){
-    return patch(host(endpoints.ARTICLEBYID+id), article);
+export async function editArticle(id, article) {
+    return patch(host(endpoints.ARTICLEBYID + id), article);
 }
 
-export async function deleteById(id){
-    return del(host(endpoints.ARTICLEBYID+id));
+export async function deleteById(id) {
+    return del(host(endpoints.ARTICLEBYID + id));
 }
