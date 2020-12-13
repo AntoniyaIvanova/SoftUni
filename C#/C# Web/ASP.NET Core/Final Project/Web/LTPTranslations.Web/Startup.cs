@@ -47,6 +47,13 @@
                         options.MinimumSameSitePolicy = SameSiteMode.None;
                     });
 
+            services.AddAuthentication().AddFacebook(facebookOptions =>
+            {
+                facebookOptions.AppId = this.configuration["Authentication:Facebook:AppId"];
+                facebookOptions.AppSecret = this.configuration["Authentication:Facebook:AppSecret"];
+                facebookOptions.Fields.Add("name");
+            });
+
             services.AddControllersWithViews(
                 options =>
                     {

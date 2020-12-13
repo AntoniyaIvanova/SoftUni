@@ -1,9 +1,9 @@
 ﻿namespace LTPTranslations.Web.ViewModels.Settings
 {
+    using AutoMapper;
+
     using LTPTranslations.Data.Models;
     using LTPTranslations.Services.Mapping;
-
-    using AutoMapper;
 
     public class SettingViewModel : IMapFrom<Setting>, IHaveCustomMappings
     {

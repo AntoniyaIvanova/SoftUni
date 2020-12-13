@@ -5,6 +5,8 @@
     using System.IO;
     using System.Threading.Tasks;
 
+    using CommandLine;
+
     using LTPTranslations.Data;
     using LTPTranslations.Data.Common;
     using LTPTranslations.Data.Common.Repositories;
@@ -13,8 +15,6 @@
     using LTPTranslations.Data.Seeding;
     using LTPTranslations.Services.Data;
     using LTPTranslations.Services.Messaging;
-
-    using CommandLine;
 
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
