@@ -1,8 +1,5 @@
 ﻿namespace SIS.HTTP
 {
-    /// <summary>
-    /// HTTP Request Method types.
-    /// </summary>
     public enum HttpMethodType
     {
         Unknown = 0,

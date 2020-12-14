@@ -1,8 +1,5 @@
 ﻿namespace SIS.HTTP
 {
-    /// <summary>
-    /// HTTP SameSite types.
-    /// </summary>
     public enum SameSiteType
     {
         None = 1,

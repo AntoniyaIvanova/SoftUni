@@ -5,15 +5,9 @@
     using System.Text;
     using System.Collections.Generic;
 
-    /// <summary>
-    /// Represents an HTTP Request with properties for the <c>Request Line</c>, <c>Request Headers</c> and <c>Request Body</c>.
-    /// </summary>
+    
     public class HttpRequest
     {
-        /// <summary>
-        /// Initializes a new <see cref="HttpRequest"/> class.
-        /// </summary>
-        /// <param name="httpRequestAsString">HTTP Request string</param>
         public HttpRequest(string httpRequestAsString)
         {
             if (string.IsNullOrWhiteSpace(httpRequestAsString))
@@ -130,34 +124,16 @@
             }
         }
 
-        /// <summary>
-        /// HTTP Request line Method.
-        /// </summary>
         public HttpMethodType Method { get; set; }
 
-        /// <summary>
-        /// HTTP Request line Path.
-        /// </summary>
         public string Path { get; set; }
 
-        /// <summary>
-        /// HTTP Request line Version.
-        /// </summary>
         public HttpVersionType Version { get; set; }
 
-        /// <summary>
-        /// Collection of HTTP Request Headers.
-        /// </summary>
         public IList<Header> Headers { get; set; }
 
-        /// <summary>
-        /// Collection of HTTP Request Cookies.
-        /// </summary>
         public IList<Cookie> Cookies { get; set; }
 
-        /// <summary>
-        /// HTTP Request Body.
-        /// </summary>
         public string Body { get; set; }
 
         public IDictionary<string, string> FormData { get; set; }

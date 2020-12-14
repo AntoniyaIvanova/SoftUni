@@ -3,17 +3,9 @@
     using System.Text;
     using System.Collections.Generic;
 
-    /// <summary>
-    /// Represents an HTTP Response with properties for the <c>Response Status Line</c>, <c>Response Headers</c> and <c>Response Body</c>.
-    /// </summary>
     public class HttpResponse
     {
         //------------- CONSTRUCTORS -------------
-        /// <summary>
-        /// Initializes a new <see cref="HttpResponse"/> class.
-        /// </summary>
-        /// <param name="statusCode">Response Status Code</param>
-        /// <param name="body">Response Body in byte[]</param>
         public HttpResponse(HttpResponseCode statusCode, byte[] body)
             : this()
         {
@@ -32,37 +24,16 @@
             this.Cookies = new List<ResponseCookie>();
         }
 
-        //-------------- PROPERTIES --------------
-        /// <summary>
-        /// HTTP Response status line Version.
-        /// </summary>
         public HttpVersionType Version { get; set; }
 
-        /// <summary>
-        /// HTTP Response status line Status Code.
-        /// </summary>
         public HttpResponseCode StatusCode { get; set; }
 
-        /// <summary>
-        /// Collection of HTTP Response Headers.
-        /// </summary>
         public IList<Header> Headers { get; set; }
 
-        /// <summary>
-        /// Collection of HTTP Response Cookies.
-        /// </summary>
         public IList<ResponseCookie> Cookies { get; set; }
 
-        /// <summary>
-        /// HTTP Response Body in the form of byte[].
-        /// </summary>
         public byte[] Body { get; set; }
 
-        //------------ PUBLIC METHODS ------------
-        /// <summary>
-        /// Returns formatted HTTP Response for the browser.
-        /// </summary>
-        /// <returns>Formatted HTTP Response</returns>
         public override string ToString()
         {
             var responseAsString = new StringBuilder();
