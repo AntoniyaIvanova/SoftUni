@@ -37,6 +37,287 @@
     
     <div class="container">
         <partial name="_CookieConsentPartial" />
+
+        <div class="frm-row">
+            <div class="section colm colm6 ">
+                <label class="field-label">
+                    <i class="fa fa-question-circle label-tooltip option" data-original-title="" title=""><b class="tooltip tip-left-top"><em style="width: 349px;">Изберете типa на услугата, която желаете</em></b></i>
+                    Услуга
+                </label>
+                <label class="field select valid" id="field-services">
+                    <select id="services" name="services" class="gui-input calc-input" aria-invalid="false">
+                        <option value="" selected="selected"></option>
+                        <option value="1">Превод</option>
+                        <option value="2">Заверка на документ</option>
+                        <option value="3">Превод и легализация</option>
+                    </select>
+                    <b class="tooltip tip-left-top field-tip"><em>Моля, изберете типa на услугата, която желаете</em></b>
+                    <b class="tip-left-top field-message" style="display: none;"></b>
+                    <i class="arrow single"></i>
+
+                </label>
+            </div><!-- end section -->
+
+            <div class="section colm colm6 ">
+                <label class="field-label">
+                    <i class="fa fa-question-circle label-tooltip option" data-original-title="" title=""><b class="tooltip tip-left-top"><em style="width: 349px;">Изберете времето, за което искате да изпълним вашата поръчка</em></b></i>
+                    Тип на поръчката
+                </label>
+                <label class="field select" id="field-execution_type">
+                    <select id="execution_type" name="execution_type" class="gui-input calc-input">
+                        <option value="" selected="selected"></option>
+                        <option value="1">Нормална поръчка</option>
+                        <option value="2">Бърза поръчка</option>
+                        <option value="3">Експресна поръчка</option>
+                    </select>
+                    <b class="tooltip tip-left-top field-tip">
+                        <em>
+                            <b>Срокове за превод:</b><br>
+                            - <b>Нормална поръчка</b> – 2 раб. дни, обем до 5 стр.;<br>
+                            - <b>Бърза поръчка</b> – 1 раб. ден (24 часа), обем до 5 стр.;<br>
+                            - <b>Експресна поръчка</b> – 2 раб. часа, обем до 5 стр. (при възможност за обработка);
+                        </em>
+                    </b>
+                    <b class="tip-left-top field-message" style="display: none;"></b>
+                    <i class="arrow single"></i>
+
+                </label>
+            </div><!-- end section -->
+
+            <div class="section colm colm9 ">
+                <label class="field-label">
+                    <i class="fa fa-question-circle label-tooltip option" data-original-title="" title=""><b class="tooltip tip-left-top"><em style="width: 349px;">Изберете групата, която най-точно описва вида на Вашия документ</em></b></i>
+                    Вид на документа
+                </label>
+                <label class="field select" id="field-doctype">
+                    <select id="doctype" name="doctype" class="gui-input calc-input">
+                        <optgroup label="Бланкови">
+                            <option value="27" class="without_leg">Лична карта</option>
+                            <option value="29" class="with_leg">Смъртен акт</option>
+                            <option value="31" class="with_leg">Удостоверение за раждане</option>
+                            <option value="55" class="with_leg">Удостоверение за граждански брак</option>
+                            <option value="18" class="with_leg">Удостоверение за постоянен адрес</option>
+                            <option value="19" class="with_leg">Удостоверение за родствени връзки</option>
+                            <option value="20" class="with_leg">Удостоверение за идентичност на имена</option>
+                            <option value="21" class="with_leg">Удостоверение за семейно положение</option>
+                            <option value="22" class="with_leg">Удостоверение за  наследници</option>
+                            <option value="23" class="with_leg">Свидетелство за съдимост</option>
+                        </optgroup>
+                        <optgroup label="Типови">
+                            <option value="34" class="with_leg">Диплома за средно образование</option>
+                            <option value="46" class="with_leg">Декларация за дете</option>
+                            <option value="35" class="with_leg">Академична справка</option>
+                            <option value="47" class="with_leg">Удостоверение от Агенцията по вписванията</option>
+                            <option value="36" class="with_leg">Удостоверение за проф.квалификация</option>
+                            <option value="48" class="with_leg">Удостоверение  от НАП</option>
+                            <option value="37" class="with_leg">Удостоверение за завършен клас</option>
+                            <option value="49" class="without_leg">CV</option>
+                            <option value="24" class="with_leg">Служебна бележка за доход</option>
+                            <option value="38" class="with_leg">Удостоверение за образователна степен</option>
+                            <option value="52" class="with_leg">Служебна бележка</option>
+                            <option value="25" class="with_leg">Удостоверение от банка</option>
+                            <option value="39" class="with_leg">Свидетелство за професионална квалификация</option>
+                            <option value="53" class="with_leg">Удостоверение  от КАТ и Полиция</option>
+                            <option value="26" class="with_leg">Удостоверение от НОИ</option>
+                            <option value="41" class="with_leg">Медицинско свидетелство</option>
+                            <option value="54" class="with_leg">Декларация пред нотариус</option>
+                            <option value="28" class="with_leg">Студентско уверение</option>
+                            <option value="42" class="with_leg">Кръщелно свидетелство</option>
+                            <option value="30" class="with_leg">Имунизационен паспорт</option>
+                            <option value="43" class="with_leg">Удостоверение за църковен брак</option>
+                            <option value="32" class="with_leg">Диплома за висше образование – заглавна страница</option>
+                            <option value="44" class="with_leg">Пълномощно</option>
+                            <option value="33" class="with_leg">Диплома за висше образование – приложение</option>
+                            <option value="45" class="with_leg">Пълномощно за автомобил</option>
+                        </optgroup>
+                        <optgroup label="Специализирани документи">
+                            <option value="2" class="with_leg">Медицински свидетелства</option>
+                            <option value="11" class="without_leg">Юридическа документация</option>
+                            <option value="12" class="without_leg">Техническа документация</option>
+                            <option value="13" class="without_leg">Икономическа документация</option>
+                            <option value="14" class="without_leg">Медицинска документация</option>
+                            <option value="15" class="with_leg">Епикриза</option>
+                            <option value="16" class="with_leg">ТЕЛК</option>
+                        </optgroup>
+                        <optgroup label="Неспециализирани документи">
+                            <option value="9" class="with_leg">Нотариални актове</option>
+                            <option value="10" class="with_leg">Протокол от полиция</option>
+                            <option value="50" class="with_leg">Договор за наем, покупка, продажба</option>
+                            <option value="51" class="with_leg">Съдебно удостоверение</option>
+                            <option value="1" class="without_leg">Фирмена документация</option>
+                            <option value="6" class="with_leg">Счетоводни баланси</option>
+                            <option value="7" class="with_leg">Съдебни решения</option>
+                            <option value="8" class="with_leg">Актуални състояния</option>
+                        </optgroup>
+                    </select>
+                    <b class="tip-left-top field-message"></b>
+                    <i class="arrow single"></i>
+
+                </label>
+            </div><!-- end section -->
+
+            <div class="section colm colm3 ">
+                <label class="field-label">
+                    <i class="fa fa-question-circle label-tooltip option" data-original-title="" title=""><b class="tooltip tip-left-top"><em style="width: 349px;">Брой страници, които съдържа Вашият документ. За непълни страници използвайте "." напр. <b>2.5</b> </em></b></i>
+                    Страници
+                </label>
+                <label class="field select" id="field-pages">
+                    <input type="number" name="pages" id="pages" value="1" class="gui-input calc-input translation_service" max="100" step="1" min="1">									  											<b class="tooltip tip-left-top field-tip">
+                        <em>
+                            - В съответствие с БДС ISO 17100:2015-05 една преводаческа страница се равнява на 1800 знака с интервалите;<br>
+                            - Стойността на поръчката се изчислява на база брой знаци от готовия превод, а не от оригиналния текст;
+                        </em>
+                    </b>
+                    <b class="tip-left-top field-message" style="display: none;"></b>
+                    <i class="arrow double"></i>
+
+                </label>
+            </div><!-- end section -->
+
+            <div class="section colm colm4 ">
+                <label class="field-label">
+                    <i class="fa fa-question-circle label-tooltip option" data-original-title="" title=""><b class="tooltip tip-left-top"><em style="width: 349px;">Изберете оригиналния език на документа</em></b></i>
+                    Език от
+                </label>
+                <label class="field select" id="field-from_lang">
+                    <select id="from_lang" name="from_lang" class="gui-input calc-input translation_service">
+                        <optgroup label="Основна група">
+                            <option value="0">БЪЛГАРСКИ</option>
+                        </optgroup>
+                        <optgroup label="Група I">
+                            <option value="1">АНГЛИЙСКИ</option>
+                            <option value="2">ИСПАНСКИ</option>
+                            <option value="3">ИТАЛИАНСКИ</option>
+                            <option value="4">НЕМСКИ</option>
+                            <option value="5">РУСКИ</option>
+                            <option value="6">ФРЕНСКИ</option>
+                        </optgroup>
+                        <optgroup label="Група II">
+                            <option value="16">ХЪРВАТСКИ</option>
+                            <option value="36">МАКЕДОНСКИ</option>
+                            <option value="7">ГРЪЦКИ</option>
+                            <option value="8">ПОЛСКИ</option>
+                            <option value="10">РУМЪНСКИ</option>
+                            <option value="13">СРЪБСКИ</option>
+                            <option value="15">УКРАИНСКИ</option>
+                        </optgroup>
+                        <optgroup label="Група IV">
+                            <option value="22">АЛБАНСКИ</option>
+                            <option value="30">НОРВЕЖКИ</option>
+                            <option value="32">УНГАРСКИ</option>
+                            <option value="34">ШВЕДСКИ</option>
+                        </optgroup>
+                        <optgroup label="Група III">
+                            <option value="21">НИДЕРЛАНДСКИ</option>
+                            <option value="11">СЛОВАШКИ</option>
+                            <option value="12">СЛОВЕНСКИ</option>
+                            <option value="17">ЧЕШКИ</option>
+                            <option value="20">ТУРСКИ</option>
+                        </optgroup>
+                        <optgroup label="Група V">
+                            <option value="33">ХИНДИ</option>
+                            <option value="14">МОЛДОВСКИ</option>
+                            <option value="35">ЯПОНСКИ</option>
+                            <option value="18">АРАБСКИ</option>
+                            <option value="23">АРМЕНСКИ</option>
+                            <option value="24">АЗЕРБАЙДЖАНСКИ</option>
+                            <option value="25">ВИЕТНАМСКИ</option>
+                            <option value="26">ЕСТОНСКИ</option>
+                            <option value="27">ИВРИТ</option>
+                            <option value="28">КИТАЙСКИ</option>
+                            <option value="29">КОРЕЙСКИ</option>
+                            <option value="31">ПЕРСИЙСКИ</option>
+                        </optgroup>
+                    </select>
+                    <b class="tip-left-top field-message"></b>
+                    <i class="arrow single"></i>
+
+                </label>
+            </div><!-- end section -->
+
+            <div class="section colm colm4 ">
+                <label class="field-label">
+                    <i class="fa fa-question-circle label-tooltip option" data-original-title="" title=""><b class="tooltip tip-left-top"><em style="width: 349px;">Изберете език, на който да се извърши превода</em></b></i>
+                    Език на
+                </label>
+                <label class="field select" id="field-to_lang">
+                    <select id="to_lang" name="to_lang" class="gui-input calc-input translation_service">
+                        <optgroup label="Основна група">
+                            <option value="0">БЪЛГАРСКИ</option>
+                        </optgroup>
+                        <optgroup label="Група I">
+                            <option value="1">АНГЛИЙСКИ</option>
+                            <option value="2">ИСПАНСКИ</option>
+                            <option value="3">ИТАЛИАНСКИ</option>
+                            <option value="4">НЕМСКИ</option>
+                            <option value="5">РУСКИ</option>
+                            <option value="6">ФРЕНСКИ</option>
+                        </optgroup>
+                        <optgroup label="Група II">
+                            <option value="16">ХЪРВАТСКИ</option>
+                            <option value="36">МАКЕДОНСКИ</option>
+                            <option value="7">ГРЪЦКИ</option>
+                            <option value="8">ПОЛСКИ</option>
+                            <option value="10">РУМЪНСКИ</option>
+                            <option value="13">СРЪБСКИ</option>
+                            <option value="15">УКРАИНСКИ</option>
+                        </optgroup>
+                        <optgroup label="Група IV">
+                            <option value="22">АЛБАНСКИ</option>
+                            <option value="30">НОРВЕЖКИ</option>
+                            <option value="32">УНГАРСКИ</option>
+                            <option value="34">ШВЕДСКИ</option>
+                        </optgroup>
+                        <optgroup label="Група III">
+                            <option value="21">НИДЕРЛАНДСКИ</option>
+                            <option value="11">СЛОВАШКИ</option>
+                            <option value="12">СЛОВЕНСКИ</option>
+                            <option value="17">ЧЕШКИ</option>
+                            <option value="20">ТУРСКИ</option>
+                        </optgroup>
+                        <optgroup label="Група V">
+                            <option value="33">ХИНДИ</option>
+                            <option value="14">МОЛДОВСКИ</option>
+                            <option value="35">ЯПОНСКИ</option>
+                            <option value="18">АРАБСКИ</option>
+                            <option value="23">АРМЕНСКИ</option>
+                            <option value="24">АЗЕРБАЙДЖАНСКИ</option>
+                            <option value="25">ВИЕТНАМСКИ</option>
+                            <option value="26">ЕСТОНСКИ</option>
+                            <option value="27">ИВРИТ</option>
+                            <option value="28">КИТАЙСКИ</option>
+                            <option value="29">КОРЕЙСКИ</option>
+                            <option value="31">ПЕРСИЙСКИ</option>
+                        </optgroup>
+                    </select>
+                    <b class="tip-left-top field-message"></b>
+                    <i class="arrow single"></i>
+
+                </label>
+            </div><!-- end section -->
+
+            <div class="section colm colm4 ">
+                <label class="field-label">
+                    <i class="fa fa-question-circle label-tooltip option" data-original-title="" title=""><b class="tooltip tip-left-top"><em style="width: 349px;">Изберете начин на получаване</em></b></i>
+                    Начин на получаване
+                </label>
+                <label class="field select" id="field-delivery_type">
+                    <select id="delivery_type" name="delivery_type" class="gui-input calc-input">
+                        <option value="" selected="selected"></option>
+                        <option value="1">В наш офис</option>
+                        <option value="2">По имейл</option>
+                        <option value="3">По куриер - в София</option>
+                        <option value="4">По куриер - извън София</option>
+                    </select>
+                    <b class="tip-left-top field-message"></b>
+                    <i class="arrow single"></i>
+
+                </label>
+            </div><!-- end section -->
+
+
+        </div>
+
         <main role="main" class="pb-3">
             @this.RenderBody()
         </main>
