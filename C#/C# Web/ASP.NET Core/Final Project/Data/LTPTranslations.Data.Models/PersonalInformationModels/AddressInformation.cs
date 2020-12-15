@@ -18,5 +18,11 @@
         public int CityId { get; set; }
 
         public City City { get; set; }
+
+        public int PostalCodeId { get; set; }
+
+        public PostalCode PostalCode { get; set; }
+
+        public string AddressLine { get; set; }
     }
 }
