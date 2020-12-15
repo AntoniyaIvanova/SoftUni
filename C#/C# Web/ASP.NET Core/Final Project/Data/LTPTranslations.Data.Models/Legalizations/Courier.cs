@@ -1,16 +1,13 @@
-﻿namespace LTPTranslations.Data.Models.Moderators
+﻿namespace LTPTranslations.Data.Models.Legalizations
 {
     using System;
     using System.Collections.Generic;
 
-    using LTPTranslations.Data.Models.Orders;
-
-    public class Moderator
+    public class Courier
     {
-        public Moderator()
+        public Courier()
         {
             this.Id = Guid.NewGuid().ToString();
-            this.Orders = new HashSet<Order>();
         }
 
         public string ApplicationUserId { get; set; }
@@ -21,6 +18,6 @@
 
         public string Name { get; set; }
 
-        public ICollection<Order> Orders { get; set; }
+        public ICollection<Legalization> Legalizations { get; set; }
     }
 }

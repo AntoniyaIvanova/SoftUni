@@ -1,4 +1,4 @@
-﻿namespace LTPTranslations.Data.Models
+﻿namespace LTPTranslations.Data.Models.Clients
 {
     using System;
 

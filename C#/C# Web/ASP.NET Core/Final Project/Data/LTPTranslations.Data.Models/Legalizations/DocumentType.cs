@@ -1,10 +1,10 @@
-﻿namespace LTPTranslations.Data.Models.Translations
+﻿namespace LTPTranslations.Data.Models.Legalizations
 {
     using System;
 
-    public class TranslationType
+    public class DocumentType
     {
-        public TranslationType()
+        public DocumentType()
         {
             this.Id = Guid.NewGuid().ToString();
         }

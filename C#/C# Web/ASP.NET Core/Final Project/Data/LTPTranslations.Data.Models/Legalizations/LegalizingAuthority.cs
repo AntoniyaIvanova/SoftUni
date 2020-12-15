@@ -1,4 +1,4 @@
-﻿namespace LTPTranslations.Data.Models
+﻿namespace LTPTranslations.Data.Models.Legalizations
 {
     using System.Collections.Generic;
 
@@ -6,8 +6,8 @@
     {
         public LegalizingAuthority()
         {
-            this.Documents = new HashSet<Document>();
-            this.AuthorityLegalizationTimeSpans = new HashSet<AuthorityLegalizationTimeSpan>();
+            this.DocumentTypes = new HashSet<DocumentType>();
+            this.LegalizationProcesses = new HashSet<LegalizationProcess>();
         }
 
         public int Id { get; set; }
@@ -20,8 +20,8 @@
 
         public string PhoneNumber { get; set; }
 
-        public virtual ICollection<AuthorityLegalizationTimeSpan> AuthorityLegalizationTimeSpans { get; set; }
+        public virtual ICollection<LegalizationProcess> LegalizationProcesses { get; set; }
 
-        public virtual ICollection<Document> Documents { get; set; }
+        public virtual ICollection<DocumentType> DocumentTypes { get; set; }
     }
 }

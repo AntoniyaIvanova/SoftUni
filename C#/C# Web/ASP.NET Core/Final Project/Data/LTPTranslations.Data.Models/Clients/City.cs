@@ -1,6 +1,6 @@
-﻿namespace LTPTranslations.Data.Models
+﻿namespace LTPTranslations.Data.Models.Clients
 {
-    public class Country
+    public class City
     {
         public int Id { get; set; }
 

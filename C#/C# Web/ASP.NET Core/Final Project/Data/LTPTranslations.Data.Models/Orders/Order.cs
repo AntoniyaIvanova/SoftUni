@@ -3,6 +3,8 @@
     using System;
     using System.Collections.Generic;
 
+    using LTPTranslations.Data.Models.Clients;
+    using LTPTranslations.Data.Models.Invoices;
     using LTPTranslations.Data.Models.Legalizations;
     using LTPTranslations.Data.Models.Moderators;
     using LTPTranslations.Data.Models.Translations;
@@ -13,6 +15,7 @@
         {
             this.Id = Guid.NewGuid().ToString();
             this.Translations = new HashSet<Translation>();
+            this.Legalizations = new HashSet<Legalization>();
         }
 
         public string Id { get; set; }
@@ -28,6 +31,10 @@
         public string ModeartorId { get; set; }
 
         public Moderator Moderator { get; set; }
+
+        public int TimeForFullfillmentId { get; set; }
+
+        public TimeForFullfillment TimeForFullfillment { get; set; }
 
         public virtual ICollection<Translation> Translations { get; set; }
 

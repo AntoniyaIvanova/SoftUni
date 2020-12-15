@@ -5,6 +5,7 @@
 
     using LTPTranslations.Data.Models;
     using LTPTranslations.Data.Models.ModelRelationships;
+    using LTPTranslations.Data.Models.Orders;
 
     public class Translation
     {
@@ -17,21 +18,23 @@
 
         public string Id { get; set; }
 
-        public int PagesCountId { get; set; }
+        public string DocumentId { get; set; }
 
-        public PagesCount PagesCount { get; set; }
-
-        public int TimeForFullfillmentId { get; set; }
-
-        public TimeForFullfillment TimeForFullfillment { get; set; }
+        public DocumentForTranslation DocumentForTranslation { get; set; }
 
         public int LanguagePairId { get; set; }
 
         public LanguagePair LanguagePair { get; set; }
 
-        public string DocumentForTranslationId { get; set; }
+        public int FullFillmentTypeId { get; set; }
 
-        public DocumentForTranslation DocumentForTranslation { get; set; }
+        public FullfillmentType FullfillmentType { get; set; }
+
+        public int TimeForFullfillmentId { get; set; }
+
+        public TimeForFullfillment TimeForFullfillment { get; set; }
+
+        public decimal PagesCount { get; set; }
 
         public virtual ICollection<Comment> Comments { get; set; }
 

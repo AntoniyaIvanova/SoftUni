@@ -1,6 +1,6 @@
-﻿namespace LTPTranslations.Data.Models
+﻿namespace LTPTranslations.Data.Models.Translations
 {
-    public class Document
+    public class LanguageTo
     {
         public int Id { get; set; }
 

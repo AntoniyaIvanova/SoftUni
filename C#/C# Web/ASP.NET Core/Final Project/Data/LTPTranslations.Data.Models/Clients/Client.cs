@@ -1,8 +1,9 @@
-﻿namespace LTPTranslations.Data.Models
+﻿namespace LTPTranslations.Data.Models.Clients
 {
     using System;
     using System.Collections.Generic;
 
+    using LTPTranslations.Data.Models.Invoices;
     using LTPTranslations.Data.Models.Orders;
 
     public class Client
@@ -15,6 +16,10 @@
         }
 
         public string Id { get; set; }
+
+        public string ApplicationUserId { get; set; }
+
+        public ApplicationUser ApplicationUser { get; set; }
 
         public string PersonalInformationId { get; set; }
 
