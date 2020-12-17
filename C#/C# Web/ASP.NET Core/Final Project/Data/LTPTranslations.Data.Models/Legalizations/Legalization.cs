@@ -2,14 +2,14 @@
 {
     using System;
 
-    public class Legalization
+    using LTPTranslations.Data.Common.Models;
+
+    public class Legalization : BaseDeletableModel<string>
     {
         public Legalization()
         {
             this.Id = Guid.NewGuid().ToString();
         }
-
-        public string Id { get; set; }
 
         public string CourierId { get; set; }
 

@@ -3,15 +3,15 @@
     using System;
     using System.Collections.Generic;
 
-    public class ConsularCertification
+    using LTPTranslations.Data.Common.Models;
+
+    public class ConsularCertification : BaseDeletableModel<string>
     {
         public ConsularCertification()
         {
             this.Id = Guid.NewGuid().ToString();
             this.UniviersityDiplomas = new HashSet<UniversityDiploma>();
         }
-
-        public string Id { get; set; }
 
         public string ConsularDeclaration { get; set; }
 

@@ -2,14 +2,14 @@
 {
     using System;
 
-    public class PersonalInformation
+    using LTPTranslations.Data.Common.Models;
+
+    public class PersonalInformation : BaseDeletableModel<string>
     {
         public PersonalInformation()
         {
             this.Id = Guid.NewGuid().ToString();
         }
-
-        public string Id { get; set; }
 
         public string FirstName { get; set; }
 

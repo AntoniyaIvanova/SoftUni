@@ -1,9 +1,9 @@
 ﻿namespace LTPTranslations.Data.Models.Legalizations
 {
-    public class DocumentForLegalization
-    {
-        public int Id { get; set; }
+    using LTPTranslations.Data.Common.Models;
 
+    public class DocumentForLegalization : BaseDeletableModel<int>
+    {
         public string DocumentUrl { get; set; }
 
         public int LegalizingAuthorityId { get; set; }

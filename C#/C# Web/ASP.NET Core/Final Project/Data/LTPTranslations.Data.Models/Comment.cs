@@ -2,14 +2,14 @@
 {
     using System;
 
-    public class Comment
+    using LTPTranslations.Data.Common.Models;
+
+    public class Comment : BaseDeletableModel<string>
     {
         public Comment()
         {
             this.Id = Guid.NewGuid().ToString();
         }
-
-        public string Id { get; set; }
 
         public string Content { get; set; }
     }

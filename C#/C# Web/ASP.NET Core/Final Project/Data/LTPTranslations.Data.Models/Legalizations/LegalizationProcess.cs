@@ -2,10 +2,10 @@
 {
     using System;
 
-    public class LegalizationProcess
-    {
-        public int Id { get; set; }
+    using LTPTranslations.Data.Common.Models;
 
+    public class LegalizationProcess : BaseDeletableModel<int>
+    {
         public string Name { get; set; }
 
         public TimeSpan TimeNeeded { get; set; }

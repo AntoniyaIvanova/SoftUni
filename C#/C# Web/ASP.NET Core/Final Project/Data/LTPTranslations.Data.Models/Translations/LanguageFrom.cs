@@ -1,9 +1,9 @@
 ﻿namespace LTPTranslations.Data.Models.Translations
 {
-    public class LanguageFrom
-    {
-        public int Id { get; set; }
+    using LTPTranslations.Data.Common.Models;
 
+    public class LanguageFrom : BaseDeletableModel<int>
+    {
         public string Name { get; set; }
     }
 }

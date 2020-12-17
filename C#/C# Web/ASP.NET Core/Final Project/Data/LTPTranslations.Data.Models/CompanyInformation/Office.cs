@@ -2,16 +2,15 @@
 {
     using System.Collections.Generic;
 
+    using LTPTranslations.Data.Common.Models;
     using LTPTranslations.Data.Models.Moderators;
 
-    public class Office
+    public class Office : BaseDeletableModel<int>
     {
         public Office()
         {
             this.Moderators = new HashSet<Moderator>();
         }
-
-        public int Id { get; set; }
 
         public string PhoneNumber { get; set; }
 

@@ -3,18 +3,17 @@
     using System;
     using System.Collections.Generic;
 
+    using LTPTranslations.Data.Common.Models;
     using LTPTranslations.Data.Models.Clients;
     using LTPTranslations.Data.Models.CompanyInformation;
 
-    public class Invoice
+    public class Invoice : BaseDeletableModel<string>
     {
         public Invoice()
         {
             this.Id = Guid.NewGuid().ToString();
             this.Comments = new HashSet<Comment>();
         }
-
-        public string Id { get; set; }
 
         public int InvoiceNumber { get; set; }
 
@@ -34,7 +33,7 @@
 
         public Company Company { get; set; }
 
-        public DateTime CreatedOn { get; set; }
+        public DateTime InvoiceCreatedOn { get; set; }
 
         public DateTime DueTo { get; set; }
 

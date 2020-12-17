@@ -1,9 +1,9 @@
 ﻿namespace LTPTranslations.Data.Models.Clients
 {
-    public class Country
-    {
-        public int Id { get; set; }
+    using LTPTranslations.Data.Common.Models;
 
+    public class Country : BaseDeletableModel<int>
+    {
         public string CountryName { get; set; }
     }
 }

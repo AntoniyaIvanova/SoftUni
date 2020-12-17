@@ -2,14 +2,14 @@
 {
     using System;
 
-    public class UniversityDiploma
+    using LTPTranslations.Data.Common.Models;
+
+    public class UniversityDiploma : BaseDeletableModel<string>
     {
         public UniversityDiploma()
         {
             this.Id = Guid.NewGuid().ToString();
         }
-
-        public string Id { get; set; }
 
         public string Diploma { get; set; }
     }

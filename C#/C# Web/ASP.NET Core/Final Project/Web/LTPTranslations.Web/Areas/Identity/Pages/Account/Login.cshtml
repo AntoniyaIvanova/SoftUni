@@ -1,0 +1,104 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Вход";
+}
+
+<div class="page-area">
+    <div class="breadcumb-overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="breadcrumb text-center">
+                    <div class="section-headline white-headline">
+                        <h3>Вход</h3>
+                    </div>
+                    <ul class="breadcrumb-bg">
+                        <li class="home-bread">Начало</li>
+                        <li>Вход</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End breadcumb Area -->
+<!-- Start Slider Area -->
+<div class="login-area page-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="login-page">
+                    <div class="login-form">
+                        <h4 class="login-title">ВХОД</h4>
+                        <div class="row">
+                            <form id="contactForm" method="POST" class="log-form">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <input type="text" asp-for="Input.Email" id="name" class="form-control" placeholder="Email" required data-error="Please enter your name">
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <input type="password" asp-for="Input.Password" id="msg_subject" class="form-control" placeholder="Password" required data-error="Please enter your message subject">
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="check-group flexbox">
+                                        <label class="check-box">
+                                            <input type="checkbox" class="check-box-input" checked>
+                                            <span class="remember-text">Запомни ме</span>
+                                        </label>
+
+                                        <a class="text-muted" href="#">Забравена парола?</a>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <button type="submit" id="submit" class="login-btn">Вход</button>
+                                    <div id="msgSubmit" class="h3 text-center hidden"></div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </form>
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="clear"></div>
+                                <div class="separetor"><span>или вход през</span></div>
+                                <div class="sign-icon">
+                                    <section>
+                                        @{
+                                            if ((Model.ExternalLogins?.Count ?? 0) == 0)
+                                            {
+                                                <div>
+                                                    <p>
+                                                        There are no external authentication services configured. See <a href="https://go.microsoft.com/fwlink/?LinkID=532715">this article</a>
+                                                        for details on setting up this ASP.NET application to support logging in via external services.
+                                                    </p>
+                                                </div>
+                                            }
+                                            else
+                                            {
+                                                <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
+                                                    <div>
+                                                        <p>
+                                                            @foreach (var provider in Model.ExternalLogins)
+                                                            {
+                                                                <button type="submit" class="btn btn-default" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
+                                                            }
+                                                        </p>
+                                                    </div>
+                                                </form>
+                                            }
+                                        }
+                                    </section>
+                                </div>
+                                <div class="acc-not">Нямате акаунт?  <a asp-area="Identity" asp-page="/Account/Register"> Регистрирай се</a></div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

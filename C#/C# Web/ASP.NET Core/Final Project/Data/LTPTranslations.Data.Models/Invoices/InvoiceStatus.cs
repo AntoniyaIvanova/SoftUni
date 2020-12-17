@@ -1,9 +1,9 @@
 ﻿namespace LTPTranslations.Data.Models.Invoices
 {
-    public class InvoiceStatus
-    {
-        public int Id { get; set; }
+    using LTPTranslations.Data.Common.Models;
 
+    public class InvoiceStatus : BaseDeletableModel<int>
+    {
         public string Name { get; set; }
     }
 }

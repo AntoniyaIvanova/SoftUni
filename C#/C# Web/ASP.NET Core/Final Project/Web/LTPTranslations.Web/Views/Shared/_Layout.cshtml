@@ -5,57 +5,225 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@this.ViewData["Title"] - @GlobalConstants.SystemName</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+
+    <link rel="stylesheet" href="~/css/bootstrap.min.css" asp-append-version="true" />
+
+
+    <link rel="stylesheet" href="~/css/owl.carousel.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/owl.transitions.css" asp-append-version="true">
+    <!-- Animate css -->
+    <link rel="stylesheet" href="~/css/animate.css" asp-append-version="true">
+    <!-- meanmenu css -->
+    <link rel="stylesheet" href="~/css/meanmenu.min.css" asp-append-version="true">
+    <!-- font-awesome css -->
+    <link rel="stylesheet" href="~/css/font-awesome.min.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/themify-icons.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/flaticon.css" asp-append-version="true">
+    <!-- magnific css -->
+    <link rel="stylesheet" href="~/css/magnific.min.css" asp-append-version="true">
+    <!-- style css -->
+    <link rel="stylesheet" href="~/style.css" asp-append-version="true">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="~/css/responsive.css" asp-append-version="true">
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <header class="header-one">
+        <!-- Start top bar -->
+        <div class="topbar-area fix hidden-xs">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">@GlobalConstants.SystemName</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <partial name="_LoginPartial" />
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Settings" asp-action="Index">Settings</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
+                <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                        <div class="topbar-left">
+                            <ul>
+                                <li><a href="#"><i class="fa fa-envelope"></i> info@ltptranslations.com</a></li>
+                                <li><a href="#"><i class="fa fa-phone"></i> +02-111-111</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class=" col-md-6 col-sm-6">
+                        <div class="topbar-right">
+                            <div class="top-social">
+                                <ul>
+                                    <li><a href="https://github.com/antoniyaivanova"><i class="fa fa-github"></i></a></li>
+                                    <li><a href="https://pinterest.com/ltptranslations"><i class="fa fa-pinterest"></i></a></li>
+                                    <li><a href="https://twitter.com/ltptranslations"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="https://facebook.com/ltptranslations"><i class="fa fa-facebook"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </nav>
+        </div>
+        <!-- End top bar -->
+        <!-- header-area start -->
+        <div id="sticker" class="header-area hidden-xs">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="row">
+                            <!-- logo start -->
+                            <div class="col-md-3 col-sm-3">
+
+                                <!-- logo end -->
+                            </div>
+                            <div class="col-md-9 col-sm-9">
+                                <div class="header-right-link">
+                                    <!-- search option end -->
+                                    <a class="s-menu" asp-area="Identity" asp-page="/Account/Login">Вход</a>
+                                </div>
+                                <!-- mainmenu start -->
+                                <nav class="navbar navbar-default">
+                                    <div class="collapse navbar-collapse" id="navbar-example">
+                                        <div class="main-menu">
+                                            <ul class="nav navbar-nav navbar-right">
+                                                <li>
+                                                    <a class="pages" asp-area="Home" asp-page="/Index">Начално</a>
+                                                </li>
+                                                <li>
+                                                    <a class="pages" href="#">За нас</a>
+                                                    <ul class="sub-menu">
+                                                        <li><a href="team.html">Екип</a></li>
+                                                        <li><a href="faq.html">Въпроси и отговори</a></li>
+                                                        <li><a href="review.html">Нашите клиенти</a></li>
+                                                        <li><a href="review.html">Отзиви</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a class="pages" href="#">Услуги</a>
+                                                    <ul class="sub-menu">
+                                                        <li><a href="team.html">Устен превод</a></li>
+                                                        <li><a href="faq.html">Писмен превод</a></li>
+                                                        <li><a href="login.html">Жестомимичен превод</a></li>
+                                                        <li><a href="review.html">Локализация и глобализация</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a class="pages" href="index-2.html">Дума на деня</a>
+                                                </li>
+                                                <li>
+                                                    <a class="pages" asp-area="" asp-controller="Contacts" asp-action="Index">Свържете се с нас</a>
+                                                    <ul class="sub-menu">
+                                                        <li><a asp-area="" asp-controller="Contacts" asp-action="Index">Запитвания</a></li>
+                                                        <li><a asp-area="Identity" asp-page="/Account/Login">Вход в системата</a></li>
+                                                        <li><a asp-area="Identity" asp-page="/Account/Register">Регистрация</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </nav>
+                                <!-- mainmenu end -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </header>
-    
+    <!-- header end -->
+    <!-- Start Intro Area -->
+
+
+
     <div class="container">
         <partial name="_CookieConsentPartial" />
-
-
-
-        <main role="main" class="pb-3">
-            @this.RenderBody()
-        </main>
     </div>
-    
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; @DateTime.Now.Year - @GlobalConstants.SystemName - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+
+    <main>
+        @this.RenderBody()
+    </main>
+
+    <footer class="footer1">
+        <div class="footer-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5 col-sm-5 col-xs-12">
+                        <div class="footer-content logo-footer">
+                            <div class="footer-head">
+                                <h3>LTP Translations</h3>
+                                <p>
+                                    Ние, LTP Translations, се наложихме като доверен партньор в областта на услугите за превод и локализация. Наши офис можете да откриете във всеки по-голям град, а системата, с която работим ни позволява да достигнем до клиентите си без значение от тяхното местоположение. Без значение от език и срока - ние сме до вас!
+                                </p>
+                                <div class="subs-feilds">
+                                    <div class="suscribe-input">
+                                        <input type="email" class="email form-control width-80" id="sus_email" placeholder="Type Email">
+                                        <button type="submit" id="sus_submit" class="add-btn">Запиши се за нашия бюлетин!</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end single footer -->
+                    <div class="col-md-4 col-sm-3 col-xs-12">
+                        <div class="footer-content">
+                            <div class="footer-head">
+                                <h4>Бързи линкове</h4>
+                                <ul class="footer-list">
+                                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Начало</a></li>
+                                    <li><a href="#">За нас</a></li>
+                                    <li><a href="#">Езици</a></li>
+                                    <li><a href="#">FAQ</a></li>
+                                    <li><a href="#">Клиенти</a></li>
+                                    <li><a asp-area="" asp-controller="Contacts" asp-action="Index">Контакти</a></li>
+                                </ul>
+                                <ul class="footer-list hidden-sm">
+                                    <li><a href="#">Писмен превод</a></li>
+                                    <li><a href="#">Устен превод</a></li>
+                                    <li><a href="#">Легализация</a></li>
+                                    <li><a href="#">Локализация и глобализация</a></li>
+                                    <li><a href="#">Жестомимичен превод</a></li>
+                                    <li><a href="#">Работа в LTP Translations</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end single footer -->
+                    <div class="col-md-3 col-md-4 col-xs-12">
+                        <div class="footer-content last-content">
+                            <div class="footer-head">
+                                <h4>Информация</h4>
+                                <div class="footer-contacts">
+                                    <p><span>Tel :</span> +02-111-111</p>
+                                    <p><span>Email :</span> info@ltptranslations.com</p>
+                                    <p><span>Главен офис :</span> Over the rainbow, София</p>
+                                </div>
+                                <div class="footer-icons">
+                                    <ul>
+                                        <li><a href="https://github.com/antoniyaivanova"><i class="fa fa-github"></i></a></li>
+                                        <li><a href="https://pinterest.com/ltptranslations"><i class="fa fa-pinterest"></i></a></li>
+                                        <li><a href="https://twitter.com/ltptranslations"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="https://facebook.com/ltptranslations"><i class="fa fa-facebook"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-area-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="copyright">
+                            &copy; @DateTime.Now.Year - @GlobalConstants.SystemName - <a asp-area="" asp-controller="Home" asp-action="Privacy">Политика за поверителност</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js" asp-append-version="true"></script>
     <script src="~/lib/jquery-validation/dist/jquery.validate.min.js" asp-append-version="true"></script>
-    <script src="~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js" asp-append-version="true"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js" asp-append-version="true"></script>
+
+    <script src="~/js/vendor/jquery-1.12.4.min.js" asp-append-version="true"></script>
+    <script src="~/js/bootstrap.min.js" asp-append-version="true"></script>
+
+
     <script src="~/js/site.min.js" asp-append-version="true"></script>
+    <script src="~/js/vendor/modernizr-2.8.3.min.js" asp-append-version="true"></script>
     @await this.RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

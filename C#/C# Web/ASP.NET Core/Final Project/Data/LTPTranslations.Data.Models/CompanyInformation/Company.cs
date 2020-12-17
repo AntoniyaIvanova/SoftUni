@@ -3,15 +3,15 @@
     using System;
     using System.Collections.Generic;
 
-    public class Company
+    using LTPTranslations.Data.Common.Models;
+
+    public class Company : BaseDeletableModel<string>
     {
         public Company()
         {
             this.Id = Guid.NewGuid().ToString();
             this.Offices = new HashSet<Office>();
         }
-
-        public string Id { get; set; }
 
         public string Name { get; set; }
 

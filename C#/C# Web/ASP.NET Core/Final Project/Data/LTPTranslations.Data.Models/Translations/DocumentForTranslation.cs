@@ -2,14 +2,14 @@
 {
     using System;
 
-    public class DocumentForTranslation
+    using LTPTranslations.Data.Common.Models;
+
+    public class DocumentForTranslation : BaseDeletableModel<string>
     {
         public DocumentForTranslation()
         {
             this.Id = Guid.NewGuid().ToString();
         }
-
-        public string Id { get; set; }
 
         public string OriginalText { get; set; }
 

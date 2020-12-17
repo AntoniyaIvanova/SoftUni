@@ -3,11 +3,12 @@
     using System;
     using System.Collections.Generic;
 
+    using LTPTranslations.Data.Common.Models;
     using LTPTranslations.Data.Models;
     using LTPTranslations.Data.Models.ModelRelationships;
     using LTPTranslations.Data.Models.Orders;
 
-    public class Translation
+    public class Translation : BaseDeletableModel<string>
     {
         public Translation()
         {
@@ -15,8 +16,6 @@
             this.TranslationsTranslators = new HashSet<TranslationTranslator>();
             this.Comments = new HashSet<Comment>();
         }
-
-        public string Id { get; set; }
 
         public string DocumentId { get; set; }
 

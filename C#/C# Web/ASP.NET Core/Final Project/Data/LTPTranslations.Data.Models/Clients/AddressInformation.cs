@@ -2,14 +2,14 @@
 {
     using System;
 
-    public class AddressInformation
+    using LTPTranslations.Data.Common.Models;
+
+    public class AddressInformation : BaseDeletableModel<string>
     {
         public AddressInformation()
         {
             this.Id = Guid.NewGuid().ToString();
         }
-
-        public string Id { get; set; }
 
         public int CountryId { get; set; }
 

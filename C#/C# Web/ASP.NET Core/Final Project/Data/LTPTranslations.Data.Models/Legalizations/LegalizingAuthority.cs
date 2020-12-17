@@ -2,15 +2,15 @@
 {
     using System.Collections.Generic;
 
-    public class LegalizingAuthority
+    using LTPTranslations.Data.Common.Models;
+
+    public class LegalizingAuthority : BaseDeletableModel<int>
     {
         public LegalizingAuthority()
         {
             this.DocumentTypes = new HashSet<DocumentType>();
             this.LegalizationProcesses = new HashSet<LegalizationProcess>();
         }
-
-        public int Id { get; set; }
 
         public string Name { get; set; }
 

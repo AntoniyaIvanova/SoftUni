@@ -3,13 +3,14 @@
     using System;
     using System.Collections.Generic;
 
+    using LTPTranslations.Data.Common.Models;
     using LTPTranslations.Data.Models.Clients;
     using LTPTranslations.Data.Models.Invoices;
     using LTPTranslations.Data.Models.Legalizations;
     using LTPTranslations.Data.Models.Moderators;
     using LTPTranslations.Data.Models.Translations;
 
-    public class Order
+    public class Order : BaseDeletableModel<string>
     {
         public Order()
         {
@@ -17,8 +18,6 @@
             this.Translations = new HashSet<Translation>();
             this.Legalizations = new HashSet<Legalization>();
         }
-
-        public string Id { get; set; }
 
         public string InvoiceId { get; set; }
 
