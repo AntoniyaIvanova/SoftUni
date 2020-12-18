@@ -46,8 +46,6 @@
 
         public DbSet<Company> Companies { get; set; }
 
-        public DbSet<ContactForm> ContactForms { get; set; }
-
         public DbSet<Office> Offices { get; set; }
 
         public DbSet<Invoice> Invoices { get; set; }

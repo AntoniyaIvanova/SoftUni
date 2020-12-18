@@ -3,8 +3,8 @@
     using System.Threading.Tasks;
 
     using LTPTranslations.Common;
-    using LTPTranslations.Data;
     using LTPTranslations.Data.Common.Repositories;
+    using LTPTranslations.Data.Models.CompanyInformation;
     using LTPTranslations.Services.Messaging;
     using LTPTranslations.Web.ViewModels.Contacts;
     using Microsoft.AspNetCore.Mvc;
@@ -40,8 +40,8 @@
             {
                 Name = model.Name,
                 Email = model.Email,
-                Title = model.Subject,
-                Content = model.Message,
+                Subject = model.Subject,
+                Message = model.Message,
                 Ip = ip,
             };
             await this.contactsRepository.AddAsync(contactFormEntry);

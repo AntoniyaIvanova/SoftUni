@@ -1,4 +1,4 @@
-﻿namespace LTPTranslations.Data
+﻿namespace LTPTranslations.Data.Models.CompanyInformation
 {
     using LTPTranslations.Data.Common.Models;
 
@@ -8,9 +8,9 @@
 
         public string Email { get; set; }
 
-        public string Title { get; set; }
+        public string Subject { get; set; }
 
-        public string Content { get; set; }
+        public string Message { get; set; }
 
         public string Ip { get; set; }
     }
