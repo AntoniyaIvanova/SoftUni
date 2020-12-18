@@ -27,6 +27,8 @@
                           {
                               new RolesSeeder(),
                               new SettingsSeeder(),
+                              new DocumentTypeSeeder(),
+                              new LegalizationAgencySeeder(),
                           };
 
             foreach (var seeder in seeders)

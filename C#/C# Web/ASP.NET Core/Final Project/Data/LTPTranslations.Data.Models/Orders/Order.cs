@@ -15,8 +15,6 @@
         public Order()
         {
             this.Id = Guid.NewGuid().ToString();
-            this.Translations = new HashSet<Translation>();
-            this.Legalizations = new HashSet<Legalization>();
         }
 
         public string InvoiceId { get; set; }
@@ -35,8 +33,12 @@
 
         public TimeForFullfillment TimeForFullfillment { get; set; }
 
-        public virtual ICollection<Translation> Translations { get; set; }
+        public int OrderTypeId { get; set; }
 
-        public virtual ICollection<Legalization> Legalizations { get; set; }
+        public OrderType OrderType { get; set; }
+
+        public int DeliveryTypeId { get; set; }
+
+        public DeliveryType DeliveryType { get; set; }
     }
 }

@@ -1,0 +1,65 @@
+﻿@model LTPTranslations.Web.ViewModels.Calculator.CalculatorOptionsViewModel
+@using LTPTranslations.Common
+@{
+    this.ViewData["Title"] = "Калкулатор";
+}
+
+<div class="page-area">
+    <div class="breadcumb-overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="breadcrumb text-center">
+                    <div class="section-headline white-headline">
+                        <h3>Калкулатор на услуги</h3>
+                    </div>
+                    <ul class="breadcrumb-bg">
+                        <li class="home-bread">Начало</li>
+                        <li>Калкулатор на услуги</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<form method="post" class="col-md-6 offset-md-3"
+      enctype="multipart/form-data">
+    <h1>@this.ViewData["Title"]</h1>
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="OrderType"></label>
+        <input asp-for="OrderType" class="form-control" />
+        <span asp-validation-for="OrderType" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="OrderSpeedFullfilment"></label>
+        <textarea asp-for="OrderSpeedFullfilment" class="form-control" rows="5"></textarea>
+        <span asp-validation-for="OrderSpeedFullfilment" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="TypeOfTheDocument"></label>
+        <input asp-for="TypeOfTheDocument" class="form-control" />
+        <span asp-validation-for="TypeOfTheDocument" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Pages"></label>
+        <input asp-for="Pages" class="form-control" />
+        <span asp-validation-for="Pages" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="WayToReceive"></label>
+        <input asp-for="WayToReceive" class="form-control" />
+        <span asp-validation-for="WayToReceive" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="LanguageFrom"></label>
+        <select asp-for="LanguageFrom" class="form-control"></select>
+        <span asp-validation-for="LanguageFrom" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="LanguageTo"></label>
+        <input asp-for="LanguageTo" class="form-control" />
+        <span asp-validation-for="LanguageTo" class="text-danger"></span>
+    </div>
+</form>
