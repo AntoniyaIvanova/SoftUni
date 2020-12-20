@@ -32,6 +32,22 @@
         {
         }
 
+        public DbSet<Order> Orders { get; set; }
+
+        public DbSet<OrderType> OrderTypes { get; set; }
+
+        public DbSet<TimeForFullfillment> TimeForFullfillments { get; set; }
+
+        public DbSet<FullfillmentType> FullfillmentTypes { get; set; }
+
+        public DbSet<LanguageFrom> LanguagesFrom { get; set; }
+
+        public DbSet<LanguageTo> LanguagesTo { get; set; }
+
+        public DbSet<DeliveryType> DeliveryTypes { get; set; }
+
+        public DbSet<DocumentForTranslation> DocumentForTranslations { get; set; }
+
         public DbSet<AddressInformation> AddressesInformation { get; set; }
 
         public DbSet<City> Cities { get; set; }
@@ -69,18 +85,6 @@
         public DbSet<TranslationTranslator> TranslationTranslators { get; set; }
 
         public DbSet<Moderator> Moderators { get; set; }
-
-        public DbSet<Order> Orders { get; set; }
-
-        public DbSet<TimeForFullfillment> TimeForFullfillments { get; set; }
-
-        public DbSet<DocumentForTranslation> DocumentForTranslations { get; set; }
-
-        public DbSet<FullfillmentType> FullfillmentTypes { get; set; }
-
-        public DbSet<LanguageFrom> LanguagesFrom { get; set; }
-
-        public DbSet<LanguageTo> LanguagesTo { get; set; }
 
         public DbSet<LanguagePair> LanguagePairs { get; set; }
 

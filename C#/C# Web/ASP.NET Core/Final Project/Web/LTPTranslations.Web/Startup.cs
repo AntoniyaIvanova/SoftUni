@@ -9,6 +9,7 @@
     using LTPTranslations.Data.Repositories;
     using LTPTranslations.Data.Seeding;
     using LTPTranslations.Services.Data;
+    using LTPTranslations.Services.Data.Orders;
     using LTPTranslations.Services.Mapping;
     using LTPTranslations.Services.Messaging;
     using LTPTranslations.Web.ViewModels;
@@ -72,6 +73,12 @@
             // Application services
             services.AddTransient<IEmailSender>(x => new SendGridEmailSender(this.configuration["SendGrid:ApiKey"]));
             services.AddTransient<ISettingsService, SettingsService>();
+            services.AddTransient<IOrderTypeService, OrderTypeService>();
+            services.AddTransient<IDocumentTypeService, DocumentTypeService>();
+            services.AddTransient<ILanguageToTypeService, LanguageToTypeService>();
+            services.AddTransient<ILanguageFromService, LanguageFromService>();
+            services.AddTransient<IOrderFullfillmentTypeService, OrderFullfillmentTypeService>();
+            services.AddTransient<IWaysToReceiveTypeService, WaysToReceiveTypeService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

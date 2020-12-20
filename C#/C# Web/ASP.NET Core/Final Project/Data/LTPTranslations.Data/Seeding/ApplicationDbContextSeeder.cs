@@ -29,6 +29,11 @@
                               new SettingsSeeder(),
                               new DocumentTypeSeeder(),
                               new LegalizationAgencySeeder(),
+                              new OrderTypeSeeder(),
+                              new FullfillmentTypeSeeder(),
+                              new WaysToDeliverSeeder(),
+                              new LanguageFromSeeder(),
+                              new LanguageToSeeder(),
                           };
 
             foreach (var seeder in seeders)

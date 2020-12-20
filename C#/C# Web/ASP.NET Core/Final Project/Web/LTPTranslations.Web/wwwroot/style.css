@@ -2832,6 +2832,31 @@ span.email-notes{
     height: auto;
 }
 
+#popupcolor{
+    background-color: green;
+}
+
 /*--------------------------------*/
 /* .End CSS
 /*--------------------------------*/
+
+
+.calculator-form button[type="submit"] {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: 1px solid #E6922E;
+    color: #fff;
+    display: block;
+    font-size: 18px;
+    margin-top: 16px;
+    padding: 13px 24px;
+    border-radius: 2px;
+    transition: all 0.3s ease 0s;
+    background: #E6922E;
+}
+
+.calculator-form button[type=submit]:hover {
+    color: #E6922E;
+    border: 1px solid #E6922E;
+    background: #fff;
+    transition: all 0.3s ease 0s;
+}

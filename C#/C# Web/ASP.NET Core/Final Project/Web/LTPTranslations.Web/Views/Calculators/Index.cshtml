@@ -1,7 +1,13 @@
-﻿@model LTPTranslations.Web.ViewModels.Calculator.CalculatorOptionsViewModel
-@using LTPTranslations.Common
+﻿@model LTPTranslations.Web.ViewModels.Calculator.CalculatorOptionsInputModel
+
 @{
-    this.ViewData["Title"] = "Калкулатор";
+    ViewData["Title"] = "Калкулатор";
+    var orderTypeItems = this.Model.OrderTypeItems.Select(x => new SelectListItem(x.Value, x.Key));
+    var documentTypeItems = this.Model.DocumentTypeItems.Select(x => new SelectListItem(x.Value, x.Key));
+    var fullfillmentSpeedItems = this.Model.OrderFullfilmentTypeItems.Select(x => new SelectListItem(x.Value, x.Key));
+    var languagesFromTypeItems = this.Model.LanguageFromItems.Select(x => new SelectListItem(x.Value, x.Value));
+    var languagesToTypeItems = this.Model.LanguageToItems.Select(x => new SelectListItem(x.Value, x.Value));
+    var waysToReceiveOrderTypeItems = this.Model.WayToReceiveItems.Select(x => new SelectListItem(x.Value, x.Key));
 }
 
 <div class="page-area">
@@ -11,55 +17,107 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="breadcrumb text-center">
                     <div class="section-headline white-headline">
-                        <h3>Калкулатор на услуги</h3>
+                        <h3>Калкулатор</h3>
                     </div>
                     <ul class="breadcrumb-bg">
                         <li class="home-bread">Начало</li>
-                        <li>Калкулатор на услуги</li>
+                        <li>Калкулатор</li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<div class="contact-area page-padding">
+    <div class="container">
+        <div id="appendPlace" class="row">
+            <form method="post" class="col-md-offset-2 col-xs-8" enctype="multipart/form-data">
+                <h1 class="text-center">@this.ViewData["Title"]</h1>
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="OrderTypeId"></label>
+                    <select asp-for="OrderTypeId" class="form-control" asp-items="orderTypeItems" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="top" data-content="Моля, изберете вида на услугата."></select>
+                    <span asp-validation-for="OrderTypeId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="OrderSpeedFullfilment"></label>
+                    <select asp-for="OrderSpeedFullfilment" class="form-control" asp-items="fullfillmentSpeedItems" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="top" data-html="true" data-content="Срокове за превод: <br/>- нормална поръчка: 2 работни дни;  <br/> - бърза поръчка: 1 работен ден;  <br/> - експресна поръчка: 2 раб. часа"></select>
+                    <span asp-validation-for="OrderSpeedFullfilment" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TypeOfTheDocument"></label>
+                    <select asp-for="TypeOfTheDocument" class="form-control" asp-items="documentTypeItems" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="top" data-html="true" data-content="Моля, изберете този вид, който отговаря най-точно на Вашия документ. <br/> Ако имате затруднения при определянето му, моля, свържете се с нас."></select>
+                    <span asp-validation-for="TypeOfTheDocument" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Pages"></label>
+                    <input asp-for="Pages" class="form-control" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="top" data-content="Моля, имайте предвид, че броят страници се изчислява по стандарт БДС EN ISO 17100:2015, според който една преводаческа страница е равна на 1800 символа, включително интервалите." />
+                    <span asp-validation-for="Pages" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="WayToReceive"></label>
+                    <select asp-for="WayToReceive" class="form-control" asp-items="waysToReceiveOrderTypeItems" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="top" data-content="Моля, изберете най-удобният за Вас начин на получаване."> </select>
+                    <span asp-validation-for="WayToReceive" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="LanguageFrom"></label>
+                    <select asp-for="LanguageFrom" class="form-control positionTypes" asp-items="languagesFromTypeItems" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="top" data-content="Моля, изберете езика на оригиналния документ."></select>
+                    <span asp-validation-for="LanguageFrom" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="LanguageTo"></label>
+                    <select asp-for="LanguageTo" class="form-control positionTypes" asp-items="languagesToTypeItems" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="top" data-content="Моля, изберете език, на който да бъде извършен превода."></select>
+                    <span asp-validation-for="LanguageTo" class="text-danger"></span>
+                </div>
+                <div class="calculator-form">
+                    <div class="btn-toolbar" >
+                        <button type="submit" id="calculatePrice" class="btn btn-primary contact-btn  pull-left">Калкулирай цената</button>
+                        <button type="submit" id="submit" class="btn  btn-primary contact-btn pull-right">Генерирай оферта</button>
+                        <button type="submit" id="submit" class="btn  btn-primary contact-btn" style="margin-left:45px">Свържи се с оператор</button>
+                        <div id="msgSubmit" class="h3 text-center hidden"></div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
-<form method="post" class="col-md-6 offset-md-3"
-      enctype="multipart/form-data">
-    <h1>@this.ViewData["Title"]</h1>
-    <div asp-validation-summary="All" class="text-danger"></div>
-    <div class="form-group">
-        <label asp-for="OrderType"></label>
-        <input asp-for="OrderType" class="form-control" />
-        <span asp-validation-for="OrderType" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="OrderSpeedFullfilment"></label>
-        <textarea asp-for="OrderSpeedFullfilment" class="form-control" rows="5"></textarea>
-        <span asp-validation-for="OrderSpeedFullfilment" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="TypeOfTheDocument"></label>
-        <input asp-for="TypeOfTheDocument" class="form-control" />
-        <span asp-validation-for="TypeOfTheDocument" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="Pages"></label>
-        <input asp-for="Pages" class="form-control" />
-        <span asp-validation-for="Pages" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="WayToReceive"></label>
-        <input asp-for="WayToReceive" class="form-control" />
-        <span asp-validation-for="WayToReceive" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="LanguageFrom"></label>
-        <select asp-for="LanguageFrom" class="form-control"></select>
-        <span asp-validation-for="LanguageFrom" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="LanguageTo"></label>
-        <input asp-for="LanguageTo" class="form-control" />
-        <span asp-validation-for="LanguageTo" class="text-danger"></span>
-    </div>
-</form>
+@section Scripts{
+    <script>
+        $(function () {
+            $('[data-toggle="popover"]').popover()
+        })
+
+        $(function () {
+            $('#calculatePrice').on('click', function (e) {
+                e.preventDefault();
+                var placeToAppend = document.getElementById("appendPlace");
+                var form = document.createElement('div');
+                form.textContent = '200BGN';
+                placeToAppend.appendChild(form);
+
+            })
+        })
+
+        $(function () {
+            $(".positionTypes").on('change', function () {
+                var selectedValue = $(this).val();
+                var otherDropdowns = $('.positionTypes').not(this);
+                otherDropdowns.find('option').prop('disabled', false); //reset all previous selection
+                console.log("value:" + selectedValue);
+                otherDropdowns.find('option[value="' + selectedValue + '"]').prop('disabled', true);
+            });
+        });
+
+        $(function () {
+            $(".positionTypes").on('change', function () {
+                var selectedValue = $(this).val();
+                var otherDropdowns = $('.positionTypes').not(this);
+                otherDropdowns.find('option').prop('disabled', false); //reset all previous selection
+                console.log("value:" + selectedValue);
+                otherDropdowns.find('option[value="' + selectedValue + '"]').prop('disabled', true);
+            });
+        });
+    </script>
+}

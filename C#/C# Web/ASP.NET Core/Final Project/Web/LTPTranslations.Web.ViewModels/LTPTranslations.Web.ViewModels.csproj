@@ -28,6 +28,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Data\LTPTranslations.Data.Models\LTPTranslations.Data.Models.csproj" />
     <ProjectReference Include="..\..\Services\LTPTranslations.Services.Mapping\LTPTranslations.Services.Mapping.csproj" />
+    <ProjectReference Include="..\..\Web\LTPTranslations.Web.Infrastructure\LTPTranslations.Web.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

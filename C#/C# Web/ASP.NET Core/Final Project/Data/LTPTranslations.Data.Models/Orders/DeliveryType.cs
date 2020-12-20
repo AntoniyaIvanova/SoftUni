@@ -4,6 +4,6 @@
 
     public class DeliveryType : BaseDeletableModel<int>
     {
-        public int Name { get; set; }
+        public string Name { get; set; }
     }
 }

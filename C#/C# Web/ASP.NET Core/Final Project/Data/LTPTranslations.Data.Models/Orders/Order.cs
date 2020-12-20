@@ -1,12 +1,10 @@
 ﻿namespace LTPTranslations.Data.Models.Orders
 {
     using System;
-    using System.Collections.Generic;
 
     using LTPTranslations.Data.Common.Models;
     using LTPTranslations.Data.Models.Clients;
     using LTPTranslations.Data.Models.Invoices;
-    using LTPTranslations.Data.Models.Legalizations;
     using LTPTranslations.Data.Models.Moderators;
     using LTPTranslations.Data.Models.Translations;
 
@@ -29,13 +27,21 @@
 
         public Moderator Moderator { get; set; }
 
+        public int OrderTypeId { get; set; }
+
+        public OrderType OrderType { get; set; }
+
         public int TimeForFullfillmentId { get; set; }
 
         public TimeForFullfillment TimeForFullfillment { get; set; }
 
-        public int OrderTypeId { get; set; }
+        public int LanguageFromId { get; set; }
 
-        public OrderType OrderType { get; set; }
+        public LanguageFrom LanguageFrom { get; set; }
+
+        public int LanguageFromTo { get; set; }
+
+        public LanguageTo LanguageTo { get; set; }
 
         public int DeliveryTypeId { get; set; }
 
