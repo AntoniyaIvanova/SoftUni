@@ -29,6 +29,8 @@
     <ProjectReference Include="..\..\Data\LTPTranslations.Data.Common\LTPTranslations.Data.Common.csproj" />
     <ProjectReference Include="..\..\Data\LTPTranslations.Data.Models\LTPTranslations.Data.Models.csproj" />
     <ProjectReference Include="..\LTPTranslations.Services.Mapping\LTPTranslations.Services.Mapping.csproj" />
+    <ProjectReference Include="..\..\Web\LTPTranslations.Web.ViewModels\LTPTranslations.Web.ViewModels.csproj" />
+
   </ItemGroup>
 
 </Project>

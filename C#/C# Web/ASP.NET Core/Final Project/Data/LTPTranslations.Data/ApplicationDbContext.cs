@@ -34,6 +34,8 @@
 
         public DbSet<Order> Orders { get; set; }
 
+        public DbSet<Offer> Offers { get; set; }
+
         public DbSet<OrderType> OrderTypes { get; set; }
 
         public DbSet<TimeForFullfillment> TimeForFullfillments { get; set; }

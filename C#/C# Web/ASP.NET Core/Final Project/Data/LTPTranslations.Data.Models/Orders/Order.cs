@@ -46,5 +46,9 @@
         public int DeliveryTypeId { get; set; }
 
         public DeliveryType DeliveryType { get; set; }
+
+        public int OfferId { get; set; }
+
+        public Offer Offer { get; set; }
     }
 }

@@ -30,7 +30,7 @@
 </div>
 <div class="contact-area page-padding">
     <div class="container">
-        <div id="appendPlace" class="row">
+        <div class="row">
             <form method="post" class="col-md-offset-2 col-xs-8" enctype="multipart/form-data">
                 <h1 class="text-center">@this.ViewData["Title"]</h1>
                 <div asp-validation-summary="All" class="text-danger"></div>
@@ -69,8 +69,11 @@
                     <select asp-for="LanguageTo" class="form-control positionTypes" asp-items="languagesToTypeItems" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="top" data-content="Моля, изберете език, на който да бъде извършен превода."></select>
                     <span asp-validation-for="LanguageTo" class="text-danger"></span>
                 </div>
+                <div id="appendPlace" style="display: none">
+                    <label asp-for="PriceOffer"></label>
+                </div>
                 <div class="calculator-form">
-                    <div class="btn-toolbar" >
+                    <div class="btn-toolbar">
                         <button type="submit" id="calculatePrice" class="btn btn-primary contact-btn  pull-left">Калкулирай цената</button>
                         <button type="submit" id="submit" class="btn  btn-primary contact-btn pull-right">Генерирай оферта</button>
                         <button type="submit" id="submit" class="btn  btn-primary contact-btn" style="margin-left:45px">Свържи се с оператор</button>
@@ -92,23 +95,23 @@
         $(function () {
             $('#calculatePrice').on('click', function (e) {
                 e.preventDefault();
-                var placeToAppend = document.getElementById("appendPlace");
-                var form = document.createElement('div');
-                form.textContent = '200BGN';
-                placeToAppend.appendChild(form);
-
             })
         })
 
         $(function () {
-            $(".positionTypes").on('change', function () {
-                var selectedValue = $(this).val();
-                var otherDropdowns = $('.positionTypes').not(this);
-                otherDropdowns.find('option').prop('disabled', false); //reset all previous selection
-                console.log("value:" + selectedValue);
-                otherDropdowns.find('option[value="' + selectedValue + '"]').prop('disabled', true);
-            });
-        });
+            $('#calculatePrice').one('click', function (e) {
+                e.preventDefault();
+                var placeToAppend = document.getElementById("appendPlace");
+
+                $(placeToAppend).show();
+              
+                var form = document.createElement('div');
+                $(form).css("font-size", "24px");
+                $(form).attr('name', ''); 
+                form.textContent = '300 BGN';
+                placeToAppend.appendChild(form);                
+            })
+        })
 
         $(function () {
             $(".positionTypes").on('change', function () {

@@ -35,6 +35,9 @@
         [Display(Name = "Начин на получаване")]
         public int WayToReceive { get; set; }
 
+        [Display(Name = "Обща сума:")]
+        public decimal PriceOffer { get; set; }
+
         public IEnumerable<KeyValuePair<string, string>> OrderTypeItems { get; set; }
 
         public IEnumerable<KeyValuePair<string, string>> OrderFullfilmentTypeItems { get; set; }
