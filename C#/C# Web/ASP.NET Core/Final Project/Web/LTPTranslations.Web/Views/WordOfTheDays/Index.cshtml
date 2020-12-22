@@ -1,0 +1,80 @@
+﻿@{
+    this.ViewData["Title"] = "Дума на деня";
+}
+
+<div class="page-area">
+    <div class="breadcumb-overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="breadcrumb text-center">
+                    <div class="section-headline white-headline">
+                        <h3>Дума на деня</h3>
+                    </div>
+                    <ul class="breadcrumb-bg">
+                        <li class="home-bread">Начало</li>
+                        <li>Дума на деня</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End breadcumb Area -->
+<!-- Start contact Area -->
+
+<div id="placeToPic">
+    <div class="col-md-offset-2 col-xs-8">
+        <a id="link" href="#" target="_blank"><div class="text-center" id="word"></div></a>
+        <table class="table table-hover">
+            <tbody id="toAppend">
+                <tr>
+                    <th scope="row">Транскрипция</th>
+                    <td id="trans"></td>
+                </tr>
+                <tr>
+                    <th scope="row">Превод</th>
+                    <td id="defin"></td>
+                </tr>
+                <tr>
+                    <th scope="row">Част на речта</th>
+                    <td id="partOf" colspan="2"></td>
+                </tr>
+                <tr>
+                    <th>Синоними</th>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+@section Scripts{
+    <script>
+
+        $.ajax({
+            type: "GET",
+            url: "https://localhost:44319/WordOfTheDaysWebApi",
+            dataType: "json",
+            success: function (data) {
+                console.log(data)
+                $("#word").append(data.originalWord);
+                $("#trans").append(data.pronunciation);
+                $("#defin").append(data.meaning);
+                $("#partOf").append(data.partOfSpeech);
+
+                data.otherSynonyms.forEach((x) => {
+                    let tr = document.createElement("tr");
+                    let th = document.createElement("th");
+                    let element = document.createElement("td");
+                    element.textContent = x.synonymName;
+                    $(element).attr("id", "synonym");
+                    tr.appendChild(th);
+                    tr.appendChild(element);
+                    $("#toAppend").append(tr);
+                })
+            }
+        });
+    </script>
+}

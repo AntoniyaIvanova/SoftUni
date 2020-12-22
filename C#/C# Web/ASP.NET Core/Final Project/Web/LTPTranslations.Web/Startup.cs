@@ -10,6 +10,7 @@
     using LTPTranslations.Data.Seeding;
     using LTPTranslations.Services.Data;
     using LTPTranslations.Services.Data.Orders;
+    using LTPTranslations.Services.Data.Web_Api;
     using LTPTranslations.Services.Mapping;
     using LTPTranslations.Services.Messaging;
     using LTPTranslations.Web.ViewModels;
@@ -79,6 +80,8 @@
             services.AddTransient<ILanguageFromService, LanguageFromService>();
             services.AddTransient<IOrderFullfillmentTypeService, OrderFullfillmentTypeService>();
             services.AddTransient<IWaysToReceiveTypeService, WaysToReceiveTypeService>();
+            services.AddTransient<IOfferService, OfferService>();
+            services.AddTransient<IWordOfTheDayService, WordOfTheDayService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -106,6 +109,7 @@
             }
 
             app.UseHttpsRedirection();
+            app.UseDefaultFiles();
             app.UseStaticFiles();
             app.UseCookiePolicy();
 

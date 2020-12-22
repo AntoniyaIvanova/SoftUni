@@ -1,5 +1,7 @@
 ﻿namespace LTPTranslations.Web.Controllers
 {
+    using System.Threading.Tasks;
+
     using LTPTranslations.Services.Data.Orders;
     using LTPTranslations.Web.ViewModels.Calculator;
     using Microsoft.AspNetCore.Mvc;
@@ -12,6 +14,7 @@
         private readonly ILanguageFromService languageFromService;
         private readonly ILanguageToTypeService languageToService;
         private readonly IWaysToReceiveTypeService waysToReceiveTypeService;
+        private readonly IOfferService offerService;
 
         public CalculatorsController(
             IOrderTypeService orderTypeService,
@@ -19,7 +22,8 @@
             IOrderFullfillmentTypeService orderFullfilmentTypeService,
             ILanguageFromService languageFromService,
             ILanguageToTypeService languageToService,
-            IWaysToReceiveTypeService waysToReceiveTypeService)
+            IWaysToReceiveTypeService waysToReceiveTypeService,
+            IOfferService offerService)
         {
             this.orderTypeService = orderTypeService;
             this.documentTypeService = documentTypeService;
@@ -27,6 +31,7 @@
             this.languageFromService = languageFromService;
             this.languageToService = languageToService;
             this.waysToReceiveTypeService = waysToReceiveTypeService;
+            this.offerService = offerService;
         }
 
         public IActionResult Index()
@@ -43,13 +48,15 @@
         }
 
         [HttpPost]
-        public IActionResult Index(CalculatorOptionsInputModel input)
+        public async Task<IActionResult> Index(CalculatorOptionsInputModel input)
         {
             if (!this.ModelState.IsValid)
             {
                 input.OrderTypeItems = this.orderTypeService.GetAllOrderTypes();
                 return this.View(input);
             }
+
+            await this.offerService.CreateAsync(input);
 
             return this.Redirect("/");
         }

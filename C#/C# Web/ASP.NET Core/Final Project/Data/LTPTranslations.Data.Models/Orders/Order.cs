@@ -5,6 +5,7 @@
     using LTPTranslations.Data.Common.Models;
     using LTPTranslations.Data.Models.Clients;
     using LTPTranslations.Data.Models.Invoices;
+    using LTPTranslations.Data.Models.Legalizations;
     using LTPTranslations.Data.Models.Moderators;
     using LTPTranslations.Data.Models.Translations;
 
@@ -39,7 +40,7 @@
 
         public LanguageFrom LanguageFrom { get; set; }
 
-        public int LanguageFromTo { get; set; }
+        public int LanguageToId { get; set; }
 
         public LanguageTo LanguageTo { get; set; }
 
@@ -47,8 +48,14 @@
 
         public DeliveryType DeliveryType { get; set; }
 
-        public int OfferId { get; set; }
+        public int DocumentTypeId { get; set; }
 
-        public Offer Offer { get; set; }
+        public DocumentType DocumentType { get; set; }
+
+        public decimal PriceOffer { get; set; }
+
+        public bool IsAccepted { get; set; }
+
+        public decimal Pages { get; set; }
     }
 }

@@ -1,9 +1,11 @@
 ﻿namespace LTPTranslations.Services.Data.Orders
 {
+    using System.Threading.Tasks;
+
     using LTPTranslations.Web.ViewModels.Calculator;
 
     public interface IOfferService
     {
-        void Create(CalculatorOptionsInputModel input);
+        Task CreateAsync(CalculatorOptionsInputModel input);
     }
 }

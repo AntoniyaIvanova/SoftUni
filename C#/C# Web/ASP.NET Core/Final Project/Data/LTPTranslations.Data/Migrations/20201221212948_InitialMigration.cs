@@ -1,10 +1,9 @@
-﻿namespace LTPTranslations.Data.Migrations
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
+
+namespace LTPTranslations.Data.Migrations
 {
-    using System;
-
-    using Microsoft.EntityFrameworkCore.Migrations;
-
-    public partial class Grrr : Migration
+    public partial class InitialMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -19,7 +18,7 @@
                     DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
                     Name = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
-                    ConcurrencyStamp = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ConcurrencyStamp = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -48,7 +47,7 @@
                     TwoFactorEnabled = table.Column<bool>(type: "bit", nullable: false),
                     LockoutEnd = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: true),
                     LockoutEnabled = table.Column<bool>(type: "bit", nullable: false),
-                    AccessFailedCount = table.Column<int>(type: "int", nullable: false),
+                    AccessFailedCount = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -65,7 +64,7 @@
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -84,7 +83,7 @@
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -101,7 +100,7 @@
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -120,7 +119,7 @@
                     Message = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Ip = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -137,11 +136,28 @@
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Countries", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "DeliveryTypes",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
+                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_DeliveryTypes", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -154,7 +170,7 @@
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -173,7 +189,7 @@
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -190,7 +206,7 @@
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -207,7 +223,7 @@
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -224,7 +240,7 @@
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -244,11 +260,28 @@
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_LegalizingAuthorities", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "OrderTypes",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
+                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_OrderTypes", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -261,7 +294,7 @@
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -280,7 +313,7 @@
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -297,7 +330,7 @@
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -315,7 +348,7 @@
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -328,16 +361,35 @@
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    AssignedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ReadyBy = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_TimeForFullfillments", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "WordsOfTheDay",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    OriginalWord = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Meaning = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Pronunciation = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PartOfSpeech = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
+                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_WordsOfTheDay", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -348,7 +400,7 @@
                         .Annotation("SqlServer:Identity", "1, 1"),
                     RoleId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     ClaimType = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ClaimValue = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ClaimValue = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -369,7 +421,7 @@
                         .Annotation("SqlServer:Identity", "1, 1"),
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     ClaimType = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ClaimValue = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ClaimValue = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -389,7 +441,7 @@
                     LoginProvider = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     ProviderKey = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     ProviderDisplayName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -407,7 +459,7 @@
                 columns: table => new
                 {
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    RoleId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    RoleId = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -433,7 +485,7 @@
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     LoginProvider = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Value = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Value = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -452,7 +504,7 @@
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     ApplicationUserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -477,7 +529,7 @@
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -500,7 +552,7 @@
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -523,7 +575,7 @@
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -549,7 +601,7 @@
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -569,7 +621,7 @@
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     ApplicationUserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     PersonalInformationId = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    ConsularCertificationId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    ConsularCertificationId = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -606,7 +658,7 @@
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -632,13 +684,37 @@
                 });
 
             migrationBuilder.CreateTable(
+                name: "Synonyms",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    SynonymName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    WordOfTheDayId = table.Column<int>(type: "int", nullable: true),
+                    CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
+                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Synonyms", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Synonyms_WordsOfTheDay_WordOfTheDayId",
+                        column: x => x.WordOfTheDayId,
+                        principalTable: "WordsOfTheDay",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Moderators",
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     ApplicationUserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    OfficeId = table.Column<int>(type: "int", nullable: true),
+                    OfficeId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -669,7 +745,7 @@
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -701,7 +777,7 @@
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -737,7 +813,7 @@
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -757,7 +833,7 @@
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     ApplicationUserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     PersonalInformationId = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    AddressInformationId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    AddressInformationId = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -783,6 +859,89 @@
                 });
 
             migrationBuilder.CreateTable(
+                name: "Legalizations",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    CourierId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    DocumentForLegalizationId = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DocumentForLegalizationId1 = table.Column<int>(type: "int", nullable: true),
+                    CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
+                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Legalizations", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Legalizations_Couriers_CourierId",
+                        column: x => x.CourierId,
+                        principalTable: "Couriers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Legalizations_DocumentForLegalizations_DocumentForLegalizationId1",
+                        column: x => x.DocumentForLegalizationId1,
+                        principalTable: "DocumentForLegalizations",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Translations",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    DocumentId = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DocumentForTranslationId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    LanguagePairId = table.Column<int>(type: "int", nullable: false),
+                    LanguagePairId1 = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    FullFillmentTypeId = table.Column<int>(type: "int", nullable: false),
+                    TimeForFullfillmentId = table.Column<int>(type: "int", nullable: false),
+                    PagesCount = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    TranslatorId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
+                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Translations", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Translations_DocumentForTranslations_DocumentForTranslationId",
+                        column: x => x.DocumentForTranslationId,
+                        principalTable: "DocumentForTranslations",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Translations_FullfillmentTypes_FullFillmentTypeId",
+                        column: x => x.FullFillmentTypeId,
+                        principalTable: "FullfillmentTypes",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Translations_LanguagePairs_LanguagePairId1",
+                        column: x => x.LanguagePairId1,
+                        principalTable: "LanguagePairs",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Translations_TimeForFullfillments_TimeForFullfillmentId",
+                        column: x => x.TimeForFullfillmentId,
+                        principalTable: "TimeForFullfillments",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Translations_Translators_TranslatorId",
+                        column: x => x.TranslatorId,
+                        principalTable: "Translators",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Invoices",
                 columns: table => new
                 {
@@ -799,7 +958,7 @@
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -831,140 +990,23 @@
                 });
 
             migrationBuilder.CreateTable(
-                name: "Orders",
+                name: "TranslationTranslators",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    InvoiceId = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    ClientId = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    ModeartorId = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ModeratorId = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    TimeForFullfillmentId = table.Column<int>(type: "int", nullable: false),
-                    CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    TranslatorId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    TranslationId = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Orders", x => x.Id);
+                    table.PrimaryKey("PK_TranslationTranslators", x => new { x.TranslationId, x.TranslatorId });
                     table.ForeignKey(
-                        name: "FK_Orders_Clients_ClientId",
-                        column: x => x.ClientId,
-                        principalTable: "Clients",
+                        name: "FK_TranslationTranslators_Translations_TranslationId",
+                        column: x => x.TranslationId,
+                        principalTable: "Translations",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Orders_Invoices_InvoiceId",
-                        column: x => x.InvoiceId,
-                        principalTable: "Invoices",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Orders_Moderators_ModeratorId",
-                        column: x => x.ModeratorId,
-                        principalTable: "Moderators",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Orders_TimeForFullfillments_TimeForFullfillmentId",
-                        column: x => x.TimeForFullfillmentId,
-                        principalTable: "TimeForFullfillments",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Legalizations",
-                columns: table => new
-                {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    CourierId = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    DocumentForLegalizationId = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    DocumentForLegalizationId1 = table.Column<int>(type: "int", nullable: true),
-                    OrderId = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Legalizations", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Legalizations_Couriers_CourierId",
-                        column: x => x.CourierId,
-                        principalTable: "Couriers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Legalizations_DocumentForLegalizations_DocumentForLegalizationId1",
-                        column: x => x.DocumentForLegalizationId1,
-                        principalTable: "DocumentForLegalizations",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Legalizations_Orders_OrderId",
-                        column: x => x.OrderId,
-                        principalTable: "Orders",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Translations",
-                columns: table => new
-                {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    DocumentId = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    DocumentForTranslationId = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    LanguagePairId = table.Column<int>(type: "int", nullable: false),
-                    LanguagePairId1 = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    FullFillmentTypeId = table.Column<int>(type: "int", nullable: false),
-                    TimeForFullfillmentId = table.Column<int>(type: "int", nullable: false),
-                    PagesCount = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    OrderId = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    TranslatorId = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Translations", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Translations_DocumentForTranslations_DocumentForTranslationId",
-                        column: x => x.DocumentForTranslationId,
-                        principalTable: "DocumentForTranslations",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Translations_FullfillmentTypes_FullFillmentTypeId",
-                        column: x => x.FullFillmentTypeId,
-                        principalTable: "FullfillmentTypes",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Translations_LanguagePairs_LanguagePairId1",
-                        column: x => x.LanguagePairId1,
-                        principalTable: "LanguagePairs",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Translations_Orders_OrderId",
-                        column: x => x.OrderId,
-                        principalTable: "Orders",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Translations_TimeForFullfillments_TimeForFullfillmentId",
-                        column: x => x.TimeForFullfillmentId,
-                        principalTable: "TimeForFullfillments",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Translations_Translators_TranslatorId",
+                        name: "FK_TranslationTranslators_Translators_TranslatorId",
                         column: x => x.TranslatorId,
                         principalTable: "Translators",
                         principalColumn: "Id",
@@ -982,7 +1024,7 @@
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -1002,25 +1044,84 @@
                 });
 
             migrationBuilder.CreateTable(
-                name: "TranslationTranslators",
+                name: "Orders",
                 columns: table => new
                 {
-                    TranslatorId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    TranslationId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    InvoiceId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    ClientId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    ModeartorId = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ModeratorId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    OrderTypeId = table.Column<int>(type: "int", nullable: false),
+                    TimeForFullfillmentId = table.Column<int>(type: "int", nullable: false),
+                    LanguageFromId = table.Column<int>(type: "int", nullable: false),
+                    LanguageToId = table.Column<int>(type: "int", nullable: false),
+                    DeliveryTypeId = table.Column<int>(type: "int", nullable: false),
+                    DocumentTypeId = table.Column<int>(type: "int", nullable: false),
+                    DocumentTypeId1 = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    PriceOffer = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    IsAccepted = table.Column<bool>(type: "bit", nullable: false),
+                    Pages = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
+                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_TranslationTranslators", x => new { x.TranslationId, x.TranslatorId });
+                    table.PrimaryKey("PK_Orders", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_TranslationTranslators_Translations_TranslationId",
-                        column: x => x.TranslationId,
-                        principalTable: "Translations",
+                        name: "FK_Orders_Clients_ClientId",
+                        column: x => x.ClientId,
+                        principalTable: "Clients",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_TranslationTranslators_Translators_TranslatorId",
-                        column: x => x.TranslatorId,
-                        principalTable: "Translators",
+                        name: "FK_Orders_DeliveryTypes_DeliveryTypeId",
+                        column: x => x.DeliveryTypeId,
+                        principalTable: "DeliveryTypes",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Orders_DocumentTypes_DocumentTypeId1",
+                        column: x => x.DocumentTypeId1,
+                        principalTable: "DocumentTypes",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Orders_Invoices_InvoiceId",
+                        column: x => x.InvoiceId,
+                        principalTable: "Invoices",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Orders_LanguagesFrom_LanguageFromId",
+                        column: x => x.LanguageFromId,
+                        principalTable: "LanguagesFrom",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Orders_LanguagesTo_LanguageToId",
+                        column: x => x.LanguageToId,
+                        principalTable: "LanguagesTo",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Orders_Moderators_ModeratorId",
+                        column: x => x.ModeratorId,
+                        principalTable: "Moderators",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Orders_OrderTypes_OrderTypeId",
+                        column: x => x.OrderTypeId,
+                        principalTable: "OrderTypes",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Orders_TimeForFullfillments_TimeForFullfillmentId",
+                        column: x => x.TimeForFullfillmentId,
+                        principalTable: "TimeForFullfillments",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -1150,6 +1251,11 @@
                 column: "ApplicationUserId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_DeliveryTypes_IsDeleted",
+                table: "DeliveryTypes",
+                column: "IsDeleted");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_DocumentForLegalizations_DocumentTypeId",
                 table: "DocumentForLegalizations",
                 column: "DocumentTypeId");
@@ -1270,11 +1376,6 @@
                 column: "IsDeleted");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Legalizations_OrderId",
-                table: "Legalizations",
-                column: "OrderId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_LegalizingAuthorities_IsDeleted",
                 table: "LegalizingAuthorities",
                 column: "IsDeleted");
@@ -1305,6 +1406,16 @@
                 column: "ClientId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Orders_DeliveryTypeId",
+                table: "Orders",
+                column: "DeliveryTypeId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Orders_DocumentTypeId1",
+                table: "Orders",
+                column: "DocumentTypeId1");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Orders_InvoiceId",
                 table: "Orders",
                 column: "InvoiceId");
@@ -1315,14 +1426,34 @@
                 column: "IsDeleted");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Orders_LanguageFromId",
+                table: "Orders",
+                column: "LanguageFromId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Orders_LanguageToId",
+                table: "Orders",
+                column: "LanguageToId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Orders_ModeratorId",
                 table: "Orders",
                 column: "ModeratorId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Orders_OrderTypeId",
+                table: "Orders",
+                column: "OrderTypeId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Orders_TimeForFullfillmentId",
                 table: "Orders",
                 column: "TimeForFullfillmentId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_OrderTypes_IsDeleted",
+                table: "OrderTypes",
+                column: "IsDeleted");
 
             migrationBuilder.CreateIndex(
                 name: "IX_PaymentMethods_IsDeleted",
@@ -1355,6 +1486,16 @@
                 column: "IsDeleted");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Synonyms_IsDeleted",
+                table: "Synonyms",
+                column: "IsDeleted");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Synonyms_WordOfTheDayId",
+                table: "Synonyms",
+                column: "WordOfTheDayId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_TimeForFullfillments_IsDeleted",
                 table: "TimeForFullfillments",
                 column: "IsDeleted");
@@ -1378,11 +1519,6 @@
                 name: "IX_Translations_LanguagePairId1",
                 table: "Translations",
                 column: "LanguagePairId1");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Translations_OrderId",
-                table: "Translations",
-                column: "OrderId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Translations_TimeForFullfillmentId",
@@ -1423,6 +1559,11 @@
                 name: "IX_UniversityDiplomas_IsDeleted",
                 table: "UniversityDiplomas",
                 column: "IsDeleted");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_WordsOfTheDay_IsDeleted",
+                table: "WordsOfTheDay",
+                column: "IsDeleted");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -1455,10 +1596,16 @@
                 name: "Legalizations");
 
             migrationBuilder.DropTable(
+                name: "Orders");
+
+            migrationBuilder.DropTable(
                 name: "PreferedTopics");
 
             migrationBuilder.DropTable(
                 name: "Settings");
+
+            migrationBuilder.DropTable(
+                name: "Synonyms");
 
             migrationBuilder.DropTable(
                 name: "TranslationTranslators");
@@ -1476,34 +1623,7 @@
                 name: "DocumentForLegalizations");
 
             migrationBuilder.DropTable(
-                name: "Translations");
-
-            migrationBuilder.DropTable(
-                name: "DocumentTypes");
-
-            migrationBuilder.DropTable(
-                name: "DocumentForTranslations");
-
-            migrationBuilder.DropTable(
-                name: "FullfillmentTypes");
-
-            migrationBuilder.DropTable(
-                name: "LanguagePairs");
-
-            migrationBuilder.DropTable(
-                name: "Orders");
-
-            migrationBuilder.DropTable(
-                name: "LegalizingAuthorities");
-
-            migrationBuilder.DropTable(
-                name: "LanguagesFrom");
-
-            migrationBuilder.DropTable(
-                name: "LanguagesTo");
-
-            migrationBuilder.DropTable(
-                name: "Translators");
+                name: "DeliveryTypes");
 
             migrationBuilder.DropTable(
                 name: "Invoices");
@@ -1512,10 +1632,16 @@
                 name: "Moderators");
 
             migrationBuilder.DropTable(
-                name: "TimeForFullfillments");
+                name: "OrderTypes");
 
             migrationBuilder.DropTable(
-                name: "ConsularCertifications");
+                name: "WordsOfTheDay");
+
+            migrationBuilder.DropTable(
+                name: "Translations");
+
+            migrationBuilder.DropTable(
+                name: "DocumentTypes");
 
             migrationBuilder.DropTable(
                 name: "Clients");
@@ -1530,16 +1656,34 @@
                 name: "Offices");
 
             migrationBuilder.DropTable(
+                name: "DocumentForTranslations");
+
+            migrationBuilder.DropTable(
+                name: "FullfillmentTypes");
+
+            migrationBuilder.DropTable(
+                name: "LanguagePairs");
+
+            migrationBuilder.DropTable(
+                name: "TimeForFullfillments");
+
+            migrationBuilder.DropTable(
+                name: "LegalizingAuthorities");
+
+            migrationBuilder.DropTable(
                 name: "AddressesInformation");
 
             migrationBuilder.DropTable(
-                name: "AspNetUsers");
-
-            migrationBuilder.DropTable(
-                name: "PersonalInformation");
-
-            migrationBuilder.DropTable(
                 name: "Companies");
+
+            migrationBuilder.DropTable(
+                name: "LanguagesFrom");
+
+            migrationBuilder.DropTable(
+                name: "LanguagesTo");
+
+            migrationBuilder.DropTable(
+                name: "Translators");
 
             migrationBuilder.DropTable(
                 name: "Cities");
@@ -1549,6 +1693,15 @@
 
             migrationBuilder.DropTable(
                 name: "PostalCodes");
+
+            migrationBuilder.DropTable(
+                name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "ConsularCertifications");
+
+            migrationBuilder.DropTable(
+                name: "PersonalInformation");
         }
     }
 }

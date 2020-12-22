@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LTPTranslations.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201219150501_andagainforthestupid")]
-    partial class andagainforthestupid
+    [Migration("20201221212948_InitialMigration")]
+    partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -852,14 +852,14 @@ namespace LTPTranslations.Data.Migrations
                     b.Property<DateTime?>("ModifiedOn")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Name")
-                        .HasColumnType("int");
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("IsDeleted");
 
-                    b.ToTable("DeliveryType");
+                    b.ToTable("DeliveryTypes");
                 });
 
             modelBuilder.Entity("LTPTranslations.Data.Models.Orders.Order", b =>
@@ -879,8 +879,17 @@ namespace LTPTranslations.Data.Migrations
                     b.Property<int>("DeliveryTypeId")
                         .HasColumnType("int");
 
+                    b.Property<int>("DocumentTypeId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("DocumentTypeId1")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<string>("InvoiceId")
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<bool>("IsAccepted")
+                        .HasColumnType("bit");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
@@ -888,10 +897,7 @@ namespace LTPTranslations.Data.Migrations
                     b.Property<int>("LanguageFromId")
                         .HasColumnType("int");
 
-                    b.Property<int>("LanguageFromTo")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("LanguageToId")
+                    b.Property<int>("LanguageToId")
                         .HasColumnType("int");
 
                     b.Property<string>("ModeartorId")
@@ -906,6 +912,12 @@ namespace LTPTranslations.Data.Migrations
                     b.Property<int>("OrderTypeId")
                         .HasColumnType("int");
 
+                    b.Property<decimal>("Pages")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("PriceOffer")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<int>("TimeForFullfillmentId")
                         .HasColumnType("int");
 
@@ -914,6 +926,8 @@ namespace LTPTranslations.Data.Migrations
                     b.HasIndex("ClientId");
 
                     b.HasIndex("DeliveryTypeId");
+
+                    b.HasIndex("DocumentTypeId1");
 
                     b.HasIndex("InvoiceId");
 
@@ -968,9 +982,6 @@ namespace LTPTranslations.Data.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<DateTime>("AssignedOn")
-                        .HasColumnType("datetime2");
-
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
 
@@ -983,8 +994,8 @@ namespace LTPTranslations.Data.Migrations
                     b.Property<DateTime?>("ModifiedOn")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("ReadyBy")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -1372,6 +1383,78 @@ namespace LTPTranslations.Data.Migrations
                     b.ToTable("UniversityDiplomas");
                 });
 
+            modelBuilder.Entity("LTPTranslations.Data.Models.WebApi.Synonyms", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("SynonymName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("WordOfTheDayId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IsDeleted");
+
+                    b.HasIndex("WordOfTheDayId");
+
+                    b.ToTable("Synonyms");
+                });
+
+            modelBuilder.Entity("LTPTranslations.Data.Models.WebApi.WordOfTheDay", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Meaning")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("OriginalWord")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PartOfSpeech")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Pronunciation")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IsDeleted");
+
+                    b.ToTable("WordsOfTheDay");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.Property<int>("Id")
@@ -1672,6 +1755,10 @@ namespace LTPTranslations.Data.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
+                    b.HasOne("LTPTranslations.Data.Models.Legalizations.DocumentType", "DocumentType")
+                        .WithMany()
+                        .HasForeignKey("DocumentTypeId1");
+
                     b.HasOne("LTPTranslations.Data.Models.Invoices.Invoice", "Invoice")
                         .WithMany()
                         .HasForeignKey("InvoiceId");
@@ -1684,7 +1771,9 @@ namespace LTPTranslations.Data.Migrations
 
                     b.HasOne("LTPTranslations.Data.Models.Translations.LanguageTo", "LanguageTo")
                         .WithMany()
-                        .HasForeignKey("LanguageToId");
+                        .HasForeignKey("LanguageToId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.HasOne("LTPTranslations.Data.Models.Moderators.Moderator", "Moderator")
                         .WithMany("Orders")
@@ -1705,6 +1794,8 @@ namespace LTPTranslations.Data.Migrations
                     b.Navigation("Client");
 
                     b.Navigation("DeliveryType");
+
+                    b.Navigation("DocumentType");
 
                     b.Navigation("Invoice");
 
@@ -1806,6 +1897,13 @@ namespace LTPTranslations.Data.Migrations
                     b.HasOne("LTPTranslations.Data.Models.Translator.ConsularCertification", null)
                         .WithMany("UniviersityDiplomas")
                         .HasForeignKey("ConsularCertificationId");
+                });
+
+            modelBuilder.Entity("LTPTranslations.Data.Models.WebApi.Synonyms", b =>
+                {
+                    b.HasOne("LTPTranslations.Data.Models.WebApi.WordOfTheDay", null)
+                        .WithMany("OtherSynonyms")
+                        .HasForeignKey("WordOfTheDayId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -1926,6 +2024,11 @@ namespace LTPTranslations.Data.Migrations
                     b.Navigation("PreferedTopics");
 
                     b.Navigation("Translations");
+                });
+
+            modelBuilder.Entity("LTPTranslations.Data.Models.WebApi.WordOfTheDay", b =>
+                {
+                    b.Navigation("OtherSynonyms");
                 });
 #pragma warning restore 612, 618
         }

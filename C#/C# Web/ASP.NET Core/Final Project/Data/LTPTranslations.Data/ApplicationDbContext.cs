@@ -17,6 +17,7 @@
     using LTPTranslations.Data.Models.Orders;
     using LTPTranslations.Data.Models.Translations;
     using LTPTranslations.Data.Models.Translator;
+    using LTPTranslations.Data.Models.WebApi;
     using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
 
@@ -32,9 +33,11 @@
         {
         }
 
-        public DbSet<Order> Orders { get; set; }
+        public DbSet<WordOfTheDay> WordsOfTheDay { get; set; }
 
-        public DbSet<Offer> Offers { get; set; }
+        public DbSet<Synonyms> Synonyms { get; set; }
+
+        public DbSet<Order> Orders { get; set; }
 
         public DbSet<OrderType> OrderTypes { get; set; }
 

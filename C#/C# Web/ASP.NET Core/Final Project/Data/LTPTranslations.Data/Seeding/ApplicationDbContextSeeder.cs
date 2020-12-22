@@ -34,6 +34,7 @@
                               new WaysToDeliverSeeder(),
                               new LanguageFromSeeder(),
                               new LanguageToSeeder(),
+                              new WordOfTheDaySeeder(),
                           };
 
             foreach (var seeder in seeders)

@@ -25,6 +25,10 @@
     <link rel="stylesheet" href="~/style.css" asp-append-version="true">
     <!-- responsive css -->
     <link rel="stylesheet" href="~/css/responsive.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/duma.css" asp-append-version="true">
+
+
+
 </head>
 <body>
     <header class="header-one">
@@ -99,7 +103,7 @@
                                                     </ul>
                                                 </li>
                                                 <li>
-                                                    <a class="pages" href="index-2.html">Дума на деня</a>
+                                                    <a class="pages" asp-controller="WordOfTheDays">Дума на деня</a>
                                                 </li>
                                                 <li>
                                                     <a class="pages" asp-area="" asp-controller="Contacts" asp-action="Index">Свържете се с нас</a>
