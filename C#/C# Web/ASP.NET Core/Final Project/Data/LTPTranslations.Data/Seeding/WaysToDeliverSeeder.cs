@@ -25,6 +25,28 @@
                     Name = deliveryType,
                 });
             }
+
+            var firstType = new DeliveryType
+            {
+                Name = "Е-мейл",
+                Price = 1,
+            };
+
+            var secondType = new DeliveryType
+            {
+                Name = "Вземане от наш офис",
+                Price = 2,
+            };
+
+            var thirdType = new DeliveryType
+            {
+                Name = "Изпращане по куриер",
+                Price = 3,
+            };
+
+            await dbContext.DeliveryTypes.AddAsync(firstType);
+            await dbContext.DeliveryTypes.AddAsync(secondType);
+            await dbContext.DeliveryTypes.AddAsync(thirdType);
         }
     }
 }

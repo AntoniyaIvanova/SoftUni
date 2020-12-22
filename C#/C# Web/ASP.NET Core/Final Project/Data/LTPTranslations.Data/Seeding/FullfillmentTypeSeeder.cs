@@ -1,7 +1,6 @@
 ﻿namespace LTPTranslations.Data.Seeding
 {
     using System;
-    using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
 
@@ -16,15 +15,27 @@
                 return;
             }
 
-            var fullfillmentTypes = new List<string> { "Нормална", "Бърза", "Експресна" };
-
-            foreach (var fullfillmentType in fullfillmentTypes)
+            var firstType = new TimeForFullfillment
             {
-                await dbContext.TimeForFullfillments.AddAsync(new TimeForFullfillment
-                {
-                    Name = fullfillmentType,
-                });
-            }
+                Name = "Нормална",
+                Price = 1,
+            };
+
+            var secondType = new TimeForFullfillment
+            {
+                Name = "Бърза",
+                Price = 2,
+            };
+
+            var thirdType = new TimeForFullfillment
+            {
+                Name = "Експресна",
+                Price = 3,
+            };
+
+            await dbContext.TimeForFullfillments.AddAsync(firstType);
+            await dbContext.TimeForFullfillments.AddAsync(secondType);
+            await dbContext.TimeForFullfillments.AddAsync(thirdType);
         }
     }
 }

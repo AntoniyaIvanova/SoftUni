@@ -1,16 +1,11 @@
 ﻿namespace LTPTranslations.Data.Models.Legalizations
 {
-    using System;
-
     using LTPTranslations.Data.Common.Models;
 
-    public class DocumentType : BaseDeletableModel<string>
+    public class DocumentType : BaseDeletableModel<int>
     {
-        public DocumentType()
-        {
-            this.Id = Guid.NewGuid().ToString();
-        }
-
         public string Name { get; set; }
+
+        public decimal Price { get; set; }
     }
 }

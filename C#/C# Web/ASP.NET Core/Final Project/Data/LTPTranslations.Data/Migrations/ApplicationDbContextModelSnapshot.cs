@@ -621,7 +621,10 @@ namespace LTPTranslations.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("DocumentTypeId")
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("DocumentTypeId1")
+                        .HasColumnType("int");
 
                     b.Property<string>("DocumentUrl")
                         .HasColumnType("nvarchar(max)");
@@ -637,7 +640,7 @@ namespace LTPTranslations.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DocumentTypeId");
+                    b.HasIndex("DocumentTypeId1");
 
                     b.HasIndex("IsDeleted");
 
@@ -648,8 +651,10 @@ namespace LTPTranslations.Data.Migrations
 
             modelBuilder.Entity("LTPTranslations.Data.Models.Legalizations.DocumentType", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
@@ -668,6 +673,9 @@ namespace LTPTranslations.Data.Migrations
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 
@@ -853,6 +861,9 @@ namespace LTPTranslations.Data.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("IsDeleted");
@@ -880,9 +891,6 @@ namespace LTPTranslations.Data.Migrations
                     b.Property<int>("DocumentTypeId")
                         .HasColumnType("int");
 
-                    b.Property<string>("DocumentTypeId1")
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<string>("InvoiceId")
                         .HasColumnType("nvarchar(450)");
 
@@ -892,10 +900,7 @@ namespace LTPTranslations.Data.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<int>("LanguageFromId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("LanguageToId")
+                    b.Property<int>("LanguagePairId")
                         .HasColumnType("int");
 
                     b.Property<string>("ModeartorId")
@@ -925,15 +930,13 @@ namespace LTPTranslations.Data.Migrations
 
                     b.HasIndex("DeliveryTypeId");
 
-                    b.HasIndex("DocumentTypeId1");
+                    b.HasIndex("DocumentTypeId");
 
                     b.HasIndex("InvoiceId");
 
                     b.HasIndex("IsDeleted");
 
-                    b.HasIndex("LanguageFromId");
-
-                    b.HasIndex("LanguageToId");
+                    b.HasIndex("LanguagePairId");
 
                     b.HasIndex("ModeratorId");
 
@@ -966,6 +969,9 @@ namespace LTPTranslations.Data.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("IsDeleted");
@@ -994,6 +1000,9 @@ namespace LTPTranslations.Data.Migrations
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 
@@ -1130,8 +1139,10 @@ namespace LTPTranslations.Data.Migrations
 
             modelBuilder.Entity("LTPTranslations.Data.Models.Translations.LanguagePair", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
@@ -1142,20 +1153,17 @@ namespace LTPTranslations.Data.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<string>("LanguageFromId")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("LanguageFromId1")
+                    b.Property<int>("LanguageFromId")
                         .HasColumnType("int");
 
-                    b.Property<string>("LanguageToId")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("LanguageToId1")
+                    b.Property<int>("LanguageToId")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("ModifiedOn")
                         .HasColumnType("datetime2");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("TranslatorId")
                         .HasColumnType("nvarchar(450)");
@@ -1164,9 +1172,9 @@ namespace LTPTranslations.Data.Migrations
 
                     b.HasIndex("IsDeleted");
 
-                    b.HasIndex("LanguageFromId1");
+                    b.HasIndex("LanguageFromId");
 
-                    b.HasIndex("LanguageToId1");
+                    b.HasIndex("LanguageToId");
 
                     b.HasIndex("TranslatorId");
 
@@ -1228,9 +1236,6 @@ namespace LTPTranslations.Data.Migrations
                     b.Property<int>("LanguagePairId")
                         .HasColumnType("int");
 
-                    b.Property<string>("LanguagePairId1")
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<DateTime?>("ModifiedOn")
                         .HasColumnType("datetime2");
 
@@ -1251,7 +1256,7 @@ namespace LTPTranslations.Data.Migrations
 
                     b.HasIndex("IsDeleted");
 
-                    b.HasIndex("LanguagePairId1");
+                    b.HasIndex("LanguagePairId");
 
                     b.HasIndex("TimeForFullfillmentId");
 
@@ -1667,7 +1672,7 @@ namespace LTPTranslations.Data.Migrations
                 {
                     b.HasOne("LTPTranslations.Data.Models.Legalizations.DocumentType", "DocumentType")
                         .WithMany()
-                        .HasForeignKey("DocumentTypeId");
+                        .HasForeignKey("DocumentTypeId1");
 
                     b.HasOne("LTPTranslations.Data.Models.Legalizations.LegalizingAuthority", "LegalizingAuthority")
                         .WithMany()
@@ -1755,21 +1760,17 @@ namespace LTPTranslations.Data.Migrations
 
                     b.HasOne("LTPTranslations.Data.Models.Legalizations.DocumentType", "DocumentType")
                         .WithMany()
-                        .HasForeignKey("DocumentTypeId1");
+                        .HasForeignKey("DocumentTypeId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.HasOne("LTPTranslations.Data.Models.Invoices.Invoice", "Invoice")
                         .WithMany()
                         .HasForeignKey("InvoiceId");
 
-                    b.HasOne("LTPTranslations.Data.Models.Translations.LanguageFrom", "LanguageFrom")
+                    b.HasOne("LTPTranslations.Data.Models.Translations.LanguagePair", "LanguagePair")
                         .WithMany()
-                        .HasForeignKey("LanguageFromId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("LTPTranslations.Data.Models.Translations.LanguageTo", "LanguageTo")
-                        .WithMany()
-                        .HasForeignKey("LanguageToId")
+                        .HasForeignKey("LanguagePairId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
@@ -1797,9 +1798,7 @@ namespace LTPTranslations.Data.Migrations
 
                     b.Navigation("Invoice");
 
-                    b.Navigation("LanguageFrom");
-
-                    b.Navigation("LanguageTo");
+                    b.Navigation("LanguagePair");
 
                     b.Navigation("Moderator");
 
@@ -1812,11 +1811,15 @@ namespace LTPTranslations.Data.Migrations
                 {
                     b.HasOne("LTPTranslations.Data.Models.Translations.LanguageFrom", "LanguageFrom")
                         .WithMany()
-                        .HasForeignKey("LanguageFromId1");
+                        .HasForeignKey("LanguageFromId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.HasOne("LTPTranslations.Data.Models.Translations.LanguageTo", "LanguageTo")
                         .WithMany()
-                        .HasForeignKey("LanguageToId1");
+                        .HasForeignKey("LanguageToId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.HasOne("LTPTranslations.Data.Models.Translator.Translator", null)
                         .WithMany("LanguagePairs")
@@ -1841,7 +1844,9 @@ namespace LTPTranslations.Data.Migrations
 
                     b.HasOne("LTPTranslations.Data.Models.Translations.LanguagePair", "LanguagePair")
                         .WithMany()
-                        .HasForeignKey("LanguagePairId1");
+                        .HasForeignKey("LanguagePairId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.HasOne("LTPTranslations.Data.Models.Orders.TimeForFullfillment", "TimeForFullfillment")
                         .WithMany()

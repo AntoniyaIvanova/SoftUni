@@ -4,6 +4,7 @@
 
     using LTPTranslations.Services.Data.Orders;
     using LTPTranslations.Web.ViewModels.Calculator;
+    using LTPTranslations.Web.ViewModels.ViewModels.Calculator;
     using Microsoft.AspNetCore.Mvc;
 
     public class CalculatorsController : Controller
@@ -50,15 +51,31 @@
         [HttpPost]
         public async Task<IActionResult> Index(CalculatorOptionsInputModel input)
         {
-            if (!this.ModelState.IsValid)
+            var languageFrom = this.languageFromService.GetAllLanguagesFromTypes();
+            var languageTo = this.languageToService.GetAllLanguagesToTypes();
+
+            if (!this.ModelState.IsValid || languageFrom == languageTo)
             {
                 input.OrderTypeItems = this.orderTypeService.GetAllOrderTypes();
+                input.DocumentTypeItems = this.documentTypeService.GetAllDocumentTypes();
+                input.OrderFullfilmentTypeItems = this.orderFullfilmentTypeService.GetAllFullfillmentTypes();
+                input.LanguageFromItems = this.languageFromService.GetAllLanguagesFromTypes();
+                input.LanguageToItems = this.languageToService.GetAllLanguagesToTypes();
+                input.WayToReceiveItems = this.waysToReceiveTypeService.GetWaysOfReceivingTypes();
+
                 return this.View(input);
             }
 
-            await this.offerService.CreateAsync(input);
+            var offerId = await this.offerService.CreateAsync(input);
 
-            return this.Redirect("/");
+            return this.RedirectToAction("Offer", new { id = offerId });
+        }
+
+        public IActionResult Offer(string id)
+        {
+            var viewModel = this.offerService.GetById(id);
+
+            return this.View(viewModel);
         }
     }
 }

@@ -51,8 +51,8 @@
                 model.Email,
                 model.Name,
                 GlobalConstants.SystemEmail,
-                model.Subject,
-                model.Message);
+                model.Message,
+                model.Subject);
 
             return this.RedirectToAction("ThankYou");
         }

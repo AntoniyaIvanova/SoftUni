@@ -52,7 +52,7 @@
 
             secondWord.OtherSynonyms.Add(new Synonyms
             {
-                SynonymName = "blq",
+                SynonymName = "transfer",
             });
 
             await dbContext.WordsOfTheDay.AddAsync(firstWord);

@@ -5,8 +5,8 @@
     var orderTypeItems = this.Model.OrderTypeItems.Select(x => new SelectListItem(x.Value, x.Key));
     var documentTypeItems = this.Model.DocumentTypeItems.Select(x => new SelectListItem(x.Value, x.Key));
     var fullfillmentSpeedItems = this.Model.OrderFullfilmentTypeItems.Select(x => new SelectListItem(x.Value, x.Key));
-    var languagesFromTypeItems = this.Model.LanguageFromItems.Select(x => new SelectListItem(x.Value, x.Value));
-    var languagesToTypeItems = this.Model.LanguageToItems.Select(x => new SelectListItem(x.Value, x.Value));
+    var languagesFromTypeItems = this.Model.LanguageFromItems.Select(x => new SelectListItem(x.Value, x.Key));
+    var languagesToTypeItems = this.Model.LanguageToItems.Select(x => new SelectListItem(x.Value, x.Key));
     var waysToReceiveOrderTypeItems = this.Model.WayToReceiveItems.Select(x => new SelectListItem(x.Value, x.Key));
 }
 
@@ -74,9 +74,9 @@
                 </div>
                 <div class="calculator-form">
                     <div class="btn-toolbar">
-                        <button type="submit" id="calculatePrice" class="btn btn-primary contact-btn  pull-left">Калкулирай цената</button>
-                        <button type="submit" id="submit" class="btn  btn-primary contact-btn pull-right">Генерирай оферта</button>
-                        <button type="submit" id="submit" class="btn  btn-primary contact-btn" style="margin-left:45px">Свържи се с оператор</button>
+                        <button type="submit" id="calculatePrice" class="btn btn-primary contact-btn  pull-left">Генерирай оферта</button>
+                      
+                        <button type="submit" id="submit" class="btn  btn-primary contact-btn pull-right">Свържи се с оператор</button>
                         <div id="msgSubmit" class="h3 text-center hidden"></div>
                         <div class="clearfix"></div>
                     </div>
@@ -92,26 +92,26 @@
             $('[data-toggle="popover"]').popover()
         })
 
-        $(function () {
-            $('#calculatePrice').on('click', function (e) {
-                e.preventDefault();
-            })
-        })
+        //$(function () {
+        //    $('#calculatePrice').on('click', function (e) {
+        //        e.preventDefault();
+        //    })
+        //})
 
-        $(function () {
-            $('#calculatePrice').one('click', function (e) {
-                e.preventDefault();
-                var placeToAppend = document.getElementById("appendPlace");
+        //$(function () {
+        //    $('#calculatePrice').one('click', function (e) {
+        //        e.preventDefault();
+        //        var placeToAppend = document.getElementById("appendPlace");
 
-                $(placeToAppend).show();
+        //        $(placeToAppend).show();
               
-                var form = document.createElement('div');
-                $(form).css("font-size", "24px");
-                $(form).attr('name', ''); 
-                form.textContent = '300 BGN';
-                placeToAppend.appendChild(form);                
-            })
-        })
+        //        var form = document.createElement('div');
+        //        $(form).css("font-size", "24px");
+        //        $(form).attr('name', ''); 
+        //        form.textContent = '300 BGN';
+        //        placeToAppend.appendChild(form);                
+        //    })
+        //})
 
         $(function () {
             $(".positionTypes").on('change', function () {

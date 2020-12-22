@@ -20,7 +20,7 @@
 
         [Required(ErrorMessage = "Моля, въведете ориентировъчния брои страници")]
         [Display(Name = "Брой страници")]
-        [Range(0.0, double.MaxValue, ErrorMessage = "The field {0} must be greater than {1}.")]
+        [Range(0.1, double.MaxValue, ErrorMessage = "The field {0} must be greater than {1}.")]
         public int Pages { get; set; }
 
         [Required(ErrorMessage = "Моля, изберете език на оригинала")]

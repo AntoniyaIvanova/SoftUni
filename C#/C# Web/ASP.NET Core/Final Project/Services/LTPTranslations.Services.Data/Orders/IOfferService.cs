@@ -3,9 +3,12 @@
     using System.Threading.Tasks;
 
     using LTPTranslations.Web.ViewModels.Calculator;
+    using LTPTranslations.Web.ViewModels.ViewModels.Calculator;
 
     public interface IOfferService
     {
-        Task CreateAsync(CalculatorOptionsInputModel input);
+        Task<string> CreateAsync(CalculatorOptionsInputModel input);
+
+        OfferViewModel GetById(string id);
     }
 }

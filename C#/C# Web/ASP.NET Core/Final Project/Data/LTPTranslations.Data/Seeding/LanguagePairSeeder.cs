@@ -7,7 +7,7 @@
 
     using LTPTranslations.Data.Models.Translations;
 
-    public class LanguageFromSeeder : ISeeder
+    public class LanguagePairSeeder : ISeeder
     {
         public async Task SeedAsync(ApplicationDbContext dbContext, IServiceProvider serviceProvider)
         {
@@ -16,13 +16,23 @@
                 return;
             }
 
-            var languagesFrom = new List<string> { "Английски език", "Немски език", "Български език", "Италиански език" };
+            var languagesFrom = new HashSet<string> { "Английски език", "Немски език", "Български език" };
 
             foreach (var languageFrom in languagesFrom)
             {
                 await dbContext.LanguagesFrom.AddAsync(new LanguageFrom
                 {
                     Name = languageFrom,
+                });
+            }
+
+            var languagesTo = new HashSet<string> { "Английски език", "Немски език", "Български език" };
+
+            foreach (var languageTo in languagesTo)
+            {
+                await dbContext.LanguagesTo.AddAsync(new LanguageTo
+                {
+                    Name = languageTo,
                 });
             }
         }

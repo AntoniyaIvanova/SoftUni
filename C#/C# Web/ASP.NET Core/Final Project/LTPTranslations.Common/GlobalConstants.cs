@@ -6,6 +6,12 @@
 
         public const string AdministratorRoleName = "Administrator";
 
+        public const string ModeratorRoleName = "Moderator";
+
+        public const string TranslatorRoleName = "Translator";
+
+        public const string ClientRoleName = "Client";
+
         public const string SystemEmail = "aspicadesign@gmail.com";
 
         public const string AdministratorUsername = "Admin";

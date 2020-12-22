@@ -36,13 +36,9 @@
 
         public TimeForFullfillment TimeForFullfillment { get; set; }
 
-        public int LanguageFromId { get; set; }
+        public int LanguagePairId { get; set; }
 
-        public LanguageFrom LanguageFrom { get; set; }
-
-        public int LanguageToId { get; set; }
-
-        public LanguageTo LanguageTo { get; set; }
+        public LanguagePair LanguagePair { get; set; }
 
         public int DeliveryTypeId { get; set; }
 

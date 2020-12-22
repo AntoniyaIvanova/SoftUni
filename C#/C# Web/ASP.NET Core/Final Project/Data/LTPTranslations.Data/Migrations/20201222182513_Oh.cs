@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace LTPTranslations.Data.Migrations
 {
-    public partial class InitialMigration : Migration
+    public partial class Oh : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -150,6 +150,7 @@ namespace LTPTranslations.Data.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
@@ -274,6 +275,7 @@ namespace LTPTranslations.Data.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
@@ -362,6 +364,7 @@ namespace LTPTranslations.Data.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
@@ -569,8 +572,10 @@ namespace LTPTranslations.Data.Migrations
                 name: "DocumentTypes",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     LegalizingAuthorityId = table.Column<int>(type: "int", nullable: true),
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -741,7 +746,8 @@ namespace LTPTranslations.Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     DocumentUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     LegalizingAuthorityId = table.Column<int>(type: "int", nullable: false),
-                    DocumentTypeId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    DocumentTypeId = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DocumentTypeId1 = table.Column<int>(type: "int", nullable: true),
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
@@ -751,8 +757,8 @@ namespace LTPTranslations.Data.Migrations
                 {
                     table.PrimaryKey("PK_DocumentForLegalizations", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_DocumentForLegalizations_DocumentTypes_DocumentTypeId",
-                        column: x => x.DocumentTypeId,
+                        name: "FK_DocumentForLegalizations_DocumentTypes_DocumentTypeId1",
+                        column: x => x.DocumentTypeId1,
                         principalTable: "DocumentTypes",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
@@ -768,11 +774,11 @@ namespace LTPTranslations.Data.Migrations
                 name: "LanguagePairs",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    LanguageFromId = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    LanguageFromId1 = table.Column<int>(type: "int", nullable: true),
-                    LanguageToId = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    LanguageToId1 = table.Column<int>(type: "int", nullable: true),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    LanguageFromId = table.Column<int>(type: "int", nullable: false),
+                    LanguageToId = table.Column<int>(type: "int", nullable: false),
+                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     TranslatorId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -783,14 +789,14 @@ namespace LTPTranslations.Data.Migrations
                 {
                     table.PrimaryKey("PK_LanguagePairs", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_LanguagePairs_LanguagesFrom_LanguageFromId1",
-                        column: x => x.LanguageFromId1,
+                        name: "FK_LanguagePairs_LanguagesFrom_LanguageFromId",
+                        column: x => x.LanguageFromId,
                         principalTable: "LanguagesFrom",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_LanguagePairs_LanguagesTo_LanguageToId1",
-                        column: x => x.LanguageToId1,
+                        name: "FK_LanguagePairs_LanguagesTo_LanguageToId",
+                        column: x => x.LanguageToId,
                         principalTable: "LanguagesTo",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
@@ -896,7 +902,6 @@ namespace LTPTranslations.Data.Migrations
                     DocumentId = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DocumentForTranslationId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     LanguagePairId = table.Column<int>(type: "int", nullable: false),
-                    LanguagePairId1 = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     FullFillmentTypeId = table.Column<int>(type: "int", nullable: false),
                     TimeForFullfillmentId = table.Column<int>(type: "int", nullable: false),
                     PagesCount = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
@@ -922,8 +927,8 @@ namespace LTPTranslations.Data.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Translations_LanguagePairs_LanguagePairId1",
-                        column: x => x.LanguagePairId1,
+                        name: "FK_Translations_LanguagePairs_LanguagePairId",
+                        column: x => x.LanguagePairId,
                         principalTable: "LanguagePairs",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
@@ -1054,11 +1059,9 @@ namespace LTPTranslations.Data.Migrations
                     ModeratorId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     OrderTypeId = table.Column<int>(type: "int", nullable: false),
                     TimeForFullfillmentId = table.Column<int>(type: "int", nullable: false),
-                    LanguageFromId = table.Column<int>(type: "int", nullable: false),
-                    LanguageToId = table.Column<int>(type: "int", nullable: false),
+                    LanguagePairId = table.Column<int>(type: "int", nullable: false),
                     DeliveryTypeId = table.Column<int>(type: "int", nullable: false),
                     DocumentTypeId = table.Column<int>(type: "int", nullable: false),
-                    DocumentTypeId1 = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     PriceOffer = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     IsAccepted = table.Column<bool>(type: "bit", nullable: false),
                     Pages = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
@@ -1083,8 +1086,8 @@ namespace LTPTranslations.Data.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Orders_DocumentTypes_DocumentTypeId1",
-                        column: x => x.DocumentTypeId1,
+                        name: "FK_Orders_DocumentTypes_DocumentTypeId",
+                        column: x => x.DocumentTypeId,
                         principalTable: "DocumentTypes",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
@@ -1095,15 +1098,9 @@ namespace LTPTranslations.Data.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Orders_LanguagesFrom_LanguageFromId",
-                        column: x => x.LanguageFromId,
-                        principalTable: "LanguagesFrom",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Orders_LanguagesTo_LanguageToId",
-                        column: x => x.LanguageToId,
-                        principalTable: "LanguagesTo",
+                        name: "FK_Orders_LanguagePairs_LanguagePairId",
+                        column: x => x.LanguagePairId,
+                        principalTable: "LanguagePairs",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
@@ -1256,9 +1253,9 @@ namespace LTPTranslations.Data.Migrations
                 column: "IsDeleted");
 
             migrationBuilder.CreateIndex(
-                name: "IX_DocumentForLegalizations_DocumentTypeId",
+                name: "IX_DocumentForLegalizations_DocumentTypeId1",
                 table: "DocumentForLegalizations",
-                column: "DocumentTypeId");
+                column: "DocumentTypeId1");
 
             migrationBuilder.CreateIndex(
                 name: "IX_DocumentForLegalizations_IsDeleted",
@@ -1326,14 +1323,14 @@ namespace LTPTranslations.Data.Migrations
                 column: "IsDeleted");
 
             migrationBuilder.CreateIndex(
-                name: "IX_LanguagePairs_LanguageFromId1",
+                name: "IX_LanguagePairs_LanguageFromId",
                 table: "LanguagePairs",
-                column: "LanguageFromId1");
+                column: "LanguageFromId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_LanguagePairs_LanguageToId1",
+                name: "IX_LanguagePairs_LanguageToId",
                 table: "LanguagePairs",
-                column: "LanguageToId1");
+                column: "LanguageToId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_LanguagePairs_TranslatorId",
@@ -1411,9 +1408,9 @@ namespace LTPTranslations.Data.Migrations
                 column: "DeliveryTypeId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Orders_DocumentTypeId1",
+                name: "IX_Orders_DocumentTypeId",
                 table: "Orders",
-                column: "DocumentTypeId1");
+                column: "DocumentTypeId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Orders_InvoiceId",
@@ -1426,14 +1423,9 @@ namespace LTPTranslations.Data.Migrations
                 column: "IsDeleted");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Orders_LanguageFromId",
+                name: "IX_Orders_LanguagePairId",
                 table: "Orders",
-                column: "LanguageFromId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Orders_LanguageToId",
-                table: "Orders",
-                column: "LanguageToId");
+                column: "LanguagePairId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Orders_ModeratorId",
@@ -1516,9 +1508,9 @@ namespace LTPTranslations.Data.Migrations
                 column: "IsDeleted");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Translations_LanguagePairId1",
+                name: "IX_Translations_LanguagePairId",
                 table: "Translations",
-                column: "LanguagePairId1");
+                column: "LanguagePairId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Translations_TimeForFullfillmentId",

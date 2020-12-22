@@ -16,15 +16,34 @@
                 return;
             }
 
-            var documents = new List<string> { "Пълномощно", "Свидетелство за съдимост", "Диплома за средно образование", "Приложение към диплома за средно образование", "Удостоверение от НАП" };
-
-            foreach (var document in documents)
+            var firstDocument = new DocumentType
             {
-                await dbContext.DocumentTypes.AddAsync(new DocumentType
-                {
-                    Name = document,
-                });
-            }
+                Name = "Пълномощно",
+                Price = 15,
+            };
+
+            var secondDocument = new DocumentType
+            {
+                Name = "Свидетелство за съдимост",
+                Price = 5,
+            };
+
+            var thirdDocument = new DocumentType
+            {
+                Name = "Диплома за средно образование",
+                Price = 1,
+            };
+
+            var fourthDocument = new DocumentType
+            {
+                Name = "Приложение към диплома за средно образование",
+                Price = 2,
+            };
+
+            await dbContext.DocumentTypes.AddAsync(firstDocument);
+            await dbContext.DocumentTypes.AddAsync(secondDocument);
+            await dbContext.DocumentTypes.AddAsync(thirdDocument);
+            await dbContext.DocumentTypes.AddAsync(fourthDocument);
         }
     }
 }

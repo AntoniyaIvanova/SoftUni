@@ -32,8 +32,8 @@
                               new OrderTypeSeeder(),
                               new FullfillmentTypeSeeder(),
                               new WaysToDeliverSeeder(),
-                              new LanguageFromSeeder(),
-                              new LanguageToSeeder(),
+                              new LanguagePairSeeder(),
+                              new LanguagePrice(),
                               new WordOfTheDaySeeder(),
                           };
 
