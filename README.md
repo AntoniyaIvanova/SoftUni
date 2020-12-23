@@ -18,7 +18,7 @@ Courses from softuni.bg
   2. JS Essentials
   3. JS Advanced<br/>
     3.1. JS Advanced  ------------------->   [Certificate from SoftUni](https://softuni.bg/certificates/details/90509/49af7525)<br/>
-    3.2. JS Applications<br/> ------------------->  [Certificate from SoftUni](https://softuni.bg/certificates/details/95162/5eaa8b0d)<br/>
+    3.2. JS Applications ------------------->  [Certificate from SoftUni](https://softuni.bg/certificates/details/95162/5eaa8b0d)<br/>
   4. JS Web<br/>
     4.1. JS Back-End<br/>
     4.2. ReactJS<br/>
