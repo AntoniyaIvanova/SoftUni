@@ -13,18 +13,13 @@ function getById(id){
    return productsData.find(x=>x.id == id);
 }
 
-function create(data) {
+function create(data, callback) {
 
     let cube = new Cube(uniqueId(), data.name, data.description, data.imageUrl, data.difficultyLevel);
 
     productsData.push(cube);
 
-    fs.writeFile(path.join(__dirname, '/../config/products.json'), JSON.stringify(productsData), (err)=>{
-        if(err){
-            console.log(err);
-            return;
-        }
-    })
+    fs.writeFile(path.join(__dirname, '/../config/products.json'), JSON.stringify(productsData), callback);
 }
 
 module.exports = { create, getAll, getById }
